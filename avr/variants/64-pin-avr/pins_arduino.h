@@ -7,6 +7,12 @@
 | ATmega1281/V                                      |
 | ATmega128/A                                       |
 | ATmega64/A                                        |
+| ATmega165/A/P/PA                                  |
+| ATmega325/A/P/PA                                  |
+| ATmega645/A/P                                     |
+| ATmega169/A/P/PA                                  |
+| ATmega329/A/P/PA                                  |
+| ATmega649/A/P                                     |
 |                                                   |
 |***************************************************/
 
@@ -23,11 +29,11 @@
 #define MEGACORE_64_PIN_AVR_PINOUT
 
 // Digital pins
-#if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__) || defined(__AVR_AT90CAN32__) \
-|| defined(__AVR_AT90CAN64__) || defined(__AVR_AT90CAN128__)
-#define NUM_DIGITAL_PINS           (53)
-#elif defined(__AVR_ATmega1281__) || defined(__AVR_ATmega2561__)
-#define NUM_DIGITAL_PINS           (54)
+#if defined(__AVR_ATmega1281__) || defined(__AVR_ATmega2561__)
+  #define NUM_DIGITAL_PINS           (54)
+
+#else // ATmega64/128, AT90CAN32/64/128, ATmega165/325/645, ATmega169/329/649
+  #define NUM_DIGITAL_PINS           (53)
 #endif
 
 // PWM pins
@@ -36,6 +42,8 @@
   #define digitalPinHasPWM(p)      (((p) >= 3 && (p) <= 5) || ((p) >= 12 && (p) <= 15))
 #elif defined(__AVR_ATmega1281__) || defined(__AVR_ATmega2561__)
   #define digitalPinHasPWM(p)      (((p) >= 3 && (p) <= 5) || ((p) >= 12 && (p) <= 15) || ((p) == 53))
+#else // ATmega165/325/645, ATmega169/329/649
+  #define digitalPinHasPWM(p)      (((p) >= 12 && (p) <= 15))
 #endif
 
 // Builtin LED
@@ -74,21 +82,46 @@ static const uint8_t MOSI = PIN_SPI_MOSI;
 static const uint8_t MISO = PIN_SPI_MISO;
 
 // i2c
-#define PIN_WIRE_SCL  (18)
-#define PIN_WIRE_SDA  (19)
+#if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)  || defined(__AVR_AT90CAN32__)  \
+|| defined(__AVR_AT90CAN64__) || defined(__AVR_AT90CAN128__) || defined(__AVR_ATmega1281__) \
+|| defined(__AVR_ATmega2561__)
+  #define PIN_WIRE_SCL  (18)
+  #define PIN_WIRE_SDA  (19)
+#else // ATmega165/325/645, ATmega169/329/649
+  #define PIN_WIRE_SCL  (4)
+  #define PIN_WIRE_SDA  (5)
+#endif
 static const uint8_t SCL = PIN_WIRE_SCL;
 static const uint8_t SDA = PIN_WIRE_SDA;
 
 // Interrupts
-#define EXTERNAL_NUM_INTERRUPTS    (8)
-#define digitalPinToInterrupt(p)   (((p) >= 4 && (p) <= 7) ? (p) : ((p) >= 18 && (p) <= 21) ? (p) - 18 : NOT_AN_INTERRUPT)
+#if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)  || defined(__AVR_AT90CAN32__)  \
+|| defined(__AVR_AT90CAN64__) || defined(__AVR_AT90CAN128__) || defined(__AVR_ATmega1281__) \
+|| defined(__AVR_ATmega2561__)
+  #define EXTERNAL_NUM_INTERRUPTS    (8)
+  #define digitalPinToInterrupt(p)   (((p) >= 4 && (p) <= 7) ? (p) : ((p) >= 18 && (p) <= 21) ? (p) - 18 : NOT_AN_INTERRUPT)
+#else // ATmega165/325/645, ATmega169/329/649
+  #define EXTERNAL_NUM_INTERRUPTS    (1)
+  #define digitalPinToInterrupt(p)   ((p) == 19 ? 0 : NOT_AN_INTERRUPT)
+#endif
+
 
 // PCINT
 #if defined(__AVR_ATmega1281__) || defined(__AVR_ATmega2561__)
-#define digitalPinToPCICR(p)    ((((p) >= 8) && ((p) <= 15)) || ((p) == 0) ? (&PCICR) : ((uint8_t*)0))
-#define digitalPinToPCICRbit(p) ((((p) >= 8) && ((p) <= 15)) ? 0 : ((((p) == 0)  ? 1 : 0)))
-#define digitalPinToPCMSK(p)    ((((p) >= 8) && ((p) <= 15)) ? (&PCMSK0) : ((((p) == 0)  ? (&PCMSK1) : ((uint8_t*)0))))
-#define digitalPinToPCMSKbit(p) ((((p) >= 8) && ((p) <= 15)) ? ((p) - 8) : (((p) ==  0) ? 1 : 0))
+  #define digitalPinToPCICR(p)    ((((p) >= 8) && ((p) <= 15)) || ((p) == 0) ? (&PCICR) : ((uint8_t*)0))
+  #define digitalPinToPCICRbit(p) ((((p) >= 8) && ((p) <= 15)) ? 0 : ((((p) == 0)  ? 1 : 0)))
+  #define digitalPinToPCMSK(p)    ((((p) >= 8) && ((p) <= 15)) ? (&PCMSK0) : ((((p) == 0)  ? (&PCMSK1) : ((uint8_t*)0))))
+  #define digitalPinToPCMSKbit(p) ((((p) >= 8) && ((p) <= 15)) ? ((p) - 8) : (((p) ==  0) ? 1 : 0))
+#elif defined(__AVR_ATmega165__) || defined(__AVR_ATmega165A__)  || defined(__AVR_ATmega165P__)  \
+|| defined(__AVR_ATmega165PA__)  || defined(__AVR_ATmega325__)   || defined(__AVR_ATmega325A__)  \
+|| defined(__AVR_ATmega325P__)   || defined(__AVR_ATmega325PA__) || defined(__AVR_ATmega645__)   \
+|| defined(__AVR_ATmega645A__)   || defined(__AVR_ATmega645P__)  || defined(__AVR_ATmega169__)   \
+|| defined(__AVR_ATmega169A__)   || defined(__AVR_ATmega169P__)  || defined(__AVR_ATmega169PA__) \
+|| defined(__AVR_ATmega329__)    || defined(__AVR_ATmega329A__)  || defined(__AVR_ATmega329P__)  \
+|| defined(__AVR_ATmega329PA__)  || defined(__AVR_ATmega649__)   || defined(__AVR_ATmega649A__)  \
+|| defined(__AVR_ATmega649P__)
+  #define digitalPinToPCMSK(p)    (((p) >= 0) && ((p) <= 7) ? (&PCMSK0) : ((p) >= 8) && ((p) <= 15) ? (&PCMSK1) : ((uint8_t*)0))))
+  #define digitalPinToPCMSKbit(p) (((p) >= 0) && ((p) <= 7) ? (p) : ((p) >= 8) && ((p) <= 15) ? ((p) - 8) : 0))
 #endif
 
 #define PIN_PE0 0
@@ -184,28 +217,28 @@ const uint16_t PROGMEM port_to_input_PGM[] = {
 };
 
 const uint8_t PROGMEM digital_pin_to_port_PGM[] = {
-  PE, // PE0 ** D0 ** RX0
-  PE, // PE1 ** D1 ** TX0
+  PE, // PE0 ** D0
+  PE, // PE1 ** D1
   PE, // PE2 ** D2
-  PE, // PE3 ** D3 ** PWM
-  PE, // PE4 ** D4 ** PWM
-  PE, // PE5 ** D5 ** PWM
+  PE, // PE3 ** D3
+  PE, // PE4 ** D4
+  PE, // PE5 ** D5
   PE, // PE6 ** D6
   PE, // PE7 ** D7
-  PB, // PB0 ** D8 ** SS
-  PB, // PB1 ** D9 ** SCK
-  PB, // PB2 ** D10 ** MOSI
-  PB, // PB3 ** D11 ** MISO
-  PB, // PB4 ** D12 ** PWM
-  PB, // PB5 ** D13 ** PWM
-  PB, // PB6 ** D14 ** PWM
-  PB, // PB7 ** D15 ** PWM
+  PB, // PB0 ** D8
+  PB, // PB1 ** D9
+  PB, // PB2 ** D10
+  PB, // PB3 ** D11
+  PB, // PB4 ** D12
+  PB, // PB5 ** D13
+  PB, // PB6 ** D14
+  PB, // PB7 ** D15
   PG, // PG3 ** D16
   PG, // PG4 ** D17
-  PD, // PD0 ** D18 ** SCL
-  PD, // PD1 ** D19 ** SDA
-  PD, // PD2 ** D20 ** RX1
-  PD, // PD3 ** D21 ** TX1
+  PD, // PD0 ** D18
+  PD, // PD1 ** D19
+  PD, // PD2 ** D20
+  PD, // PD3 ** D21
   PD, // PD4 ** D22
   PD, // PD5 ** D23
   PD, // PD6 ** D24
@@ -238,33 +271,33 @@ const uint8_t PROGMEM digital_pin_to_port_PGM[] = {
   PF, // PF6 ** D51 ** A6
   PF, // PF7 ** D52 ** A7
 #if defined(__AVR_ATmega1281__) || defined(__AVR_ATmega2561__)
-  PG, // PG5 ** D53 ** PWM
+  PG, // PG5 ** D53
 #endif
 };
 
 const uint8_t PROGMEM digital_pin_to_bit_mask_PGM[] = {
-  _BV(0), // PE0 ** D0 ** RX0
-  _BV(1), // PE1 ** D1 ** TX0
+  _BV(0), // PE0 ** D0
+  _BV(1), // PE1 ** D1
   _BV(2), // PE2 ** D2
-  _BV(3), // PE3 ** D3 ** PWM
-  _BV(4), // PE4 ** D4 ** PWM
-  _BV(5), // PE5 ** D5 ** PWM
+  _BV(3), // PE3 ** D3
+  _BV(4), // PE4 ** D4
+  _BV(5), // PE5 ** D5
   _BV(6), // PE6 ** D6
   _BV(7), // PE7 ** D7
-  _BV(0), // PB0 ** D8 ** SS
-  _BV(1), // PB1 ** D9 ** SCK
-  _BV(2), // PB2 ** D10 ** MOSI
-  _BV(3), // PB3 ** D11 ** MISO
-  _BV(4), // PB4 ** D12 ** PWM
-  _BV(5), // PB5 ** D13 ** PWM
-  _BV(6), // PB6 ** D14 ** PWM
-  _BV(7), // PB7 ** D15 ** PWM
+  _BV(0), // PB0 ** D8
+  _BV(1), // PB1 ** D9
+  _BV(2), // PB2 ** D10
+  _BV(3), // PB3 ** D11
+  _BV(4), // PB4 ** D12
+  _BV(5), // PB5 ** D13
+  _BV(6), // PB6 ** D14
+  _BV(7), // PB7 ** D15
   _BV(3), // PG3 ** D16
   _BV(4), // PG4 ** D17
-  _BV(0), // PD0 ** D18 ** SCL
-  _BV(1), // PD1 ** D19 ** SDA
-  _BV(2), // PD2 ** D20 ** RX1
-  _BV(3), // PD3 ** D21 ** TX1
+  _BV(0), // PD0 ** D18
+  _BV(1), // PD1 ** D19
+  _BV(2), // PD2 ** D20
+  _BV(3), // PD3 ** D21
   _BV(4), // PD4 ** D22
   _BV(5), // PD5 ** D23
   _BV(6), // PD6 ** D24
@@ -297,38 +330,54 @@ const uint8_t PROGMEM digital_pin_to_bit_mask_PGM[] = {
   _BV(6), // PF6 ** D51 ** A6
   _BV(7), // PF7 ** D52 ** A7
 #if defined(__AVR_ATmega1281__) || defined(__AVR_ATmega2561__)
-  _BV(5), // PG5 ** D53 ** PWM
+  _BV(5), // PG5 ** D53
 #endif
 };
 
 const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
-  NOT_ON_TIMER, // PE0 ** D0 ** RX0
-  NOT_ON_TIMER, // PE1 ** D1 ** TX0
+  NOT_ON_TIMER, // PE0 ** D0
+  NOT_ON_TIMER, // PE1 ** D1
   NOT_ON_TIMER, // PE2 ** D2
-  TIMER3A,      // PE3 ** D3 ** PWM
-  TIMER3B,      // PE4 ** D4 ** PWM
-  TIMER3C,      // PE5 ** D5 ** PWM
+#if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)  || defined(__AVR_AT90CAN32__)  \
+|| defined(__AVR_AT90CAN64__) || defined(__AVR_AT90CAN128__) || defined(__AVR_ATmega1281__) \
+|| defined(__AVR_ATmega2561__)
+  TIMER3A,      // PE3 ** D3
+  TIMER3B,      // PE4 ** D4
+  TIMER3C,      // PE5 ** D5
+#else // ATmega165/325/645, ATmega169/329/649
+  NOT_ON_TIMER, // PE3 ** D3
+  NOT_ON_TIMER, // PE4 ** D4
+  NOT_ON_TIMER, // PE5 ** D5
+#endif
   NOT_ON_TIMER, // PE6 ** D6
   NOT_ON_TIMER, // PE7 ** D7
-  NOT_ON_TIMER, // PB0 ** D8 ** SS
-  NOT_ON_TIMER, // PB1 ** D9 ** SCK
-  NOT_ON_TIMER, // PB2 ** D10 ** MOSI
-  NOT_ON_TIMER, // PB3 ** D11 ** MISO
+  NOT_ON_TIMER, // PB0 ** D8
+  NOT_ON_TIMER, // PB1 ** D9
+  NOT_ON_TIMER, // PB2 ** D10
+  NOT_ON_TIMER, // PB3 ** D11
 #if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)
-  TIMER0,       // PB4 ** D12 ** PWM
+  TIMER0,       // PB4 ** D12
 #elif defined(__AVR_ATmega1281__) || defined(__AVR_ATmega2561__) || defined(__AVR_AT90CAN32__) \
-|| defined(__AVR_AT90CAN64__) || defined(__AVR_AT90CAN128__)
-  TIMER2A,      // PB4 ** D12 ** PWM
+|| defined(__AVR_AT90CAN64__)     || defined(__AVR_AT90CAN128__)
+  TIMER2A,      // PB4 ** D12
+#else // ATmega165/325/645, ATmega169/329/649
+  TIMER0A,      // PB4 ** D12
 #endif
-  TIMER1A,      // PB5 ** D13 ** PWM
-  TIMER1B,      // PB6 ** D14 ** PWM
-  TIMER1C,      // PB7 ** D15 ** PWM
+  TIMER1A,      // PB5 ** D13
+  TIMER1B,      // PB6 ** D14
+#if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)  || defined(__AVR_AT90CAN32__)  \
+|| defined(__AVR_AT90CAN64__) || defined(__AVR_AT90CAN128__) || defined(__AVR_ATmega1281__) \
+|| defined(__AVR_ATmega2561__)
+  TIMER1C,      // PB7 ** D15
+#else // ATmega165/325/645, ATmega169/329/649
+  TIMER2A,      // PB7 ** D15
+#endif
   NOT_ON_TIMER, // PG3 ** D16
   NOT_ON_TIMER, // PG4 ** D17
-  NOT_ON_TIMER, // PD0 ** D18 ** SCL
-  NOT_ON_TIMER, // PD1 ** D19 ** SDA
-  NOT_ON_TIMER, // PD2 ** D20 ** RX1
-  NOT_ON_TIMER, // PD3 ** D21 ** TX1
+  NOT_ON_TIMER, // PD0 ** D18
+  NOT_ON_TIMER, // PD1 ** D19
+  NOT_ON_TIMER, // PD2 ** D20
+  NOT_ON_TIMER, // PD3 ** D21
   NOT_ON_TIMER, // PD4 ** D22
   NOT_ON_TIMER, // PD5 ** D23
   NOT_ON_TIMER, // PD6 ** D24
@@ -361,7 +410,7 @@ const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
   NOT_ON_TIMER, // PF6 ** D51 ** A6
   NOT_ON_TIMER, // PF7 ** D52 ** A7
 #if defined(__AVR_ATmega1281__) || defined(__AVR_ATmega2561__)
-  TIMER0B,      // PG5 ** D53 ** PWM
+  TIMER0B,      // PG5 ** D53
 #endif
 };
 
@@ -375,7 +424,9 @@ const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
 #define SERIAL_PORT_MONITOR         Serial
 #define SERIAL_PORT_HARDWARE        Serial
 #define SERIAL_PORT_HARDWARE_OPEN   Serial1
-#define SERIAL_PORT_HARDWARE1       Serial1
-#define SERIAL_PORT_HARDWARE_OPEN1  Serial1
+#if defined(UBRR1H)
+  #define SERIAL_PORT_HARDWARE1       Serial1
+  #define SERIAL_PORT_HARDWARE_OPEN1  Serial1
+#endif
 
 #endif

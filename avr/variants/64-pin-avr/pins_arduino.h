@@ -120,8 +120,10 @@ static const uint8_t SDA = PIN_WIRE_SDA;
 || defined(__AVR_ATmega329__)    || defined(__AVR_ATmega329A__)  || defined(__AVR_ATmega329P__)  \
 || defined(__AVR_ATmega329PA__)  || defined(__AVR_ATmega649__)   || defined(__AVR_ATmega649A__)  \
 || defined(__AVR_ATmega649P__)
-  #define digitalPinToPCMSK(p)    (((p) >= 0) && ((p) <= 7) ? (&PCMSK0) : ((p) >= 8) && ((p) <= 15) ? (&PCMSK1) : ((uint8_t*)0))))
-  #define digitalPinToPCMSKbit(p) (((p) >= 0) && ((p) <= 7) ? (p) : ((p) >= 8) && ((p) <= 15) ? ((p) - 8) : 0))
+  #define digitalPinToPCICR(p)    (((p) >= 0) && ((p) <= 15) ? (&EIMSK) : (uint8_t*)0)
+  #define digitalPinToPCICRbit(p) (((p) >= 0) && ((p) <= 7)  ? (PCIE0) : ((p) >= 8) && ((p) <= 15) ? (PCIE1) : 0)
+  #define digitalPinToPCMSK(p)    (((p) >= 0) && ((p) <= 7)  ? (&PCMSK0) : ((p) >= 8) && ((p) <= 15) ? (&PCMSK1) : ((uint8_t*)0))
+  #define digitalPinToPCMSKbit(p) (((p) >= 0) && ((p) <= 7)  ? (p) : ((p) >= 8) && ((p) <= 15) ? ((p) - 8) : 0)
 #endif
 
 #define PIN_PE0 0

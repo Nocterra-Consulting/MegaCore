@@ -28,20 +28,16 @@ const int chipSelect = 4;
 void setup() {
   // Open serial communications and wait for port to open:
   Serial.begin(9600);
-  while (!Serial) {
-    ; // wait for serial port to connect. Needed for native USB port only
-  }
 
-
-  Serial.print("Initializing SD card...");
+  Serial.print(F("Initializing SD card..."));
 
   // see if the card is present and can be initialized:
   if (!SD.begin(chipSelect)) {
-    Serial.println("Card failed, or not present");
+    Serial.println(F("Card failed, or not present"));
     // don't do anything more:
     return;
   }
-  Serial.println("card initialized.");
+  Serial.println(F("card initialized."));
 }
 
 void loop() {
@@ -70,6 +66,6 @@ void loop() {
   }
   // if the file isn't open, pop up an error:
   else {
-    Serial.println("error opening datalog.txt");
+    Serial.println(F("error opening datalog.txt"));
   }
 }

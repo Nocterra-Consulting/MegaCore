@@ -1,8 +1,8 @@
 # MegaCore
 [![Build Status](https://travis-ci.com/MCUdude/MegaCore.svg?branch=master)](https://travis-ci.com/MCUdude/MegaCore) [![MegaCore forum thread](https://img.shields.io/badge/support-forum-blue.svg)](https://forum.arduino.cc/index.php?topic=386733.0)
 
-An Arduino core for ATmega64, ATmega128, ATmega640, ATmega1280, ATmega1281, ATmega2560, ATmega2561, AT90CAN32, AT90CAN64 and AT90CAN128, all running [Optiboot flash](#write-to-own-flash). This core requires at least Arduino IDE v1.6, where v1.8.5+ is recommended. <br/>
-If you're into "pure" AVR programming, I'm happy to tell you that all relevant keywords are being highlighted by the IDE through a separate keywords file. Make sure to check out the [example files](https://github.com/MCUdude/MegaCore/tree/master/avr/libraries/AVR_examples/examples) (File > Examples > AVR C code examples).
+An Arduino core for most 64 and 100 pin AVRs, all running [Optiboot flash](#write-to-own-flash). This core requires at least Arduino IDE v1.6, where v1.8.5+ is recommended. <br/>
+If you're into "native" AVR programming, I'm happy to tell you that all relevant keywords are being highlighted by the IDE through a separate keywords file. Make sure to check out the [example files](https://github.com/MCUdude/MegaCore/tree/master/avr/libraries/AVR_examples/examples) (File > Examples > AVR C code examples).
 
 
 # Table of contents
@@ -32,28 +32,35 @@ If you're into "pure" AVR programming, I'm happy to tell you that all relevant k
 * ATmega2560
 * ATmega1281
 * ATmega1280
+* ATmega649
+* ATmega645
 * ATmega640
+* ATmega329
+* ATmega325
+* ATmega169
+* ATmega165
 * ATmega128
 * ATmega64
 * AT90CAN128
 * AT90CAN64
 * AT90CAN32
 
-(All variants - A, L, V)
+(All variants - A, L, P, PA, V)
 <br/> <br/>
 Can't decide what microcontroller to choose? Have a look at the specification table below:
 
-|              | Mega2560 | Mega1280 | Mega640 | Mega2561 | Mega1281 | Mega128<br/>CAN128 | Mega64<br/>CAN64 | CAN32 |
-|--------------|----------|----------|---------|----------|----------|--------------------|------------------|-------|
-| **Flash**    | 256kB    | 128kB    | 64kB    | 256kB    | 128kB    | 128kB              | 64kB             | 32kB  |
-| **RAM**      | 8kB      | 8kB      | 8kB     | 8kB      | 8kB      | 4kB                | 4kB              | 2kB   |
-| **EEPROM**   | 4kB      | 4kB      | 4kB     | 4kB      | 4kB      | 4kB                | 2kB              | 1kB   |
-| **IO pins**  | 70/86 *  | 70/86 *  | 70/86 * | 54       | 54       | 53                 | 53               | 53    |
-| **PWM pins** | 15       | 15       | 15      | 8        | 8        | 7                  | 7                | 7     |
-| **LED pin**  | PB7      | PB7      | PB7     | PB5      | PB5      | PB5                | PB5              | PB5   |
+|              | Mega2560 | Mega1280 | Mega640 | Mega2561 | Mega1281 | Mega128<br/>CAN128 | Mega64<br/>CAN64<br>Mega649<br/>Mega645 | CAN32<br/>Mega329<br/>Mega325 | Mega169<br/>Mega165 |
+|--------------|----------|----------|---------|----------|----------|--------------------|-----------------------------------------|-------------------------------|---------------------|
+| **Flash**    | 256kB    | 128kB    | 64kB    | 256kB    | 128kB    | 128kB              | 64kB                                    | 32kB                          | 16kB                |
+| **RAM**      | 8kB      | 8kB      | 8kB     | 8kB      | 8kB      | 4kB                | 4kB                                     | 2kB                           | 1 kB                |
+| **EEPROM**   | 4kB      | 4kB      | 4kB     | 4kB      | 4kB      | 4kB                | 2kB                                     | 1kB                           | 512B                |
+| **IO pins**  | 70/86 *  | 70/86 *  | 70/86 * | 54       | 54       | 53                 | 53                                      | 53                            | 53                  |
+| **PWM pins** | 15       | 15       | 15      | 8        | 8        | 7                  | 7 / 4 **                                | 7 / 4 **                      | 4                   |
+| **LED pin**  | PB7      | PB7      | PB7     | PB5      | PB5      | PB5                | PB5                                     | PB5                           | PB5                 |
 
-<b>*</b> pin 70-85 is not broken out on the Arduino Mega. Make sure to check out the [*AVR style pinout*](#atmega64012802560) for a cleaner an more logical pinout.
+<b>*</b> Pin 70-85 is not broken out on the Arduino Mega. Make sure to check out the [*AVR style pinout*](#atmega64012802560) for a cleaner an more logical pinout.
 
+<b>**</b> ATmega165/169/325/329/645/649 has only four PWM pins.
 
 ## Supported clock frequencies
 
@@ -96,16 +103,16 @@ Note that you have need to connect a programmer and hit **Burn bootloader** if y
 Brown out detection, or BOD for short lets the microcontroller sense the input voltage and shut down if the voltage goes below the brown out setting. To change the BOD settings you'll have to connect an ISP programmer and hit "Burn bootloader". Below is a table that shows the available BOD options:
 <br/>
 
-| ATmega640/1280/2560 | ATmega1281/2561 | ATmega64/128  | AT90CAN32/64/128 |
-|---------------------|-----------------|---------------|------------------|
-| 4.3V                | 4.3V            | 4.0V          | 4.1V             |
-| 2.7V                | 2.7V            | 2.7V          | 4.0V             |
-| 1.8V                | 1.8V            |               | 3.9V             |
-|                     |                 |               | 3.8V             |
-|                     |                 |               | 2.7V             |
-|                     |                 |               | 2.6V             |
-|                     |                 |               | 2.5V             |
-| Disabled            | Disabled        | Disabled      | Disabled         |
+| ATmega640/1280/2560 | ATmega1281/2561 | ATmega165/169<br/>ATmega325/329<br/>ATmega645/649 | ATmega64/128  | AT90CAN32/64/128 |
+|---------------------|-----------------|---------------------------------------------------|---------------|------------------|
+| 4.3V                | 4.3V            | 4.3V                                              | 4.0V          | 4.1V             |
+| 2.7V                | 2.7V            | 2.7V                                              | 2.7V          | 4.0V             |
+| 1.8V                | 1.8V            | 1.8V                                              |               | 3.9V             |
+|                     |                 |                                                   |               | 3.8V             |
+|                     |                 |                                                   |               | 2.7V             |
+|                     |                 |                                                   |               | 2.6V             |
+|                     |                 |                                                   |               | 2.5V             |
+| Disabled            | Disabled        | Disabled                                          | Disabled      | Disabled         |
 
 
 ## EEPROM option
@@ -212,7 +219,8 @@ Open Arduino IDE, and a new category in the boards menu called "MegaCore" will s
 Ok, so you're downloaded and installed MegaCore, but how to get started? Here's a quick start guide:
 * Hook up your microcontroller as shown in the [pinout diagram](#pinout).
   - If you're not planning to use the bootloader (uploading code using a USB to serial adapter), the FTDI header and the 100 nF capacitor on the reset pin can be omitted.
-* Open the **Tools > Board** menu item, and select **ATmega64**, **ATmega128**, **ATmega1281**, **ATmega2561**, **ATmega640**, **ATmega1280**, **ATmega2560**, **AT90CAN32**, **AT90CAN64** or **AT90CAN128**.
+* Open the **Tools > Board** menu item, select **MegaCore** and select our preferred target.
+* 
 * Select your preferred clock frequency. **16 MHz** is standard on most Arduino boards.
 * Select what kind of programmer you're using under the **Programmers** menu.
 * Hit **Burn Bootloader**. If an LED is connected to pin PB5/PB7, it should flash twice every second.
@@ -241,17 +249,24 @@ I hope you find this useful, because they really are!
 
 ## Pinout
 
-### ATmega64/128/1281/2561/CAN32/CAN64/CAN128
-Since there are no standardized Arduino pinout for this chip family, I've created one. I've tried to make it as simple and logical as possible. This pinout makes great sense if you're buying this [cheap breakout boards](http://www.ebay.com/itm/381547311629) at Ebay or AliExpress (just make sure to remove C3 in order to get auto reset working). The standard LED pin is assigned to Arduino pin 13, and will blink twice if you hit the reset button.
+### 64-pin chips
+Since there are no standardized Arduino pinout for this chip family, I've created one. I've tried to make it as simple and logical as possible. This pinout makes great sense if you're buying this [cheap breakout boards](http://www.ebay.com/itm/381547311629) at Ebay or AliExpress (just make sure to remove C3 in order to get auto reset working). The standard LED pin is assigned to Arduino pin 13 (PB5), and will blink twice if you hit the reset button.
 
-### ATmega640/1280/2560
+| ATmega64/128/1281/2561<br/>AT90CAN32/CAN64/CAN128      | ATmega165/169/325/329/645/649                           |
+|--------------------------------------------------------|---------------------------------------------------------|
+|<img src="https://i.imgur.com/sweRJs3.jpg" width="280"> | <img src="https://i.imgur.com/hUjTyRJ.png" width="280"> |
+
+### 100-pin chips
 Beside including the original Arduino Mega pinout for the ATmega640/1280/2560, I've also added an *AVR style pinout*, which is a more straight forward and logical pinout if you're not working with the Arduino Mega board. For the default Arduino Mega pinout, the standard LED pin is assigned to Arduino pin 13, and for the AVR pin it's assigned to pin 22.
 <b>Click to enlarge:</b> <br/>
-<img src="https://i.imgur.com/sweRJs3.jpg" width="280"> <img src="https://i.imgur.com/O7WtWAj.jpg" width="280"> <img src="http://i.imgur.com/DfR7arD.jpg" width="280">
+
+| Arduino MEGA pinout                                     | "AVR" pinout                                           |
+|---------------------------------------------------------|--------------------------------------------------------|
+| <img src="https://i.imgur.com/O7WtWAj.jpg" width="280"> | <img src="http://i.imgur.com/DfR7arD.jpg" width="280"> |
 
 
 
 ## Minimal setup
-Here's some simple schematics for the ATmega64/128/1281/2561/CAN32/CAN64/CAN128 and ATmega640/1280/2560 showing a minimal setup using an external crystal. Omit the crystal and the two 22pF capacitors if you're using the internal oscillator. <br/>
+Here's some simple schematics for the ATmega64/128/1281/2561/CAN32/CAN64/CAN128, ATmega165/169/325/329/645/649 and ATmega640/1280/2560 showing a minimal setup using an external crystal. Omit the crystal and the two 22pF capacitors if you're using the internal oscillator. <br/>
 <b>Click to enlarge:</b> <br/>
 <img src="https://i.imgur.com/BkJfIWC.png" width="400">    <img src="http://i.imgur.com/gQS1ORv.png" width="400">

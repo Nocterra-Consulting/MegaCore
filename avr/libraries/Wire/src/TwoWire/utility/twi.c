@@ -17,7 +17,12 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
   Modified 2012 by Todd Krein (todd@krein.org) to implement repeated starts
+
 */
+
+#include <avr/io.h>
+
+#if defined(TWDR) // TWI hardware
 
 #include <math.h>
 #include <stdlib.h>
@@ -26,14 +31,6 @@
 #include <avr/interrupt.h>
 #include <compat/twi.h>
 #include "Arduino.h" // for digitalWrite
-
-#ifndef cbi
-#define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
-#endif
-
-#ifndef sbi
-#define sbi(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
-#endif
 
 #include "pins_arduino.h"
 #include "twi.h"
@@ -77,8 +74,7 @@ void twi_init(void)
   digitalWrite(SCL, 1);
 
   // initialize twi prescaler and bit rate
-  cbi(TWSR, TWPS0);
-  cbi(TWSR, TWPS1);
+  TWSR &= ~(_BV(TWPS0) | _BV(TWPS1));
   TWBR = ((F_CPU / TWI_FREQ) - 16) / 2;
 
   /* twi bit rate formula from atmega128 manual pg 204
@@ -166,7 +162,7 @@ uint8_t twi_readFrom(uint8_t address, uint8_t* data, uint8_t length, uint8_t sen
   twi_masterBufferIndex = 0;
   twi_masterBufferLength = length-1;  // This is not intuitive, read on...
   // On receive, the previously configured ACK/NACK setting is transmitted in
-  // response to the received byte before the interrupt is signalled. 
+  // response to the received byte before the interrupt is signalled.
   // Therefore we must actually set NACK when the _next_ to last byte is
   // received, causing that NACK to be sent in response to receiving the last
   // expected byte of data.
@@ -262,7 +258,7 @@ uint8_t twi_writeTo(uint8_t address, uint8_t* data, uint8_t length, uint8_t wait
     // (@@@ we hope), and the TWI statemachine is just waiting for the address byte.
     // We need to remove ourselves from the repeated start state before we enable interrupts,
     // since the ISR is ASYNC, and we could get confused if we hit the ISR before cleaning
-    // up. Also, don't enable the START interrupt. There may be one pending from the 
+    // up. Also, don't enable the START interrupt. There may be one pending from the
     // repeated start that we sent ourselves, and that would really confuse things.
     twi_inRepStart = false; // Remember, we're dealing with an ASYNC ISR
     do {
@@ -560,3 +556,5 @@ ISR(TWI_vect)
       break;
   }
 }
+
+#endif // TWI hardware

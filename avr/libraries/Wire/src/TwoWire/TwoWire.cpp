@@ -1,5 +1,5 @@
 /*
-  Wire.cpp - TWI/I2C library for Wiring & Arduino
+  TwoWire.cpp - TWI/I2C library for Wiring & Arduino
   Copyright (c) 2006 Nicholas Zambetti.  All right reserved.
 
   This library is free software; you can redistribute it and/or
@@ -18,7 +18,12 @@
 
   Modified 2012 by Todd Krein (todd@krein.org) to implement repeated starts
   Modified 2017 by Chuck Todd (ctodd@cableone.net) to correct Unconfigured Slave Mode reboot
+
 */
+
+#include <avr/io.h>
+
+#if defined(TWDR) // TWI hardware
 
 extern "C" {
   #include <stdlib.h>
@@ -328,3 +333,5 @@ void TwoWire::onRequest( void (*function)(void) )
 // Preinstantiate Objects //////////////////////////////////////////////////////
 
 TwoWire Wire = TwoWire();
+
+#endif // TWI hardware

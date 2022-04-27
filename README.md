@@ -269,4 +269,7 @@ Beside including the original Arduino Mega pinout for the ATmega640/1280/2560, I
 ## Minimal setup
 Here's some simple schematics for the ATmega64/128/1281/2561/CAN32/CAN64/CAN128, ATmega165/169/325/329/645/649 and ATmega640/1280/2560 showing a minimal setup using an external crystal. Omit the crystal and the two 22pF capacitors if you're using the internal oscillator. <br/>
 <b>Click to enlarge:</b> <br/>
-<img src="https://i.imgur.com/BkJfIWC.png" width="400">    <img src="http://i.imgur.com/gQS1ORv.png" width="400">
+
+| ATmega64/128/1281/2561<br/>AT90CAN32/CAN64/CAN128      | ATmega165/169/325/329/645/649                           | ATmega640/1280/2560                                    |
+|--------------------------------------------------------|---------------------------------------------------------|--------------------------------------------------------|
+|<img src="https://i.imgur.com/Ca4ASgH.png" width="260"> | <img src="https://i.imgur.com/d5Otnpj.png" width="260"> | <img src="http://i.imgur.com/gQS1ORv.png" width="260"> |

@@ -279,6 +279,14 @@ menu.bootloader=Bootloader
 2560.menu.bootloader.uart3.bootloader.high_fuses=0b1101{bootloader.eesave_bit}110
 2560.menu.bootloader.uart3.bootloader.file=optiboot_flash/bootloaders/{build.mcu}/{build.clock_speed}/optiboot_flash_{build.mcu}_{upload.port}_{upload.speed}_{build.clock_speed}_{build.bootloader_led}_BIGBOOT.hex
 
+2560.menu.bootloader.original_mega_2560=Yes (Original Mega 2560 bootloader)
+2560.menu.bootloader.original_mega_2560.upload.maximum_size=253952
+2560.menu.bootloader.original_mega_2560.upload.protocol=wiring
+2560.menu.bootloader.original_mega_2560.build.export_merged_output=true
+2560.menu.bootloader.original_mega_2560.bootloader.high_fuses=0b1101{bootloader.eesave_bit}000
+2560.menu.bootloader.original_mega_2560.bootloader.file=stk500v2/bootloaders/{build.mcu}/stk500boot_v2_{build.mcu}_{upload.speed}_{build.clock_speed}.hex
+2560.menu.bootloader.original_mega_2560.upload.speed=115200
+
 2560.menu.bootloader.no_bootloader=No bootloader
 2560.menu.bootloader.no_bootloader.upload.maximum_size=262144
 2560.menu.bootloader.no_bootloader.build.export_merged_output=false

@@ -2809,91 +2809,91 @@ can64.menu.LTO.Os_flto.ltoarcmd=avr-gcc-ar
 # Clock frequencies
 can64.menu.clock.16MHz_external=External 16 MHz
 can64.menu.clock.16MHz_external.upload.speed=115200
-can64.menu.clock.16MHz_external.bootloader.low_fuses=0xff
+can64.menu.clock.16MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.16MHz_external.build.clkpr=
 can64.menu.clock.16MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 can64.menu.clock.20MHz_external=External 20 MHz
 can64.menu.clock.20MHz_external.upload.speed=115200
-can64.menu.clock.20MHz_external.bootloader.low_fuses=0xff
+can64.menu.clock.20MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.20MHz_external.build.clkpr=
 can64.menu.clock.20MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 can64.menu.clock.18_432MHz_external=External 18.4320 MHz
 can64.menu.clock.18_432MHz_external.upload.speed=115200
-can64.menu.clock.18_432MHz_external.bootloader.low_fuses=0xff
+can64.menu.clock.18_432MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.18_432MHz_external.build.clkpr=
 can64.menu.clock.18_432MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 can64.menu.clock.14_7456MHz_external=External 14.7456 MHz
 can64.menu.clock.14_7456MHz_external.upload.speed=115200
-can64.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xff
+can64.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.14_7456MHz_external.build.clkpr=
 can64.menu.clock.14_7456MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 can64.menu.clock.12MHz_external=External 12 MHz
 can64.menu.clock.12MHz_external.upload.speed=57600
-can64.menu.clock.12MHz_external.bootloader.low_fuses=0xff
+can64.menu.clock.12MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.12MHz_external.build.clkpr=
 can64.menu.clock.12MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 can64.menu.clock.11_0592MHz_external=External 11.0592 MHz
 can64.menu.clock.11_0592MHz_external.upload.speed=115200
-can64.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xff
+can64.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.11_0592MHz_external.build.clkpr=
 can64.menu.clock.11_0592MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 can64.menu.clock.8MHz_external=External 8 MHz
 can64.menu.clock.8MHz_external.upload.speed=57600
-can64.menu.clock.8MHz_external.bootloader.low_fuses=0xff
+can64.menu.clock.8MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.8MHz_external.build.clkpr=
 can64.menu.clock.8MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 can64.menu.clock.7_3728MHz_external=External 7.3728 MHz
 can64.menu.clock.7_3728MHz_external.upload.speed=115200
-can64.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xfd
+can64.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xcd
 can64.menu.clock.7_3728MHz_external.build.clkpr=
 can64.menu.clock.7_3728MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 can64.menu.clock.4MHz_external=External 4 MHz
 can64.menu.clock.4MHz_external.upload.speed=9600
-can64.menu.clock.4MHz_external.bootloader.low_fuses=0xff
+can64.menu.clock.4MHz_external.bootloader.low_fuses=0xcd
 can64.menu.clock.4MHz_external.build.clkpr=
 can64.menu.clock.4MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 can64.menu.clock.3_6864MHz_external=External 3.6864 MHz
 can64.menu.clock.3_6864MHz_external.upload.speed=115200
-can64.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xfd
+can64.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xcd
 can64.menu.clock.3_6864MHz_external.build.clkpr=
 can64.menu.clock.3_6864MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 can64.menu.clock.2MHz_external=External 2 MHz
 can64.menu.clock.2MHz_external.upload.speed=9600
-can64.menu.clock.2MHz_external.bootloader.low_fuses=0xff
+can64.menu.clock.2MHz_external.bootloader.low_fuses=0xcb
 can64.menu.clock.2MHz_external.build.clkpr=
 can64.menu.clock.2MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 can64.menu.clock.1_8432MHz_external=External 1.8432 MHz
 can64.menu.clock.1_8432MHz_external.upload.speed=115200
-can64.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xfb
+can64.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xcb
 can64.menu.clock.1_8432MHz_external.build.clkpr=
 can64.menu.clock.1_8432MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 can64.menu.clock.1MHz_external=External 1 MHz
 can64.menu.clock.1MHz_external.upload.speed=9600
-can64.menu.clock.1MHz_external.bootloader.low_fuses=0xff
+can64.menu.clock.1MHz_external.bootloader.low_fuses=0xcb
 can64.menu.clock.1MHz_external.build.clkpr=
 can64.menu.clock.1MHz_external.build.clock_speed={build.f_cpu}
 can64.menu.clock.1MHz_external.build.f_cpu=1000000L
@@ -2995,91 +2995,91 @@ can32.menu.LTO.Os_flto.ltoarcmd=avr-gcc-ar
 # Clock frequencies
 can32.menu.clock.16MHz_external=External 16 MHz
 can32.menu.clock.16MHz_external.upload.speed=115200
-can32.menu.clock.16MHz_external.bootloader.low_fuses=0xff
+can32.menu.clock.16MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.16MHz_external.build.clkpr=
 can32.menu.clock.16MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 can32.menu.clock.20MHz_external=External 20 MHz
 can32.menu.clock.20MHz_external.upload.speed=115200
-can32.menu.clock.20MHz_external.bootloader.low_fuses=0xff
+can32.menu.clock.20MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.20MHz_external.build.clkpr=
 can32.menu.clock.20MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 can32.menu.clock.18_432MHz_external=External 18.4320 MHz
 can32.menu.clock.18_432MHz_external.upload.speed=115200
-can32.menu.clock.18_432MHz_external.bootloader.low_fuses=0xff
+can32.menu.clock.18_432MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.18_432MHz_external.build.clkpr=
 can32.menu.clock.18_432MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 can32.menu.clock.14_7456MHz_external=External 14.7456 MHz
 can32.menu.clock.14_7456MHz_external.upload.speed=115200
-can32.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xff
+can32.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.14_7456MHz_external.build.clkpr=
 can32.menu.clock.14_7456MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 can32.menu.clock.12MHz_external=External 12 MHz
 can32.menu.clock.12MHz_external.upload.speed=57600
-can32.menu.clock.12MHz_external.bootloader.low_fuses=0xff
+can32.menu.clock.12MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.12MHz_external.build.clkpr=
 can32.menu.clock.12MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 can32.menu.clock.11_0592MHz_external=External 11.0592 MHz
 can32.menu.clock.11_0592MHz_external.upload.speed=115200
-can32.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xff
+can32.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.11_0592MHz_external.build.clkpr=
 can32.menu.clock.11_0592MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 can32.menu.clock.8MHz_external=External 8 MHz
 can32.menu.clock.8MHz_external.upload.speed=57600
-can32.menu.clock.8MHz_external.bootloader.low_fuses=0xff
+can32.menu.clock.8MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.8MHz_external.build.clkpr=
 can32.menu.clock.8MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 can32.menu.clock.7_3728MHz_external=External 7.3728 MHz
 can32.menu.clock.7_3728MHz_external.upload.speed=115200
-can32.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xfd
+can32.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xcd
 can32.menu.clock.7_3728MHz_external.build.clkpr=
 can32.menu.clock.7_3728MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 can32.menu.clock.4MHz_external=External 4 MHz
 can32.menu.clock.4MHz_external.upload.speed=9600
-can32.menu.clock.4MHz_external.bootloader.low_fuses=0xff
+can32.menu.clock.4MHz_external.bootloader.low_fuses=0xcd
 can32.menu.clock.4MHz_external.build.clkpr=
 can32.menu.clock.4MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 can32.menu.clock.3_6864MHz_external=External 3.6864 MHz
 can32.menu.clock.3_6864MHz_external.upload.speed=115200
-can32.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xfd
+can32.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xcd
 can32.menu.clock.3_6864MHz_external.build.clkpr=
 can32.menu.clock.3_6864MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 can32.menu.clock.2MHz_external=External 2 MHz
 can32.menu.clock.2MHz_external.upload.speed=9600
-can32.menu.clock.2MHz_external.bootloader.low_fuses=0xff
+can32.menu.clock.2MHz_external.bootloader.low_fuses=0xcb
 can32.menu.clock.2MHz_external.build.clkpr=
 can32.menu.clock.2MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 can32.menu.clock.1_8432MHz_external=External 1.8432 MHz
 can32.menu.clock.1_8432MHz_external.upload.speed=115200
-can32.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xfb
+can32.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xcb
 can32.menu.clock.1_8432MHz_external.build.clkpr=
 can32.menu.clock.1_8432MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 can32.menu.clock.1MHz_external=External 1 MHz
 can32.menu.clock.1MHz_external.upload.speed=9600
-can32.menu.clock.1MHz_external.bootloader.low_fuses=0xff
+can32.menu.clock.1MHz_external.bootloader.low_fuses=0xcb
 can32.menu.clock.1MHz_external.build.clkpr=
 can32.menu.clock.1MHz_external.build.clock_speed={build.f_cpu}
 can32.menu.clock.1MHz_external.build.f_cpu=1000000L

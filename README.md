@@ -28,6 +28,11 @@ If you're into "native" AVR programming, I'm happy to tell you that all relevant
 
 
 ## Supported microcontrollers:
+
+* ATmega6490
+* ATmega6450
+* ATmega3290
+* ATmega3250
 * ATmega2561
 * ATmega2560
 * ATmega1281
@@ -45,22 +50,23 @@ If you're into "native" AVR programming, I'm happy to tell you that all relevant
 * AT90CAN64
 * AT90CAN32
 
-(All variants - A, L, P, PA, V)
+(All variants - A, L, P, PA, PV, V)
 <br/> <br/>
 Can't decide what microcontroller to choose? Have a look at the specification table below:
 
-|              | Mega2560 | Mega1280 | Mega640 | Mega2561 | Mega1281 | Mega128<br/>CAN128 | Mega64<br/>CAN64<br>Mega649<br/>Mega645 | CAN32<br/>Mega329<br/>Mega325 | Mega169<br/>Mega165 |
-|--------------|----------|----------|---------|----------|----------|--------------------|-----------------------------------------|-------------------------------|---------------------|
-| **Flash**    | 256kB    | 128kB    | 64kB    | 256kB    | 128kB    | 128kB              | 64kB                                    | 32kB                          | 16kB                |
-| **RAM**      | 8kB      | 8kB      | 8kB     | 8kB      | 8kB      | 4kB                | 4kB                                     | 2kB                           | 1 kB                |
-| **EEPROM**   | 4kB      | 4kB      | 4kB     | 4kB      | 4kB      | 4kB                | 2kB                                     | 1kB                           | 512B                |
-| **IO pins**  | 70/86 *  | 70/86 *  | 70/86 * | 54       | 54       | 53                 | 53                                      | 53                            | 53                  |
-| **PWM pins** | 15       | 15       | 15      | 8        | 8        | 7                  | 7 / 4 **                                | 7 / 4 **                      | 4                   |
-| **LED pin**  | PB7      | PB7      | PB7     | PB5      | PB5      | PB5                | PB5                                     | PB5                           | PB5                 |
+|                  | Mega2560 | Mega1280 | Mega640 | Mega2561 | Mega1281 | Mega128<br/>CAN128 | Mega6490<br/>Mega6450 | Mega64<br/>CAN64<br>Mega649<br/>Mega645 | Mega6490<br/>Mega6450 | CAN32<br/>Mega329<br/>Mega325 | Mega169<br/>Mega165 |
+|------------------|----------|----------|---------|----------|----------|--------------------|-----------------------|-----------------------------------------|-----------------------|-------------------------------|---------------------|
+| **Flash**        | 256kB    | 128kB    | 64kB    | 256kB    | 128kB    | 128kB              | 64kB                  | 64kB                                    | 32kB                  | 32kB                          | 16kB                |
+| **RAM**          | 8kB      | 8kB      | 8kB     | 8kB      | 8kB      | 4kB                | 4kB                   | 4kB                                     | 2kB                   | 2kB                           | 1 kB                |
+| **EEPROM**       | 4kB      | 4kB      | 4kB     | 4kB      | 4kB      | 4kB                | 2kB                   | 2kB                                     | 1kB                   | 1kB                           | 512B                |
+| **IO pins**      | 70/86 *  | 70/86 *  | 70/86 * | 54       | 54       | 53                 | 68                    | 53                                      | 68                    | 53                            | 53                  |
+| **Serial ports** | 4        | 4        | 4       | 2        | 2        | 2                  | 1                     | 2 / 1 **                                | 1                     | 2 / 1 **                      | 1                   |
+| **PWM pins**     | 15       | 15       | 15      | 8        | 8        | 7                  | 4                     | 7 / 4 **                                | 4                     | 7 / 4 **                      | 4                   |
+| **LED pin**      | PB7      | PB7      | PB7     | PB5      | PB5      | PB5                | PB7                   | PB5                                     | PB7                   | PB5                           | PB5                 |
 
 <b>*</b> Pin 70-85 is not broken out on the Arduino Mega. Make sure to check out the [*AVR style pinout*](#atmega64012802560) for a cleaner an more logical pinout.
 
-<b>**</b> ATmega165/169/325/329/645/649 has only four PWM pins.
+<b>**</b> ATmega165/169/325/329/645/649 has one hardware serial port and four PWM outputs.
 
 ## Supported clock frequencies
 
@@ -104,16 +110,16 @@ Note that you have need to connect a programmer and hit **Burn bootloader** if y
 Brown out detection, or BOD for short lets the microcontroller sense the input voltage and shut down if the voltage goes below the brown out setting. To change the BOD settings you'll have to connect an ISP programmer and hit "Burn bootloader". Below is a table that shows the available BOD options:
 <br/>
 
-| ATmega640/1280/2560 | ATmega1281/2561 | ATmega165/169<br/>ATmega325/329<br/>ATmega645/649 | ATmega64/128  | AT90CAN32/64/128 |
-|---------------------|-----------------|---------------------------------------------------|---------------|------------------|
-| 4.3V                | 4.3V            | 4.3V                                              | 4.0V          | 4.1V             |
-| 2.7V                | 2.7V            | 2.7V                                              | 2.7V          | 4.0V             |
-| 1.8V                | 1.8V            | 1.8V                                              |               | 3.9V             |
-|                     |                 |                                                   |               | 3.8V             |
-|                     |                 |                                                   |               | 2.7V             |
-|                     |                 |                                                   |               | 2.6V             |
-|                     |                 |                                                   |               | 2.5V             |
-| Disabled            | Disabled        | Disabled                                          | Disabled      | Disabled         |
+| ATmega640/1280/2560 | ATmega1281/2561 | ATmega3290/6490<br/>ATmega3250/6450 | ATmega165/169<br/>ATmega325/329<br/>ATmega645/649 | ATmega64/128  | AT90CAN32/64/128 |
+|---------------------|-----------------|-------------------------------------|---------------------------------------------------|---------------|------------------|
+| 4.3V                | 4.3V            | 4.3V                                | 4.3V                                              | 4.0V          | 4.1V             |
+| 2.7V                | 2.7V            | 2.7V                                | 2.7V                                              | 2.7V          | 4.0V             |
+| 1.8V                | 1.8V            | 1.8V                                | 1.8V                                              |               | 3.9V             |
+|                     |                 |                                     |                                                   |               | 3.8V             |
+|                     |                 |                                     |                                                   |               | 2.7V             |
+|                     |                 |                                     |                                                   |               | 2.6V             |
+|                     |                 |                                     |                                                   |               | 2.5V             |
+| Disabled            | Disabled        | Disabled                            | Disabled                                          | Disabled      | Disabled         |
 
 
 ## EEPROM option
@@ -255,22 +261,23 @@ Since there are no standardized Arduino pinout for this chip family, I've create
 
 | ATmega64/128/1281/2561<br/>AT90CAN32/CAN64/CAN128      | ATmega165/169/325/329/645/649                           |
 |--------------------------------------------------------|---------------------------------------------------------|
-|<img src="https://i.imgur.com/sweRJs3.jpg" width="280"> | <img src="https://i.imgur.com/hUjTyRJ.png" width="280"> |
+|<img src="https://i.imgur.com/sweRJs3.jpg" width="280"> | <img src="https://i.imgur.com/YJ3ojm1.png" width="280"> |
 
 ### 100-pin chips
 Beside including the original Arduino Mega pinout for the ATmega640/1280/2560, I've also added an *AVR style pinout*, which is a more straight forward and logical pinout if you're not working with the Arduino Mega board. For the default Arduino Mega pinout, the standard LED pin is assigned to Arduino pin 13, and for the AVR pin it's assigned to pin 22.
 <b>Click to enlarge:</b> <br/>
 
-| Arduino MEGA pinout                                     | "AVR" pinout                                           |
-|---------------------------------------------------------|--------------------------------------------------------|
-| <img src="https://i.imgur.com/O7WtWAj.jpg" width="280"> | <img src="http://i.imgur.com/DfR7arD.jpg" width="280"> |
+| ATmega640/1280/2560<br/>Arduino MEGA pinout             | ATmega640/1280/2560<br/>"AVR" pinout                   | ATmega3250/3290/6450/6490                               |
+|---------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------|
+| <img src="https://i.imgur.com/O7WtWAj.jpg" width="240"> | <img src="http://i.imgur.com/DfR7arD.jpg" width="240"> | <img src="https://i.imgur.com/F80M5u1.jpg" width="240"> |
 
 
 
 ## Minimal setup
-Here's some simple schematics for the ATmega64/128/1281/2561/CAN32/CAN64/CAN128, ATmega165/169/325/329/645/649 and ATmega640/1280/2560 showing a minimal setup using an external crystal. Omit the crystal and the two 22pF capacitors if you're using the internal oscillator. <br/>
+Here's some simple schematics showing a minimal setup using an external crystal. Omit the crystal and the two 22pF capacitors if you're using the internal oscillator. <br/>
 <b>Click to enlarge:</b> <br/>
 
-| ATmega64/128/1281/2561<br/>AT90CAN32/CAN64/CAN128      | ATmega165/169/325/329/645/649                           | ATmega640/1280/2560                                    |
-|--------------------------------------------------------|---------------------------------------------------------|--------------------------------------------------------|
-|<img src="https://i.imgur.com/Ca4ASgH.png" width="260"> | <img src="https://i.imgur.com/d5Otnpj.png" width="260"> | <img src="http://i.imgur.com/gQS1ORv.png" width="260"> |
+| ATmega64/128/1281/2561<br/>AT90CAN32/CAN64/CAN128      | ATmega165/325/645<br/>ATmega169/329/649                 | ATmega640/1280/2560                                    | ATmega3250/6450<br/>ATmega3290/6490                    |
+|--------------------------------------------------------|---------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------|
+|<img src="https://i.imgur.com/Ca4ASgH.png" width="200"> | <img src="https://i.imgur.com/d5Otnpj.png" width="200"> | <img src="http://i.imgur.com/gQS1ORv.png" width="200"> |<img src="https://i.imgur.com/jdPptok.png" width="200"> |
+

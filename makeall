@@ -340,7 +340,7 @@ then
 fi
 
 # Loop through all MCUs and parameters
-for((i=200; i < ${#mcu_and_params[@]}; i+=2));
+for((i=0; i < ${#mcu_and_params[@]}; i+=2));
 do
   # Count how many targets we've built for
   TARGET_COUNTER=$(($TARGET_COUNTER + 1))

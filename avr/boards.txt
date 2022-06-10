@@ -855,21 +855,19 @@ menu.bootloader=Bootloader
 
 
 
-#####################
-####  ATmega649  ####
-#####################
+##########################
+####  ATmega649/6490  ####
+##########################
 
 # General
-649.name=ATmega649
+649.name=ATmega649/6490
 649.upload.tool=avrdude
 649.upload.maximum_data_size=4096
 649.bootloader.tool=avrdude
 649.bootloader.unlock_bits=0xff
 649.bootloader.lock_bits=0xcf
 649.build.core=MCUdude_corefiles
-649.build.variant=64-pin-avr
 649.build.board=AVR_ATmega649
-649.build.bootloader_led=B5
 649.build.extra_flags={build.clkpr}
 
 # Upload port select
@@ -894,10 +892,29 @@ menu.bootloader=Bootloader
 649.menu.eeprom.erase.bootloader.eesave_bit=1
 
 # Variants
-649.menu.variant.modelP=649P
-649.menu.variant.modelP.build.mcu=atmega649p
-649.menu.variant.modelA=649/A
-649.menu.variant.modelA.build.mcu=atmega649
+649.menu.variant.model649P=649P/PA
+649.menu.variant.model649P.build.mcu=atmega649p
+649.menu.variant.model649P.build.variant=64-pin-avr
+649.menu.variant.model649P.build.board=AVR_ATmega649
+649.menu.variant.model649P.build.bootloader_led=B5
+
+649.menu.variant.model649=649/A
+649.menu.variant.model649.build.mcu=atmega649
+649.menu.variant.model649.build.variant=64-pin-avr
+649.menu.variant.model649.build.board=AVR_ATmega649
+649.menu.variant.model649.build.bootloader_led=B5
+
+649.menu.variant.model6490P=6490P/PA
+649.menu.variant.model6490P.build.mcu=atmega6490p
+649.menu.variant.model6490P.build.variant=100-pin-avr
+649.menu.variant.model6490P.build.board=AVR_ATmega6490
+649.menu.variant.model6490P.build.bootloader_led=B7
+
+649.menu.variant.model6490=6490/A
+649.menu.variant.model6490.build.mcu=atmega6490
+649.menu.variant.model6490.build.variant=100-pin-avr
+649.menu.variant.model6490.build.board=AVR_ATmega6490
+649.menu.variant.model6490.build.bootloader_led=B7
 
 # Brown out detection
 649.menu.BOD.2v7=BOD 2.7V
@@ -1044,21 +1061,19 @@ menu.bootloader=Bootloader
 
 
 
-#####################
-####  ATmega645  ####
-#####################
+##########################
+####  ATmega645/6450  ####
+##########################
 
 # General
-645.name=ATmega645
+645.name=ATmega645/6450
 645.upload.tool=avrdude
 645.upload.maximum_data_size=4096
 645.bootloader.tool=avrdude
 645.bootloader.unlock_bits=0xff
 645.bootloader.lock_bits=0xcf
 645.build.core=MCUdude_corefiles
-645.build.variant=64-pin-avr
 645.build.board=AVR_ATmega645
-645.build.bootloader_led=B5
 645.build.extra_flags={build.clkpr}
 
 # Upload port select
@@ -1083,10 +1098,29 @@ menu.bootloader=Bootloader
 645.menu.eeprom.erase.bootloader.eesave_bit=1
 
 # Variants
-645.menu.variant.modelP=645P
-645.menu.variant.modelP.build.mcu=atmega645p
-645.menu.variant.modelA=645/A
-645.menu.variant.modelA.build.mcu=atmega645
+645.menu.variant.model645P=645P/PA
+645.menu.variant.model645P.build.mcu=atmega645p
+645.menu.variant.model645P.build.variant=64-pin-avr
+645.menu.variant.model645P.build.board=AVR_ATmega645
+645.menu.variant.model645P.build.bootloader_led=B5
+
+645.menu.variant.model645=645/A
+645.menu.variant.model645.build.mcu=atmega645
+645.menu.variant.model645.build.variant=64-pin-avr
+645.menu.variant.model645.build.board=AVR_ATmega645
+645.menu.variant.model645.build.bootloader_led=B5
+
+645.menu.variant.model6450P=6450P
+645.menu.variant.model6450P.build.mcu=atmega6450p
+645.menu.variant.model6450P.build.variant=100-pin-avr
+645.menu.variant.model6450P.build.board=AVR_ATmega6450
+645.menu.variant.model6450P.build.bootloader_led=B7
+
+645.menu.variant.model6450=6450/A
+645.menu.variant.model6450.build.mcu=atmega6450
+645.menu.variant.model6450.build.variant=100-pin-avr
+645.menu.variant.model6450.build.board=AVR_ATmega6450
+645.menu.variant.model6450.build.bootloader_led=B7
 
 # Brown out detection
 645.menu.BOD.2v7=BOD 2.7V
@@ -1446,21 +1480,19 @@ menu.bootloader=Bootloader
 
 
 
-#####################
-####  ATmega329  ####
-#####################
+##########################
+####  ATmega329/3290  ####
+##########################
 
 # General
-329.name=ATmega329
+329.name=ATmega329/3290
 329.upload.tool=avrdude
 329.upload.maximum_data_size=2048
 329.bootloader.tool=avrdude
 329.bootloader.unlock_bits=0xff
 329.bootloader.lock_bits=0xcf
 329.build.core=MCUdude_corefiles
-329.build.variant=64-pin-avr
 329.build.board=AVR_ATmega329
-329.build.bootloader_led=B5
 329.build.extra_flags={build.clkpr}
 
 # Upload port select
@@ -1485,10 +1517,29 @@ menu.bootloader=Bootloader
 329.menu.eeprom.erase.bootloader.eesave_bit=1
 
 # Variants
-329.menu.variant.modelP=329P/PA
-329.menu.variant.modelP.build.mcu=atmega329p
-329.menu.variant.modelA=329/A
-329.menu.variant.modelA.build.mcu=atmega329
+329.menu.variant.model329P=329P/PA
+329.menu.variant.model329P.build.mcu=atmega329p
+329.menu.variant.model329P.build.variant=64-pin-avr
+329.menu.variant.model329P.build.board=AVR_ATmega329
+329.menu.variant.model329P.build.bootloader_led=B5
+
+329.menu.variant.model329=329/A
+329.menu.variant.model329.build.mcu=atmega329
+329.menu.variant.model329.build.variant=64-pin-avr
+329.menu.variant.model329.build.board=AVR_ATmega329
+329.menu.variant.model329.build.bootloader_led=B5
+
+329.menu.variant.model3290P=3290P/PA
+329.menu.variant.model3290P.build.mcu=atmega3290p
+329.menu.variant.model3290P.build.variant=100-pin-avr
+329.menu.variant.model3290P.build.board=AVR_ATmega3290
+329.menu.variant.model3290P.build.bootloader_led=B7
+
+329.menu.variant.model3290=3290/A
+329.menu.variant.model3290.build.mcu=atmega3290
+329.menu.variant.model3290.build.variant=100-pin-avr
+329.menu.variant.model3290.build.board=AVR_ATmega3290
+329.menu.variant.model3290.build.bootloader_led=B7
 
 # Brown out detection
 329.menu.BOD.2v7=BOD 2.7V
@@ -1635,21 +1686,19 @@ menu.bootloader=Bootloader
 
 
 
-#####################
-####  ATmega325  ####
-#####################
+##########################
+####  ATmega325/3250  ####
+##########################
 
 # General
-325.name=ATmega325
+325.name=ATmega325/3250
 325.upload.tool=avrdude
 325.upload.maximum_data_size=2048
 325.bootloader.tool=avrdude
 325.bootloader.unlock_bits=0xff
 325.bootloader.lock_bits=0xcf
 325.build.core=MCUdude_corefiles
-325.build.variant=64-pin-avr
 325.build.board=AVR_ATmega325
-325.build.bootloader_led=B5
 325.build.extra_flags={build.clkpr}
 
 # Upload port select
@@ -1674,10 +1723,29 @@ menu.bootloader=Bootloader
 325.menu.eeprom.erase.bootloader.eesave_bit=1
 
 # Variants
-325.menu.variant.modelP=325P/PA
-325.menu.variant.modelP.build.mcu=atmega325p
-325.menu.variant.modelA=325/A
-325.menu.variant.modelA.build.mcu=atmega325
+325.menu.variant.model325P=325P/PA
+325.menu.variant.model325P.build.mcu=atmega325p
+325.menu.variant.model325P.build.variant=64-pin-avr
+325.menu.variant.model325P.build.board=AVR_ATmega325
+325.menu.variant.model325P.build.bootloader_led=B5
+
+325.menu.variant.model325=325/A
+325.menu.variant.model325.build.mcu=atmega325
+325.menu.variant.model325.build.variant=64-pin-avr
+325.menu.variant.model325.build.board=AVR_ATmega325
+325.menu.variant.model325.build.bootloader_led=B5
+
+325.menu.variant.model3250P=3250P/PA
+325.menu.variant.model3250P.build.mcu=atmega3250p
+325.menu.variant.model3250P.build.variant=100-pin-avr
+325.menu.variant.model3250P.build.board=AVR_ATmega3250
+325.menu.variant.model3250P.build.bootloader_led=B7
+
+325.menu.variant.model3250=3250/A
+325.menu.variant.model3250.build.mcu=atmega3250
+325.menu.variant.model3250.build.variant=100-pin-avr
+325.menu.variant.model3250.build.board=AVR_ATmega3250
+325.menu.variant.model3250.build.bootloader_led=B7
 
 # Brown out detection
 325.menu.BOD.2v7=BOD 2.7V

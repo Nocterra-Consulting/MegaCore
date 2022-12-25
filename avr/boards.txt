@@ -1934,7 +1934,7 @@ menu.bootloader=Bootloader
 169.menu.variant.modelP=169P/PA
 169.menu.variant.modelP.build.mcu=atmega169p
 169.menu.variant.modelA=169/A
-169.menu.variant.modelA.build.mcu=atmega169
+169.menu.variant.modelA.build.mcu=atmega169a
 
 # Brown out detection
 169.menu.BOD.2v7=BOD 2.7V
@@ -2122,8 +2122,8 @@ menu.bootloader=Bootloader
 # Variants
 165.menu.variant.modelP=165P/PA
 165.menu.variant.modelP.build.mcu=atmega165p
-165.menu.variant.modelA=165/A
-165.menu.variant.modelA.build.mcu=atmega165
+165.menu.variant.modelA=165A
+165.menu.variant.modelA.build.mcu=atmega165a
 
 # Brown out detection
 165.menu.BOD.2v7=BOD 2.7V

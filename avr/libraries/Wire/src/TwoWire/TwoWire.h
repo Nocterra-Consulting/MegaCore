@@ -17,19 +17,20 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
   Modified 2012 by Todd Krein (todd@krein.org) to implement repeated starts
+  Modified 2020 by Greyson Christoforo (grey@christoforo.net) to implement timeouts
 */
 
 #ifndef TwoWire_h
 #define TwoWire_h
 
 #include <avr/io.h>
+#include "Wire_timeout.h"
 
 #if defined(TWDR) // TWI hardware
 
 #include <Arduino.h>
 #include <inttypes.h>
 #include "Stream.h"
-
 
 // WIRE_HAS_END means Wire has end()
 #define WIRE_HAS_END 1
@@ -58,6 +59,11 @@ class TwoWire : public Stream
     void begin(int);
     void end();
     void setClock(uint32_t);
+    #if defined(WIRE_TIMEOUT)
+      void setWireTimeout(uint32_t timeout = 25000, bool reset_with_timeout = false);
+      bool getWireTimeoutFlag(void);
+      void clearWireTimeoutFlag(void);
+    #endif
     void beginTransmission(uint8_t);
     void beginTransmission(int);
     uint8_t endTransmission(void);

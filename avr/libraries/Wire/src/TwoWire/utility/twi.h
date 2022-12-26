@@ -24,34 +24,37 @@
 
 #if defined(TWDR) // TWI hardware
 
-#include <inttypes.h>
+  #include <inttypes.h>
 
-#ifndef TWI_FREQ
+  #ifndef TWI_FREQ
   #define TWI_FREQ 100000L
-#endif
+  #endif
 
-#ifndef TWI_BUFFER_SIZE
+  #ifndef TWI_BUFFER_SIZE
   #define TWI_BUFFER_SIZE 32
-#endif
+  #endif
 
-#define TWI_READY 0
-#define TWI_MRX   1
-#define TWI_MTX   2
-#define TWI_SRX   3
-#define TWI_STX   4
+  #define TWI_READY 0
+  #define TWI_MRX   1
+  #define TWI_MTX   2
+  #define TWI_SRX   3
+  #define TWI_STX   4
 
-void twi_init(void);
-void twi_disable(void);
-void twi_setAddress(uint8_t);
-void twi_setFrequency(uint32_t);
-uint8_t twi_readFrom(uint8_t, uint8_t*, uint8_t, uint8_t);
-uint8_t twi_writeTo(uint8_t, uint8_t*, uint8_t, uint8_t, uint8_t);
-uint8_t twi_transmit(const uint8_t*, uint8_t);
-void twi_attachSlaveRxEvent( void (*)(uint8_t*, int) );
-void twi_attachSlaveTxEvent( void (*)(void) );
-void twi_reply(uint8_t);
-void twi_stop(void);
-void twi_releaseBus(void);
+  void twi_init(void);
+  void twi_disable(void);
+  void twi_setAddress(uint8_t);
+  void twi_setFrequency(uint32_t);
+  uint8_t twi_readFrom(uint8_t, uint8_t*, uint8_t, uint8_t);
+  uint8_t twi_writeTo(uint8_t, uint8_t*, uint8_t, uint8_t, uint8_t);
+  uint8_t twi_transmit(const uint8_t*, uint8_t);
+  void twi_attachSlaveRxEvent( void (*)(uint8_t*, int) );
+  void twi_attachSlaveTxEvent( void (*)(void) );
+  void twi_reply(uint8_t);
+  void twi_stop(void);
+  void twi_releaseBus(void);
+  void twi_setTimeoutInMicros(uint32_t, bool);
+  void twi_handleTimeout(bool);
+  bool twi_manageTimeoutFlag(bool);
 
 #endif // TWI hardware
 #endif

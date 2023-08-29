@@ -28,7 +28,9 @@
 #define digitalPinHasPWM(p)         (((p) >= 2 && (p) <= 13) || ((p) >= 44 && (p)<= 46))
 
 // Builtin LED
-#define LED_BUILTIN   (13)
+#if !defined(LED_BUILTIN)
+  #define LED_BUILTIN               (13)
+#endif
 static const uint8_t LED = LED_BUILTIN;
 
 // SPI

@@ -33,7 +33,9 @@
                                       ((p) >= 29 && (p)<= 31) || \
                                       ((p) == 85))
   // Builtin LED
-  #define LED_BUILTIN                 (22)
+  #if !defined(LED_BUILTIN)
+    #define LED_BUILTIN               (22)
+  #endif
   static const uint8_t LED = LED_BUILTIN;
 
   // SPI defs
@@ -541,7 +543,9 @@
   #define digitalPinHasPWM(p)         (((p) >= 14 && (p) <= 17))
 
   // Builtin LED
-  #define LED_BUILTIN                 (17)
+  #if !defined(LED_BUILTIN)
+    #define LED_BUILTIN               (17)
+  #endif
   static const uint8_t LED = LED_BUILTIN;
 
   // SPI defs
@@ -559,7 +563,7 @@
   #define PIN_WIRE_SCL                (4)
   static const uint8_t SDA = PIN_WIRE_SDA;
   static const uint8_t SCL = PIN_WIRE_SCL;
-  
+
   // Serial defs
   #define SERIAL_PORT_MONITOR         Serial
   #define SERIAL_PORT_HARDWARE        Serial
@@ -611,7 +615,7 @@
   static const uint8_t A5 = PIN_A5;
   static const uint8_t A6 = PIN_A6;
   static const uint8_t A7 = PIN_A7;
-  
+
   // PIN macros
   #define PIN_PE0 0
   #define PIN_PE1 1
@@ -724,7 +728,7 @@
       NOT_A_PIN,
       (uint16_t) &PINJ,
     };
-    
+
     // Port list
     const uint8_t PROGMEM digital_pin_to_port_PGM[] = {
       PE, // PE 0 ** 0
@@ -940,7 +944,7 @@
       NOT_ON_TIMER, // PF 6 ** 66
       NOT_ON_TIMER, // PF 7 ** 67
     };
-  
+
   #endif //ARDUINO_MAIN
 
 #endif // ATmega3250, ATmega3290, ATmega6450, ATmega6490

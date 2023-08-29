@@ -2,7 +2,7 @@
 #define FLASH_H
 
 #include <Arduino.h>
-#include <optiboot.h>
+#include "urboot.h"
 
 class Flash
 {
@@ -16,9 +16,10 @@ class Flash
     uint8_t read_buffer(uint8_t index);
     void write_buffer(uint8_t index, uint8_t value);
     uint16_t buffer_size();
+    void write(uint16_t flash_start_address, uint16_t length, uint16_t ram_buffer_start_address = 0);
     void write_page(uint16_t flash_page_number);
     void fetch_page(uint16_t flash_page_number);
-    void fetch_data(uint16_t start_address, uint16_t stop_address);
+    void fetch_data(uint16_t flash_start_address, uint16_t flash_stop_address);
 
     // Operator overload to be able to read and write directly to the RAM array from a byte level
     uint8_t& operator[] (int16_t index);

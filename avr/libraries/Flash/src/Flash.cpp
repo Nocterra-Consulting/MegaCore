@@ -10,7 +10,7 @@
  * optional parameter, and defaults to SPM_PAGESIZE, the flash page size if not
  * present
  */
-Flash::Flash(const uint8_t *flash_array, const uint16_t flash_array_size, uint8_t *ram_array, const uint16_t ram_array_size)
+Flash::Flash(const uint8_t * flash_array, const uint16_t flash_array_size, uint8_t *ram_array, const uint16_t ram_array_size)
   : _flash_array(flash_array),
     _flash_array_size(flash_array_size),
     _ram_array(ram_array),
@@ -58,7 +58,7 @@ void Flash::set_far_address(uint32_t address)
  */
 bool Flash::check_writable()
 {
-  return optiboot_check_writable();
+  return ispgmwritepage076_ur();
 }
 
 /**
@@ -69,7 +69,7 @@ bool Flash::check_writable()
  */
 void Flash::clear_buffer(uint8_t fill)
 {
-  memset(_ram_array, fill, sizeof(_ram_array_size));
+  memset(_ram_array, fill, buffer_size());
 }
 
 /**
@@ -107,6 +107,31 @@ uint16_t Flash::buffer_size()
 }
 
 /**
+ * @brief Writes the current content of the RAM buffer to anywhere in flash.
+ * Will need to read, modify & write.
+ *
+ * @param flash_start_address address to start writing to
+ * @param length number of bytes to write
+ * @param ram_buffer_start_address optional start address for the data
+ * that's being written to flash
+ */
+void Flash::write(uint16_t flash_start_address, uint16_t length, uint16_t ram_buffer_start_address)
+{
+  // For devices with 128kiB or more, and data is stored in far progmem
+  #ifdef RAMPZ
+  if(_far_flash_array_addr != 0x0000)
+  {
+    urflashWrite(_ram_array + ram_buffer_start_address, (uintpgm_t)_far_flash_array_addr + flash_start_address, length);
+  }
+  // For devices with where flash space is allocated in near progmem, <64kiB
+  else
+  #endif
+  {
+    urflashWrite(_ram_array + ram_buffer_start_address, (uintpgm_t)_flash_array + flash_start_address, length);
+  }
+}
+
+/**
  * @brief Writes the current content of the RAM buffer to a flash page
  *
  * @param flash_page_number page number to write the buffer to
@@ -117,13 +142,13 @@ void Flash::write_page(uint16_t flash_page_number)
   #ifdef RAMPZ
   if(_far_flash_array_addr != 0x0000)
   {
-    optiboot_writePage(_far_flash_array_addr, _ram_array, flash_page_number);
+    urbootPageWrite(_ram_array, (progmem_t)(_far_flash_array_addr + SPM_PAGESIZE * flash_page_number));
   }
   // For devices with where flash space is allocated in near progmem, <64kiB
   else
   #endif
   {
-    optiboot_writePage(_flash_array, _ram_array, flash_page_number);
+    urbootPageWrite(_ram_array, (progmem_t)(_flash_array + SPM_PAGESIZE * flash_page_number));
   }
 }
 
@@ -134,17 +159,18 @@ void Flash::write_page(uint16_t flash_page_number)
  */
 void Flash::fetch_page(uint16_t flash_page_number)
 {
-  // For devices with 128kiB or more, and data is stored in far progmem
+
+    // For devices with 128kiB or more, and data is stored in far progmem
   #ifdef RAMPZ
   if(_far_flash_array_addr != 0x0000)
   {
-    optiboot_read(_far_flash_array_addr, _ram_array, flash_page_number, 0, _ram_array_size);
+    urflashRead(_ram_array, (uintpgm_t)_far_flash_array_addr + SPM_PAGESIZE * flash_page_number, buffer_size());
   }
   // For devices with where flash space is allocated in near progmem, <64kiB
   else
   #endif
   {
-    optiboot_read(_flash_array, _ram_array, flash_page_number, 0, _ram_array_size);
+    urflashRead(_ram_array, (uintpgm_t)_flash_array + SPM_PAGESIZE * flash_page_number, buffer_size());
   }
 }
 
@@ -157,26 +183,16 @@ void Flash::fetch_page(uint16_t flash_page_number)
  * the span between the start and stop address can't be larger than the size of
  * the RAM buffer.
  *
- * @param start_address address to start reading from
- * @param stop_address  address where we stop reading at
+ * @param flash_start_address address to start reading from
+ * @param flash_stop_address  address where we stop reading at
  */
-void Flash::fetch_data(uint16_t start_address, uint16_t stop_address)
+void Flash::fetch_data(uint16_t flash_start_address, uint16_t flash_stop_address)
 {
   uint16_t end_address;
-  if(stop_address - start_address > _ram_array_size)
+  if(flash_stop_address - flash_start_address > _ram_array_size)
     end_address = _ram_array_size;
   else
-    end_address = stop_address;
+    end_address = flash_stop_address;
 
-  #ifdef RAMPZ
-  if(_far_flash_array_addr != 0x0000)
-  {
-    optiboot_read(_far_flash_array_addr, _ram_array, 0, start_address, end_address);
-  }
-  // For devices with where flash space is allocated in near progmem, <64kiB
-  else
-  #endif
-  {
-    optiboot_read(_flash_array, _ram_array, 0, start_address, end_address);
-  }
+  urflashRead(_ram_array, (uintpgm_t)(_flash_array + flash_start_address), end_address);
 }

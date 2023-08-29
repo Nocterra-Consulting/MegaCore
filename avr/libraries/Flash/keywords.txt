@@ -1,5 +1,5 @@
 #############################################
-# Syntax Coloring Map For Flash and Optiboot
+# Syntax Coloring Map For Flash and Urboot
 #############################################
 
 #############################################
@@ -19,6 +19,7 @@ clear_buffer	KEYWORD2
 read_buffer	KEYWORD2
 write_buffer	KEYWORD2
 buffer_size	KEYWORD2
+write	KEYWORD2
 write_page	KEYWORD2
 fetch_page	KEYWORD2
 fetch_data	KEYWORD2
@@ -26,14 +27,9 @@ get	KEYWORD2
 put	KEYWORD2
 
 # Optiboot
-do_spm_cli	KEYWORD2
-optiboot_check_writable	KEYWORD2
-optiboot_page_erase	KEYWORD2
-optiboot_page_fill	KEYWORD2
-optiboot_page_write	KEYWORD2
-optiboot_readPage	KEYWORD2
-optiboot_read	KEYWORD2
-optiboot_writePage	KEYWORD2
+urbootPageWrite	KEYWORD2
+urflashWrite	KEYWORD2
+urflashRead	KEYWORD2
 
 ############################################
 # Constants (LITERAL1)

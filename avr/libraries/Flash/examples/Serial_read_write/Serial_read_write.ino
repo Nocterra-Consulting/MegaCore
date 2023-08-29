@@ -1,36 +1,24 @@
-/*------------ Optiboot flasher example for the MightyCore -----------------|
- |                                                                          |
- | Created May 2016 by MCUdude, https://github.com/MCUdude                  |
- | Based on the work done by Marek Wodzinski, https://github.com/majekw     |
- | Released to public domain                                                |
- |                                                                          |
- | This is example how to use optiboot.h together with Optiboot             |
- | bootloader to write to FLASH memory by application code.                 |
- |                                                                          |
- | IMPORTANT THINGS:                                                        |
- | - All flash content gets erased after each upload cycle                  |
- | - Buffer must be page aligned (see declaration of flash_buffer)          |
- | - Interrupts must be disabled during SPM                                 |
- | - Writing to EEPROM destroys temporary buffer                            |
- | - You can write only once into one location of temporary buffer          |
- | - Only safely and always working sequence is erase-fill-write            |
- | - If you want to do fill-erase-write, you must put code in NRWW          |
- |   and pass data!=0 for erase. It's not easy, but possible.               |
- |                                                                          |
- | WRITE SEQUENCE - OPTION 1 (used in this example)                         |
- | 1. Erase page by optiboot_page_erase                                     |
- | 2. Write contents of page into temporary buffer by optiboot_page_fill    |
- | 3. Write temporary buffer to FLASH by optiboot_page_write                |
- |                                                                          |
- | WRITE SEQUENCE - OPTION 2 (works only for code in NRWW)                  |
- | 1. Write contents of page into temporary buffer by optiboot_page_fill    |
- | 2. Erase page by optiboot_page_erase (set data to NOT zero)              |
- | 3. Write temporary buffer to FLASH by optiboot_page_write                |
- |-------------------------------------------------------------------------*/
+/***********************************************************************|
+| Urboot read/write interface library                                   |
+|                                                                       |
+| Serial_read_write.ino                                                 |
+|                                                                       |
+| A library for interfacing with Urboot's flash write functionality     |
+| Developed in 2023 by Stefan Rueger and MCUdude                        |
+| https://github.com/stefanrueger/                                      |
+| https://github.com/MCUdude/                                           |
+|                                                                       |
+| This example provides a simple interactive serial terminal that       |
+| provides flash read/write functionality.                              |
+|                                                                       |
+| A RAM buffer (ram_buffer) is required for this library to work. It    |
+| acts as a memory pool you can read from and write to, and recommended |
+| size for this buffer is one flash page, 256/128/64 bytes depending on |
+| what chip you're using. ram_buffer[] and flash[] is the exact same    |
+| array, flash[] is just pointing to ram_buffer[].                      |
+|***********************************************************************/
 
-// optiboot.h contains the functions that lets you read to
-// and write from the flash memory
-#include <optiboot.h>
+#include <Flash.h>
 
 // Define the number of pages you want to write to here (limited by flash size)
 #define NUMBER_OF_PAGES 8
@@ -39,24 +27,19 @@
 const char terminationChar = '@';
 
 // The temporary data (data that's read or is about to get written) is stored here
-uint8_t ramBuffer[SPM_PAGESIZE];
+uint8_t ram_buffer[SPM_PAGESIZE];
 
 // This array allocates the space you'll be able to write to
-const uint8_t flashSpace[SPM_PAGESIZE * NUMBER_OF_PAGES] __attribute__ (( aligned(SPM_PAGESIZE) )) PROGMEM = {
-  "This some default content stored on page one"
+const uint8_t flash_space[SPM_PAGESIZE * NUMBER_OF_PAGES] __attribute__ (( aligned(SPM_PAGESIZE) )) PROGMEM = {
+  "This some default content stored at page zero"
 };
 
+// Flash constructor
+Flash flash(flash_space, sizeof(flash_space), ram_buffer, sizeof(ram_buffer));
 
 void setup()
 {
-  // Initialize serial
   Serial.begin(9600);
-
-  if(!optiboot_check_writable())
-  {
-    Serial.println(F("Incompatible or no bootloader present! Please burn correct bootloader"));
-    while(1);
-  }
 }
 
 
@@ -65,7 +48,7 @@ void loop()
   // Print main menu
   Serial.println();
   Serial.println(F("|------------------------------------------------|"));
-  Serial.println(F("| Welcome to the Optiboot flash writer example!  |"));
+  Serial.println(F("| Welcome to the Urboot flash writer example!    |"));
   Serial.print(F("| Each flash page is "));
   Serial.print(SPM_PAGESIZE);
   Serial.println(F(" bytes long.             |"));
@@ -83,7 +66,6 @@ void loop()
   Serial.println(F("| 2. Write to flash memory                       |"));
   Serial.println(F("|------------------------------------------------|"));
 
-  // Static variables
   static uint8_t charBuffer;
   static char menuOption;
   static uint16_t pageNumber;
@@ -102,7 +84,6 @@ void loop()
   Serial.print(F("\nOption "));
   Serial.print(menuOption);
   Serial.println(F(" selected."));
-
 
 
   // Read flash option selected
@@ -142,26 +123,24 @@ void loop()
     if(pageNumber != NUMBER_OF_PAGES)
     {
       pageFirst = pageNumber;
-      pageLast = pageNumber;
+      pageLast = pageNumber + 1;
     }
-
     for(uint8_t page = pageFirst; page < pageLast; page++)
     {
-      optiboot_readPage(flashSpace, ramBuffer, page);
+      flash.fetch_page(page);
       Serial.print(F("Page "));
       Serial.print(page);
       Serial.print(F(": "));
-      for(uint16_t i = 0; i < sizeof(ramBuffer); i++)
+      for(uint16_t i = 0; i < flash.buffer_size(); i++)
       {
-        if(ramBuffer[i] == 0x00 || ramBuffer[i] == 0xff)
+        if(flash[i] == 0x00 || flash[i] == 0xff)
           Serial.write('.');
         else
-          Serial.write(ramBuffer[i]);
+          Serial.write(flash[i]);
       }
       Serial.println("");
     }
   }  // End of flash read option
-
 
 
   // Write flash option selected
@@ -195,7 +174,7 @@ void loop()
     Serial.println(F("' character:"));
 
     // Get all characters from the serial monitor and store it to the ramBuffer
-    memset(ramBuffer, 0, sizeof(ramBuffer));
+    flash.clear_buffer();
     uint16_t counter = 0;
     while (counter < SPM_PAGESIZE && charBuffer != terminationChar)
     {
@@ -205,7 +184,7 @@ void loop()
         if(charBuffer != terminationChar)
         {
           Serial.write(charBuffer); // echo character back
-          ramBuffer[counter] = charBuffer;
+          flash[counter] = charBuffer;
           counter++;
         }
       }
@@ -213,11 +192,8 @@ void loop()
     charBuffer = 0;
     Serial.println(F("\n\nAll chars received \nWriting to flash..."));
 
-    // WRITE RECEIVED DATA TO THE CURRENT FLASH PAGE
-    // flash_buffer is where the data is stored (contains the memory addresses)
-    // ramBuffer contains the data that's going to be stored in the flash
-    // pageNumber is the page the data is written to
-    optiboot_writePage(flashSpace, ramBuffer, pageNumber);
+    // Write received data to the current flash page
+    flash.write_page(pageNumber);
 
     Serial.println(F("Writing finished. You can now reset or power cycle the board and check for new contents!"));
   } // End of flash write option

@@ -1,15 +1,17 @@
 /***********************************************************************|
-| Optiboot Flash read/write interface library                           |
+| Urboot read/write interface library                                   |
 |                                                                       |
-| Flash_iterate.ino                                                     |
+| Flash_get_put.ino                                                     |
 |                                                                       |
-| A library for interfacing with Optiboot Flash's write functionality   |
-| Developed in 2021 by MCUdude                                          |
+| A library for interfacing with Urboot's flash write functionality     |
+| Developed in 2023 by Stefan Rueger and MCUdude                        |
+| https://github.com/stefanrueger/                                      |
 | https://github.com/MCUdude/                                           |
 |                                                                       |
-| In this example we fill the flash[] buffer with numbers and write it  |
-| to flash page 0. After a reset or power cycle, we read the values     |
-| back and prints them to the serial monitor.                           |
+| In this example we write a float and a struct to flash page 0, and we |
+| set a flag on flash page 1 to indicate there is content to be read    |
+| afterwards. After a reset we read back the flash content and prints   |
+| them to the serial monitor.                                           |
 |                                                                       |
 | A RAM buffer (ram_buffer) is required for this library to work. It    |
 | acts as a memory pool you can read from and write to, and recommended |
@@ -20,24 +22,47 @@
 
 #include <Flash.h>
 
-// RAM buffer needed by the Flash library. Use flash[] to access the buffer. This
+struct MyStruct
+{
+  float field1;
+  uint8_t field2;
+  char name[10];
+};
+
+// RAM buffer needed by the Flash library. Use flash[] to access the buffer.
 uint8_t ram_buffer[SPM_PAGESIZE];
 
 // Allocate two flash pages for storing data. Use PROGMEM1 to allocate space above 64kiB
 #define NUMBER_OF_PAGES 2
-const uint8_t flashSpace[SPM_PAGESIZE * NUMBER_OF_PAGES] __attribute__((aligned(SPM_PAGESIZE))) PROGMEM = {};
+const uint8_t flash_space[SPM_PAGESIZE * NUMBER_OF_PAGES] __attribute__((aligned(SPM_PAGESIZE))) PROGMEM = {};
 
 // Flash constructor
-Flash flash(flashSpace, sizeof(flashSpace), ram_buffer, sizeof(ram_buffer));
+Flash flash(flash_space, sizeof(flash_space), ram_buffer, sizeof(ram_buffer));
 
 void write_data()
 {
+  uint8_t buffer_address = 0;
+  float f = 123.456f;
+
   // First, make sure there are no content in out buffer
   flash.clear_buffer();
 
-  // Fill buffer with numbers, starting from 0
-  for(uint8_t i = 0; i < 64; i++)
-    flash[i] = i + 100;
+  // One simple call, with the address first and the object second
+  flash.put(buffer_address, f);
+
+  Serial.println(F("Written float data type!"));
+
+  // Data to store
+  MyStruct customVar =
+  {
+    3.14f,
+    65,
+    "MCUdude"
+  };
+
+  // Move address to the next byte after float 'f'
+  buffer_address += sizeof(float);
+  flash.put(buffer_address, customVar);
 
   // Write buffer to the first allocated flash page (page 0)
   flash.write_page(0);
@@ -48,23 +73,33 @@ void write_data()
   flash[5] = 'X';
   flash.write_page(1);
 
-  Serial.println(F("Page 0 written to!\nReset your board to view the contents!\n"));
+  Serial.println(F("Written custom data type!\nReset your board to view the contents!\n"));
 }
 
 void read_data()
 {
-  Serial.println(F("Read float from flash page 0: "));
+  Serial.println(F("Read float from flash: "));
 
   // Fetch first flash page
   flash.fetch_page(0);
 
-  for(uint16_t i = 0; i < flash.buffer_size(); i++)
-  {
-    Serial.print(F("Addr: "));
-    Serial.print(i);
-    Serial.print(F(" \tData: "));
-    Serial.println(flash[i]);
-  }
+  float f = 0.00f; // Variable to store data read from flash
+  uint8_t buffer_address = 0; // Buffer address to start from
+
+  // Get the float data from flash at position 'buffer_address'
+  flash.get(buffer_address, f);
+  Serial.print(F("The value of f is now: "));
+  Serial.println(f, 3);
+
+  buffer_address += sizeof(float); // Move address to the next byte after float 'f'
+  MyStruct customVar; // Variable to store custom object read from flash.
+
+  flash.get(buffer_address, customVar);
+
+  Serial.println(F("Read custom object from flash: "));
+  Serial.println(customVar.field1);
+  Serial.println(customVar.field2);
+  Serial.println(customVar.name);
 }
 
 void setup()
@@ -74,7 +109,7 @@ void setup()
 
   if(!flash.check_writable())
   {
-    Serial.println(F("Incompatible or no bootloader present! Please burn correct bootloader"));
+    Serial.println(F("Incompatible or no Urboot compatible bootloader present! Please burn correct bootloader"));
     while(1);
   }
 
@@ -82,7 +117,7 @@ void setup()
   // As a workaround, you can set the address to the allocated space like this, and the
   // library will handle the rest. You'll also have to allocate your flash space in
   // PROGMEM1 rather than PROGMEM.
-  //flash.set_far_address(pgm_get_far_address(flashSpace));
+  //flash.set_far_address(pgm_get_far_address(flash_space));
 
   // Fetch flash page 1, where we may have a flag
   flash.fetch_page(1);

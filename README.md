@@ -4,7 +4,7 @@
 An Arduino core for most 64 and 100-pin AVRs, all running the [Urboot](#write-to-own-flash) bootloader.
 This core requires at least Arduino IDE v1.8, where v1.8.9 or newer is recommended. IDE 2.x should also work.
 
-*From MegaCore version 3 and onwards, the Optiboot bootloader has been replaced by the [Urboot bootloader](https://github.com/stefanrueger/urboot/), which is superior to Optiboot. It's smaller, faster, and has automatic baud rate detection. Other cool features the bootloader provides but are not utilized by MightyCore are user program metadata stored in flash (that can easily be viewed by Avrdude -xshowall) and chip erase functionality.
+*From MegaCore version 3 and onwards, the Optiboot bootloader has been replaced by the superior [Urboot bootloader](https://github.com/stefanrueger/urboot/). It's smaller, faster, and has automatic baud rate detection, and can read and write to EEPROM. Other cool features the bootloader provides but are not utilized by MightyCore are user program metadata stored in flash (that can easily be viewed by Avrdude -xshowall) and chip-erase functionality.
 If you already have Optiboot installed and don't want to replace it with Urboot, you can still upload programs without any compatibility issues. However, if you're burning a bootloader to a new chip, Urboot is the way to go.*
 
 
@@ -74,17 +74,16 @@ Can't decide what microcontroller to choose? Have a look at the specification ta
 ## Supported clock frequencies
 
 MegaCore supports a variety of different clock frequencies. Select the microcontroller in the boards menu, then select the clock frequency. *You will have to hit "Burn bootloader" in order to set the correct fuses and upload the correct bootloader. This also has to be done if you want to change any of the fuse settings (BOD and EEPROM settings) regardless if a bootloader is installed or not*.
-Make sure you connect an ISP programmer, and select the correct one in the "Programmers" menu. For time-critical operations, an external crystal/oscillator is recommended.
 
 Make sure you connect an ISP programmer, and select the correct one in the "Programmers" menu. For time-critical operations, an external crystal/oscillator is recommended. The Urboot bootloader has automatic baud rate detection (except when using UART2 and UART3 on ATmega640/1280/2560), so UART uploads should work fine even though the oscillator is a little too fast or too slow.
 
 | Frequency   | Oscillator type             | Speed  | Comment                                           |
 |-------------|-----------------------------|--------|---------------------------------------------------|
-| 16 MHz      | External crystal/oscillator | 115200 | Default clock on most AVR based Arduino boards    |
+| 16 MHz      | External crystal/oscillator | 115200 | Default clock on most AVR-based Arduino boards    |
 | 20 MHz      | External crystal/oscillator | 115200 |                                                   |
 | 18.4320 MHz | External crystal/oscillator | 115200 | Great clock for UART communication with no error  |
 | 14.7456 MHz | External crystal/oscillator | 115200 | Great clock for UART communication with no error  |
-| 12 MHz      | External crystal/oscillator | 57600  | Useful when working with USB 1.1 (12 Mbit/s)      |
+| 12 MHz      | External crystal/oscillator | 57600  |                                                   |
 | 11.0592 MHz | External crystal/oscillator | 115200 | Great clock for UART communication with no error  |
 | 8 MHz       | External crystal/oscillator | 57600  | Common clock when working with 3.3V               |
 | 7.3728 MHz  | External crystal/oscillator | 115200 | Great clock for UART communication with no error  |
@@ -93,7 +92,7 @@ Make sure you connect an ISP programmer, and select the correct one in the "Prog
 | 2 MHz       | External crystal/oscillator | 9600   |                                                   |
 | 1.8432 MHz  | External crystal/oscillator | 115200 | Great clock for UART communication with no error  |
 | 1 MHz       | External crystal/oscillator | 9600   |                                                   |
-| 8 MHz       | Internal oscillator         | 38400  | Might cause UART upload issues. See comment above |
+| 8 MHz       | Internal oscillator         | 38400  |                                                   |
 | 4 MHz       | Internal oscillator         | 9600   | Derived from the 8 MHz internal oscillator        |
 | 2 MHz       | Internal oscillator         | 9600   | Derived from the 8 MHz internal oscillator        |
 | 1 MHz       | Internal oscillator         | 9600   | Derived from the 8 MHz internal oscillator        |
@@ -145,9 +144,9 @@ Link time optimization (LTO for short) optimizes the code at link time, usually 
 
 
 ## Printf support
-Unlike the official Arduino cores, MegaCore has printf support out of the box. If you're not familiar with printf you should probably [read this first](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm). It's added to the Print class and will work with all libraries that inherit Print. Printf is a standard C function that lets you format text much easier than using Arduino's built-in print and println. Note that this implementation of printf will NOT print floats or doubles. This is a limitation of the avr-libc printf implementation on AVR microcontrollers, and nothing I can easily fix.
+Unlike the official Arduino cores, MegaCore has printf support out of the box. If you're not familiar with printf you should probably [read this first](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm). It's added to the Print class and will work with all libraries that inherit Print. Printf is a standard C function that lets you format text much easier than using Arduino's built-in print and println. Note that this implementation of printf will NOT print floats or doubles. This is disabled by default to save space but can be enabled using a build flag if using PlatformIO.
 
-If you're using a serial port, simply use `Serial.printf("Milliseconds since start: %ld\n", millis());`. Other libraries that inherit the Print class (and thus support printf) are the LiquidCrystal LCD library and the U8G2 graphical LCD library.
+If you're using a serial port, simply use `Serial.printf("Milliseconds since start: %ld\n", millis());`. You can also use the `F()` macro if you need to store the string in flash. Other libraries that inherit the Print class (and thus support printf) are the LiquidCrystal LCD library and the U8G2 graphical LCD library.
 
 
 ## Pin macros
@@ -164,7 +163,7 @@ digitalWrite(0, HIGH);
 
 
 ## Write to own flash
-MegaCoree uses the excellent Urboot bootloader, written by [Stefan Rueger](https://github.com/stefanrueger). Urboot supports flash writing within the running application, meaning that content from e.g. a sensor can be stored in the flash memory directly without needing external memory. Flash memory is much faster than EEPROM, and can handle at least 10,000 write cycles before wear becomes an issue.
+MegaCore uses the excellent Urboot bootloader, written by [Stefan Rueger](https://github.com/stefanrueger). Urboot supports flash writing within the running application, meaning that content from e.g. a sensor can be stored in the flash memory directly without needing external memory. Flash memory is much faster than EEPROM, and can handle at least 10,000 write cycles before wear becomes an issue.
 For more information on how it works and how you can use this in your own application, check out the [Serial_read_write](https://github.com/MCUdude/MegaCore/blob/master/avr/libraries/Flash/examples/Serial_read_write/Serial_read_write.ino) for a simple proof-of-concept demo, and
 [Flash_put_get](https://github.com/MCUdude/MegaCore/blob/master/avr/libraries/Flash/examples/Flash_put_get/Flash_put_get.ino) + [Flash_iterate](https://github.com/MCUdude/MegaCore/blob/master/avr/libraries/Flash/examples/Flash_iterate/Flash_iterate.ino) for useful examples on how you can store strings, structs, and variables to flash and retrieve then afterward.
 
@@ -241,7 +240,7 @@ Open Arduino IDE, and a new category in the boards menu called "MegaCore" will s
 * If the *BOD option* is presented, you can select at what voltage the microcontroller will shut down at. Read more about BOD [here](#bod-option).
 * Select your preferred clock frequency. **16 MHz** is standard on most Arduino boards.
 * Select what kind of programmer you're using under the **Programmers** menu.
-* Hit **Burn Bootloader**. The LED pin will not toggle after the bootloader has been loaded.
+* Hit **Burn Bootloader**. The LED pin will *not* toggle after the bootloader has been loaded.
 * Disconnect the ISP programmer, and connect a USB to serial adapter to the target microcontroller shown in the [pinout diagram](#pinout). Select the correct serial port under the **Tools** menu, and click the **Upload** button. If you're getting a timeout error, it may be because the RX and TX pins are swapped, or the auto-reset circuit isn't working properly (the 100 nF capacitor and a 10k resistor on the reset line).
 
 Your code should now be running on the microcontroller!

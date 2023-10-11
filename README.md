@@ -23,6 +23,7 @@ If you already have Optiboot installed and don't want to replace it with Urboot,
 * **[How to install](#how-to-install)**
   - [Boards Manager Installation](#boards-manager-installation)
   - [Manual Installation](#manual-installation)
+  - [Arduino CLI Installation](#arduino-cli-installation)
   - [PlatformIO](#platformio)
 * **[Getting started with MegaCore](#getting-started-with-megacore)**
 * [Wiring reference](#wiring-reference)
@@ -227,6 +228,13 @@ This installation method requires Arduino IDE version 1.8.0 or greater.
 #### Manual Installation
 Click on the "Download ZIP" button in the upper right corner. Extract the ZIP file, and move the extracted folder to the location "**~/Documents/Arduino/hardware**". Create the "hardware" folder if it doesn't exist.
 Open Arduino IDE, and a new category in the boards menu called "MegaCore" will show up.
+
+#### Arduino CLI Installation
+Run the following command in a terminal:
+
+```
+arduino-cli core install MegaCore:avr --additional-urls https://mcudude.github.io/MegaCore/package_MCUdude_MegaCore_index.json
+```
 
 #### PlatformIO
 [PlatformIO](http://platformio.org) is an open-source ecosystem for IoT and embedded systems, and supports MightyCore.

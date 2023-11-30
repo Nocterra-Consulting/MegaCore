@@ -247,7 +247,7 @@ Specifies if the EEPROM memory should be retained when uploading using a program
 
 ### `board_hardware.ckout`
 Enable clock output on targets that support it.  
-Pin PE7 on ATmega1280/1281/2560/2561  
+Pin PE7 on ATmega1280/1281/2560/2561, ATmega165/169/325/329/645/649 and ATmega3250/3290/6450/6490
 Pin PC7 on AT90CAN32/64/128  
 
 | Clock output enable |
@@ -293,7 +293,7 @@ Suggested baud rates for a particular clock speed are in **bold text**.
 
 
 ### `board_build.variant`
-Holds the current pinout in use. The alternative pinout is only available for ATmega640/1280/2560, so this parameter isn't needed if you're not using the 100-pin AVR pinout.
+Holds the current pinout in use. The alternative pinout is only available for ATmega640/1280/2560.
 See [pinout pics](https://github.com/MCUdude/MegaCore#pinout) for more info.
 
 | Target                                                                                                        | Default pinout         | Alternative pinout |

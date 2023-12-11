@@ -15,7 +15,7 @@ menu.LTO=Compiler LTO
 menu.variant=Variant
 menu.pinout=Pinout
 menu.bootloader=Bootloader
-
+menu.baudrate=Baud rate
 
 #####################
 #### ATmega2561  ####
@@ -61,6 +61,34 @@ menu.bootloader=Bootloader
 2561.menu.eeprom.erase=EEPROM not retained
 2561.menu.eeprom.erase.bootloader.high_fuses=0xdf
 
+# Baud rate
+2561.menu.baudrate.default=Default
+2561.menu.baudrate.default.upload.speed={upload.default_speed}
+2561.menu.baudrate.1000000=1000000
+2561.menu.baudrate.1000000.upload.speed=1000000
+2561.menu.baudrate.500000=500000
+2561.menu.baudrate.500000.upload.speed=500000
+2561.menu.baudrate.460800=460800
+2561.menu.baudrate.460800.upload.speed=460800
+2561.menu.baudrate.250000=250000
+2561.menu.baudrate.250000.upload.speed=250000
+2561.menu.baudrate.230400=230400
+2561.menu.baudrate.230400.upload.speed=230400
+2561.menu.baudrate.125000=125000
+2561.menu.baudrate.125000.upload.speed=125000
+2561.menu.baudrate.115200=115200
+2561.menu.baudrate.115200.upload.speed=115200
+2561.menu.baudrate.57600=57600
+2561.menu.baudrate.57600.upload.speed=57600
+2561.menu.baudrate.38400=38400
+2561.menu.baudrate.38400.upload.speed=38400
+2561.menu.baudrate.19200=19200
+2561.menu.baudrate.19200.upload.speed=19200
+2561.menu.baudrate.9600=9600
+2561.menu.baudrate.9600.upload.speed=9600
+2561.menu.baudrate.4800=4800
+2561.menu.baudrate.4800.upload.speed=4800
+
 # Brown out detection
 2561.menu.BOD.2v7=BOD 2.7V
 2561.menu.BOD.2v7.bootloader.extended_fuses=0xfd
@@ -86,109 +114,109 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 2561.menu.clock.16MHz_external=External 16 MHz
-2561.menu.clock.16MHz_external.upload.speed=115200
+2561.menu.clock.16MHz_external.upload.default_speed=115200
 2561.menu.clock.16MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.16MHz_external.build.clkpr=
 2561.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 2561.menu.clock.20MHz_external=External 20 MHz
-2561.menu.clock.20MHz_external.upload.speed=115200
+2561.menu.clock.20MHz_external.upload.default_speed=115200
 2561.menu.clock.20MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.20MHz_external.build.clkpr=
 2561.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 2561.menu.clock.18_432MHz_external=External 18.4320 MHz
-2561.menu.clock.18_432MHz_external.upload.speed=115200
+2561.menu.clock.18_432MHz_external.upload.default_speed=115200
 2561.menu.clock.18_432MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.18_432MHz_external.build.clkpr=
 2561.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 2561.menu.clock.14_7456MHz_external=External 14.7456 MHz
-2561.menu.clock.14_7456MHz_external.upload.speed=115200
+2561.menu.clock.14_7456MHz_external.upload.default_speed=115200
 2561.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.14_7456MHz_external.build.clkpr=
 2561.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 2561.menu.clock.12MHz_external=External 12 MHz
-2561.menu.clock.12MHz_external.upload.speed=57600
+2561.menu.clock.12MHz_external.upload.default_speed=57600
 2561.menu.clock.12MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.12MHz_external.build.clkpr=
 2561.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 2561.menu.clock.11_0592MHz_external=External 11.0592 MHz
-2561.menu.clock.11_0592MHz_external.upload.speed=115200
+2561.menu.clock.11_0592MHz_external.upload.default_speed=115200
 2561.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.11_0592MHz_external.build.clkpr=
 2561.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 2561.menu.clock.8MHz_external=External 8 MHz
-2561.menu.clock.8MHz_external.upload.speed=57600
+2561.menu.clock.8MHz_external.upload.default_speed=57600
 2561.menu.clock.8MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.8MHz_external.build.clkpr=
 2561.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 2561.menu.clock.7_3728MHz_external=External 7.3728 MHz
-2561.menu.clock.7_3728MHz_external.upload.speed=115200
+2561.menu.clock.7_3728MHz_external.upload.default_speed=115200
 2561.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.7_3728MHz_external.build.clkpr=
 2561.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 2561.menu.clock.6MHz_external=External 6 MHz
-2561.menu.clock.6MHz_external.upload.speed=57600
+2561.menu.clock.6MHz_external.upload.default_speed=57600
 2561.menu.clock.6MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.6MHz_external.build.clkpr=
 2561.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 2561.menu.clock.4MHz_external=External 4 MHz
-2561.menu.clock.4MHz_external.upload.speed=9600
+2561.menu.clock.4MHz_external.upload.default_speed=9600
 2561.menu.clock.4MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.4MHz_external.build.clkpr=
 2561.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 2561.menu.clock.3_6864MHz_external=External 3.6864 MHz
-2561.menu.clock.3_6864MHz_external.upload.speed=115200
+2561.menu.clock.3_6864MHz_external.upload.default_speed=115200
 2561.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.3_6864MHz_external.build.clkpr=
 2561.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 2561.menu.clock.2MHz_external=External 2 MHz
-2561.menu.clock.2MHz_external.upload.speed=9600
+2561.menu.clock.2MHz_external.upload.default_speed=9600
 2561.menu.clock.2MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.2MHz_external.build.clkpr=
 2561.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 2561.menu.clock.1_8432MHz_external=External 1.8432 MHz
-2561.menu.clock.1_8432MHz_external.upload.speed=115200
+2561.menu.clock.1_8432MHz_external.upload.default_speed=115200
 2561.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.1_8432MHz_external.build.clkpr=
 2561.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 2561.menu.clock.1MHz_external=External 1 MHz
-2561.menu.clock.1MHz_external.upload.speed=9600
+2561.menu.clock.1MHz_external.upload.default_speed=9600
 2561.menu.clock.1MHz_external.bootloader.low_fuses=0xf7
 2561.menu.clock.1MHz_external.build.clkpr=
 2561.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 2561.menu.clock.8MHz_internal=Internal 8 MHz
-2561.menu.clock.8MHz_internal.upload.speed=38400
+2561.menu.clock.8MHz_internal.upload.default_speed=38400
 2561.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 2561.menu.clock.8MHz_internal.build.clkpr=
 2561.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 2561.menu.clock.4MHz_internal=Internal 4 MHz
-2561.menu.clock.4MHz_internal.upload.speed=9600
+2561.menu.clock.4MHz_internal.upload.default_speed=9600
 2561.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 2561.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 2561.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 2561.menu.clock.2MHz_internal=Internal 2 MHz
-2561.menu.clock.2MHz_internal.upload.speed=9600
+2561.menu.clock.2MHz_internal.upload.default_speed=9600
 2561.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 2561.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 2561.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 2561.menu.clock.1MHz_internal=Internal 1 MHz
-2561.menu.clock.1MHz_internal.upload.speed=9600
+2561.menu.clock.1MHz_internal.upload.default_speed=9600
 2561.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 2561.menu.clock.1MHz_internal.build.clkpr=
 2561.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -251,6 +279,34 @@ menu.bootloader=Bootloader
 2560.menu.eeprom.erase=EEPROM not retained
 2560.menu.eeprom.erase.bootloader.high_fuses=0xdf
 
+# Baud rate
+2560.menu.baudrate.default=Default
+2560.menu.baudrate.default.upload.speed={upload.default_speed}
+2560.menu.baudrate.1000000=1000000
+2560.menu.baudrate.1000000.upload.speed=1000000
+2560.menu.baudrate.500000=500000
+2560.menu.baudrate.500000.upload.speed=500000
+2560.menu.baudrate.460800=460800
+2560.menu.baudrate.460800.upload.speed=460800
+2560.menu.baudrate.250000=250000
+2560.menu.baudrate.250000.upload.speed=250000
+2560.menu.baudrate.230400=230400
+2560.menu.baudrate.230400.upload.speed=230400
+2560.menu.baudrate.125000=125000
+2560.menu.baudrate.125000.upload.speed=125000
+2560.menu.baudrate.115200=115200
+2560.menu.baudrate.115200.upload.speed=115200
+2560.menu.baudrate.57600=57600
+2560.menu.baudrate.57600.upload.speed=57600
+2560.menu.baudrate.38400=38400
+2560.menu.baudrate.38400.upload.speed=38400
+2560.menu.baudrate.19200=19200
+2560.menu.baudrate.19200.upload.speed=19200
+2560.menu.baudrate.9600=9600
+2560.menu.baudrate.9600.upload.speed=9600
+2560.menu.baudrate.4800=4800
+2560.menu.baudrate.4800.upload.speed=4800
+
 # Pinouts
 2560.menu.pinout.mega_pinout=Arduino MEGA pinout
 2560.menu.pinout.mega_pinout.build.variant=100-pin-arduino-mega
@@ -282,7 +338,7 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 2560.menu.clock.16MHz_external=External 16 MHz
-2560.menu.clock.16MHz_external.upload.speed=115200
+2560.menu.clock.16MHz_external.upload.default_speed=115200
 2560.menu.clock.16MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.16MHz_external.build.clkpr=
 2560.menu.clock.16MHz_external.build.oscillator=external_oscillator
@@ -290,7 +346,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 2560.menu.clock.20MHz_external=External 20 MHz
-2560.menu.clock.20MHz_external.upload.speed=115200
+2560.menu.clock.20MHz_external.upload.default_speed=115200
 2560.menu.clock.20MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.20MHz_external.build.clkpr=
 2560.menu.clock.20MHz_external.build.oscillator=external_oscillator
@@ -298,7 +354,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 2560.menu.clock.18_432MHz_external=External 18.4320 MHz
-2560.menu.clock.18_432MHz_external.upload.speed=115200
+2560.menu.clock.18_432MHz_external.upload.default_speed=115200
 2560.menu.clock.18_432MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.18_432MHz_external.build.clkpr=
 2560.menu.clock.18_432MHz_external.build.oscillator=external_oscillator
@@ -306,7 +362,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 2560.menu.clock.14_7456MHz_external=External 14.7456 MHz
-2560.menu.clock.14_7456MHz_external.upload.speed=115200
+2560.menu.clock.14_7456MHz_external.upload.default_speed=115200
 2560.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.14_7456MHz_external.build.clkpr=
 2560.menu.clock.14_7456MHz_external.build.oscillator=external_oscillator
@@ -314,7 +370,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 2560.menu.clock.12MHz_external=External 12 MHz
-2560.menu.clock.12MHz_external.upload.speed=57600
+2560.menu.clock.12MHz_external.upload.default_speed=57600
 2560.menu.clock.12MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.12MHz_external.build.clkpr=
 2560.menu.clock.12MHz_external.build.oscillator=external_oscillator
@@ -322,7 +378,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 2560.menu.clock.11_0592MHz_external=External 11.0592 MHz
-2560.menu.clock.11_0592MHz_external.upload.speed=115200
+2560.menu.clock.11_0592MHz_external.upload.default_speed=115200
 2560.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.11_0592MHz_external.build.clkpr=
 2560.menu.clock.11_0592MHz_external.build.oscillator=external_oscillator
@@ -330,7 +386,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 2560.menu.clock.8MHz_external=External 8 MHz
-2560.menu.clock.8MHz_external.upload.speed=57600
+2560.menu.clock.8MHz_external.upload.default_speed=57600
 2560.menu.clock.8MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.8MHz_external.build.clkpr=
 2560.menu.clock.8MHz_external.build.oscillator=external_oscillator
@@ -338,7 +394,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 2560.menu.clock.7_3728MHz_external=External 7.3728 MHz
-2560.menu.clock.7_3728MHz_external.upload.speed=115200
+2560.menu.clock.7_3728MHz_external.upload.default_speed=115200
 2560.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.7_3728MHz_external.build.clkpr=
 2560.menu.clock.7_3728MHz_external.build.oscillator=external_oscillator
@@ -346,7 +402,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 2560.menu.clock.6MHz_external=External 6 MHz
-2560.menu.clock.6MHz_external.upload.speed=57600
+2560.menu.clock.6MHz_external.upload.default_speed=57600
 2560.menu.clock.6MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.6MHz_external.build.clkpr=
 2560.menu.clock.6MHz_external.build.oscillator=external_oscillator
@@ -354,7 +410,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 2560.menu.clock.4MHz_external=External 4 MHz
-2560.menu.clock.4MHz_external.upload.speed=9600
+2560.menu.clock.4MHz_external.upload.default_speed=9600
 2560.menu.clock.4MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.4MHz_external.build.clkpr=
 2560.menu.clock.4MHz_external.build.oscillator=external_oscillator
@@ -362,7 +418,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 2560.menu.clock.3_6864MHz_external=External 3.6864 MHz
-2560.menu.clock.3_6864MHz_external.upload.speed=115200
+2560.menu.clock.3_6864MHz_external.upload.default_speed=115200
 2560.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.3_6864MHz_external.build.clkpr=
 2560.menu.clock.3_6864MHz_external.build.oscillator=external_oscillator
@@ -370,7 +426,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 2560.menu.clock.2MHz_external=External 2 MHz
-2560.menu.clock.2MHz_external.upload.speed=9600
+2560.menu.clock.2MHz_external.upload.default_speed=9600
 2560.menu.clock.2MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.2MHz_external.build.clkpr=
 2560.menu.clock.2MHz_external.build.oscillator=external_oscillator
@@ -378,7 +434,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 2560.menu.clock.1_8432MHz_external=External 1.8432 MHz
-2560.menu.clock.1_8432MHz_external.upload.speed=115200
+2560.menu.clock.1_8432MHz_external.upload.default_speed=115200
 2560.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.1_8432MHz_external.build.clkpr=
 2560.menu.clock.1_8432MHz_external.build.oscillator=external_oscillator
@@ -386,7 +442,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 2560.menu.clock.1MHz_external=External 1 MHz
-2560.menu.clock.1MHz_external.upload.speed=9600
+2560.menu.clock.1MHz_external.upload.default_speed=9600
 2560.menu.clock.1MHz_external.bootloader.low_fuses=0xf7
 2560.menu.clock.1MHz_external.build.clkpr=
 2560.menu.clock.1MHz_external.build.oscillator=external_oscillator
@@ -394,7 +450,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 2560.menu.clock.8MHz_internal=Internal 8 MHz
-2560.menu.clock.8MHz_internal.upload.speed=38400
+2560.menu.clock.8MHz_internal.upload.default_speed=38400
 2560.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 2560.menu.clock.8MHz_internal.build.clkpr=
 2560.menu.clock.8MHz_internal.build.oscillator=internal_oscillator
@@ -402,7 +458,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 2560.menu.clock.4MHz_internal=Internal 4 MHz
-2560.menu.clock.4MHz_internal.upload.speed=9600
+2560.menu.clock.4MHz_internal.upload.default_speed=9600
 2560.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 2560.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 2560.menu.clock.4MHz_internal.build.oscillator=internal_oscillator
@@ -410,7 +466,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 2560.menu.clock.2MHz_internal=Internal 2 MHz
-2560.menu.clock.2MHz_internal.upload.speed=9600
+2560.menu.clock.2MHz_internal.upload.default_speed=9600
 2560.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 2560.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 2560.menu.clock.2MHz_internal.build.oscillator=internal_oscillator
@@ -418,7 +474,7 @@ menu.bootloader=Bootloader
 2560.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 2560.menu.clock.1MHz_internal=Internal 1 MHz
-2560.menu.clock.1MHz_internal.upload.speed=9600
+2560.menu.clock.1MHz_internal.upload.default_speed=9600
 2560.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 2560.menu.clock.1MHz_internal.build.clkpr=
 2560.menu.clock.1MHz_internal.build.oscillator=internal_oscillator
@@ -471,6 +527,34 @@ menu.bootloader=Bootloader
 1281.menu.eeprom.erase=EEPROM not retained
 1281.menu.eeprom.erase.bootloader.high_fuses=0xdf
 
+# Baud rate
+1281.menu.baudrate.default=Default
+1281.menu.baudrate.default.upload.speed={upload.default_speed}
+1281.menu.baudrate.1000000=1000000
+1281.menu.baudrate.1000000.upload.speed=1000000
+1281.menu.baudrate.500000=500000
+1281.menu.baudrate.500000.upload.speed=500000
+1281.menu.baudrate.460800=460800
+1281.menu.baudrate.460800.upload.speed=460800
+1281.menu.baudrate.250000=250000
+1281.menu.baudrate.250000.upload.speed=250000
+1281.menu.baudrate.230400=230400
+1281.menu.baudrate.230400.upload.speed=230400
+1281.menu.baudrate.125000=125000
+1281.menu.baudrate.125000.upload.speed=125000
+1281.menu.baudrate.115200=115200
+1281.menu.baudrate.115200.upload.speed=115200
+1281.menu.baudrate.57600=57600
+1281.menu.baudrate.57600.upload.speed=57600
+1281.menu.baudrate.38400=38400
+1281.menu.baudrate.38400.upload.speed=38400
+1281.menu.baudrate.19200=19200
+1281.menu.baudrate.19200.upload.speed=19200
+1281.menu.baudrate.9600=9600
+1281.menu.baudrate.9600.upload.speed=9600
+1281.menu.baudrate.4800=4800
+1281.menu.baudrate.4800.upload.speed=4800
+
 # Brown out detection
 1281.menu.BOD.2v7=BOD 2.7V
 1281.menu.BOD.2v7.bootloader.extended_fuses=0xfd
@@ -496,109 +580,109 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 1281.menu.clock.16MHz_external=External 16 MHz
-1281.menu.clock.16MHz_external.upload.speed=115200
+1281.menu.clock.16MHz_external.upload.default_speed=115200
 1281.menu.clock.16MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.16MHz_external.build.clkpr=
 1281.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 1281.menu.clock.20MHz_external=External 20 MHz
-1281.menu.clock.20MHz_external.upload.speed=115200
+1281.menu.clock.20MHz_external.upload.default_speed=115200
 1281.menu.clock.20MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.20MHz_external.build.clkpr=
 1281.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 1281.menu.clock.18_432MHz_external=External 18.4320 MHz
-1281.menu.clock.18_432MHz_external.upload.speed=115200
+1281.menu.clock.18_432MHz_external.upload.default_speed=115200
 1281.menu.clock.18_432MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.18_432MHz_external.build.clkpr=
 1281.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 1281.menu.clock.14_7456MHz_external=External 14.7456 MHz
-1281.menu.clock.14_7456MHz_external.upload.speed=115200
+1281.menu.clock.14_7456MHz_external.upload.default_speed=115200
 1281.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.14_7456MHz_external.build.clkpr=
 1281.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 1281.menu.clock.12MHz_external=External 12 MHz
-1281.menu.clock.12MHz_external.upload.speed=57600
+1281.menu.clock.12MHz_external.upload.default_speed=57600
 1281.menu.clock.12MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.12MHz_external.build.clkpr=
 1281.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 1281.menu.clock.11_0592MHz_external=External 11.0592 MHz
-1281.menu.clock.11_0592MHz_external.upload.speed=115200
+1281.menu.clock.11_0592MHz_external.upload.default_speed=115200
 1281.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.11_0592MHz_external.build.clkpr=
 1281.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 1281.menu.clock.8MHz_external=External 8 MHz
-1281.menu.clock.8MHz_external.upload.speed=57600
+1281.menu.clock.8MHz_external.upload.default_speed=57600
 1281.menu.clock.8MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.8MHz_external.build.clkpr=
 1281.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 1281.menu.clock.7_3728MHz_external=External 7.3728 MHz
-1281.menu.clock.7_3728MHz_external.upload.speed=115200
+1281.menu.clock.7_3728MHz_external.upload.default_speed=115200
 1281.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.7_3728MHz_external.build.clkpr=
 1281.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 1281.menu.clock.6MHz_external=External 6 MHz
-1281.menu.clock.6MHz_external.upload.speed=57600
+1281.menu.clock.6MHz_external.upload.default_speed=57600
 1281.menu.clock.6MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.6MHz_external.build.clkpr=
 1281.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 1281.menu.clock.4MHz_external=External 4 MHz
-1281.menu.clock.4MHz_external.upload.speed=9600
+1281.menu.clock.4MHz_external.upload.default_speed=9600
 1281.menu.clock.4MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.4MHz_external.build.clkpr=
 1281.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 1281.menu.clock.3_6864MHz_external=External 3.6864 MHz
-1281.menu.clock.3_6864MHz_external.upload.speed=115200
+1281.menu.clock.3_6864MHz_external.upload.default_speed=115200
 1281.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.3_6864MHz_external.build.clkpr=
 1281.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 1281.menu.clock.2MHz_external=External 2 MHz
-1281.menu.clock.2MHz_external.upload.speed=9600
+1281.menu.clock.2MHz_external.upload.default_speed=9600
 1281.menu.clock.2MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.2MHz_external.build.clkpr=
 1281.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 1281.menu.clock.1_8432MHz_external=External 1.8432 MHz
-1281.menu.clock.1_8432MHz_external.upload.speed=115200
+1281.menu.clock.1_8432MHz_external.upload.default_speed=115200
 1281.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.1_8432MHz_external.build.clkpr=
 1281.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 1281.menu.clock.1MHz_external=External 1 MHz
-1281.menu.clock.1MHz_external.upload.speed=9600
+1281.menu.clock.1MHz_external.upload.default_speed=9600
 1281.menu.clock.1MHz_external.bootloader.low_fuses=0xf7
 1281.menu.clock.1MHz_external.build.clkpr=
 1281.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 1281.menu.clock.8MHz_internal=Internal 8 MHz
-1281.menu.clock.8MHz_internal.upload.speed=38400
+1281.menu.clock.8MHz_internal.upload.default_speed=38400
 1281.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 1281.menu.clock.8MHz_internal.build.clkpr=
 1281.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 1281.menu.clock.4MHz_internal=Internal 4 MHz
-1281.menu.clock.4MHz_internal.upload.speed=9600
+1281.menu.clock.4MHz_internal.upload.default_speed=9600
 1281.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 1281.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 1281.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 1281.menu.clock.2MHz_internal=Internal 2 MHz
-1281.menu.clock.2MHz_internal.upload.speed=9600
+1281.menu.clock.2MHz_internal.upload.default_speed=9600
 1281.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 1281.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 1281.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 1281.menu.clock.1MHz_internal=Internal 1 MHz
-1281.menu.clock.1MHz_internal.upload.speed=9600
+1281.menu.clock.1MHz_internal.upload.default_speed=9600
 1281.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 1281.menu.clock.1MHz_internal.build.clkpr=
 1281.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -663,6 +747,34 @@ menu.bootloader=Bootloader
 1280.menu.eeprom.erase=EEPROM not retained
 1280.menu.eeprom.erase.bootloader.high_fuses=0xdf
 
+# Baud rate
+1280.menu.baudrate.default=Default
+1280.menu.baudrate.default.upload.speed={upload.default_speed}
+1280.menu.baudrate.1000000=1000000
+1280.menu.baudrate.1000000.upload.speed=1000000
+1280.menu.baudrate.500000=500000
+1280.menu.baudrate.500000.upload.speed=500000
+1280.menu.baudrate.460800=460800
+1280.menu.baudrate.460800.upload.speed=460800
+1280.menu.baudrate.250000=250000
+1280.menu.baudrate.250000.upload.speed=250000
+1280.menu.baudrate.230400=230400
+1280.menu.baudrate.230400.upload.speed=230400
+1280.menu.baudrate.125000=125000
+1280.menu.baudrate.125000.upload.speed=125000
+1280.menu.baudrate.115200=115200
+1280.menu.baudrate.115200.upload.speed=115200
+1280.menu.baudrate.57600=57600
+1280.menu.baudrate.57600.upload.speed=57600
+1280.menu.baudrate.38400=38400
+1280.menu.baudrate.38400.upload.speed=38400
+1280.menu.baudrate.19200=19200
+1280.menu.baudrate.19200.upload.speed=19200
+1280.menu.baudrate.9600=9600
+1280.menu.baudrate.9600.upload.speed=9600
+1280.menu.baudrate.4800=4800
+1280.menu.baudrate.4800.upload.speed=4800
+
 # Pinouts
 1280.menu.pinout.mega_pinout=Arduino MEGA pinout
 1280.menu.pinout.mega_pinout.build.variant=100-pin-arduino-mega
@@ -694,7 +806,7 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 1280.menu.clock.16MHz_external=External 16 MHz
-1280.menu.clock.16MHz_external.upload.speed=115200
+1280.menu.clock.16MHz_external.upload.default_speed=115200
 1280.menu.clock.16MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.16MHz_external.build.clkpr=
 1280.menu.clock.16MHz_external.build.oscillator=external_oscillator
@@ -702,7 +814,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 1280.menu.clock.20MHz_external=External 20 MHz
-1280.menu.clock.20MHz_external.upload.speed=115200
+1280.menu.clock.20MHz_external.upload.default_speed=115200
 1280.menu.clock.20MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.20MHz_external.build.clkpr=
 1280.menu.clock.20MHz_external.build.oscillator=external_oscillator
@@ -710,7 +822,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 1280.menu.clock.18_432MHz_external=External 18.4320 MHz
-1280.menu.clock.18_432MHz_external.upload.speed=115200
+1280.menu.clock.18_432MHz_external.upload.default_speed=115200
 1280.menu.clock.18_432MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.18_432MHz_external.build.clkpr=
 1280.menu.clock.18_432MHz_external.build.oscillator=external_oscillator
@@ -718,7 +830,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 1280.menu.clock.14_7456MHz_external=External 14.7456 MHz
-1280.menu.clock.14_7456MHz_external.upload.speed=115200
+1280.menu.clock.14_7456MHz_external.upload.default_speed=115200
 1280.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.14_7456MHz_external.build.clkpr=
 1280.menu.clock.14_7456MHz_external.build.oscillator=external_oscillator
@@ -726,7 +838,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 1280.menu.clock.12MHz_external=External 12 MHz
-1280.menu.clock.12MHz_external.upload.speed=57600
+1280.menu.clock.12MHz_external.upload.default_speed=57600
 1280.menu.clock.12MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.12MHz_external.build.clkpr=
 1280.menu.clock.12MHz_external.build.oscillator=external_oscillator
@@ -734,7 +846,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 1280.menu.clock.11_0592MHz_external=External 11.0592 MHz
-1280.menu.clock.11_0592MHz_external.upload.speed=115200
+1280.menu.clock.11_0592MHz_external.upload.default_speed=115200
 1280.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.11_0592MHz_external.build.clkpr=
 1280.menu.clock.11_0592MHz_external.build.oscillator=external_oscillator
@@ -742,7 +854,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 1280.menu.clock.8MHz_external=External 8 MHz
-1280.menu.clock.8MHz_external.upload.speed=57600
+1280.menu.clock.8MHz_external.upload.default_speed=57600
 1280.menu.clock.8MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.8MHz_external.build.clkpr=
 1280.menu.clock.8MHz_external.build.oscillator=external_oscillator
@@ -750,7 +862,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 1280.menu.clock.7_3728MHz_external=External 7.3728 MHz
-1280.menu.clock.7_3728MHz_external.upload.speed=115200
+1280.menu.clock.7_3728MHz_external.upload.default_speed=115200
 1280.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.7_3728MHz_external.build.clkpr=
 1280.menu.clock.7_3728MHz_external.build.oscillator=external_oscillator
@@ -758,7 +870,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 1280.menu.clock.6MHz_external=External 6 MHz
-1280.menu.clock.6MHz_external.upload.speed=57600
+1280.menu.clock.6MHz_external.upload.default_speed=57600
 1280.menu.clock.6MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.6MHz_external.build.clkpr=
 1280.menu.clock.6MHz_external.build.oscillator=external_oscillator
@@ -766,7 +878,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 1280.menu.clock.4MHz_external=External 4 MHz
-1280.menu.clock.4MHz_external.upload.speed=9600
+1280.menu.clock.4MHz_external.upload.default_speed=9600
 1280.menu.clock.4MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.4MHz_external.build.clkpr=
 1280.menu.clock.4MHz_external.build.oscillator=external_oscillator
@@ -774,7 +886,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 1280.menu.clock.3_6864MHz_external=External 3.6864 MHz
-1280.menu.clock.3_6864MHz_external.upload.speed=115200
+1280.menu.clock.3_6864MHz_external.upload.default_speed=115200
 1280.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.3_6864MHz_external.build.clkpr=
 1280.menu.clock.3_6864MHz_external.build.oscillator=external_oscillator
@@ -782,7 +894,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 1280.menu.clock.2MHz_external=External 2 MHz
-1280.menu.clock.2MHz_external.upload.speed=9600
+1280.menu.clock.2MHz_external.upload.default_speed=9600
 1280.menu.clock.2MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.2MHz_external.build.clkpr=
 1280.menu.clock.2MHz_external.build.oscillator=external_oscillator
@@ -790,7 +902,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 1280.menu.clock.1_8432MHz_external=External 1.8432 MHz
-1280.menu.clock.1_8432MHz_external.upload.speed=115200
+1280.menu.clock.1_8432MHz_external.upload.default_speed=115200
 1280.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.1_8432MHz_external.build.clkpr=
 1280.menu.clock.1_8432MHz_external.build.oscillator=external_oscillator
@@ -798,7 +910,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 1280.menu.clock.1MHz_external=External 1 MHz
-1280.menu.clock.1MHz_external.upload.speed=9600
+1280.menu.clock.1MHz_external.upload.default_speed=9600
 1280.menu.clock.1MHz_external.bootloader.low_fuses=0xf7
 1280.menu.clock.1MHz_external.build.clkpr=
 1280.menu.clock.1MHz_external.build.oscillator=external_oscillator
@@ -806,7 +918,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 1280.menu.clock.8MHz_internal=Internal 8 MHz
-1280.menu.clock.8MHz_internal.upload.speed=38400
+1280.menu.clock.8MHz_internal.upload.default_speed=38400
 1280.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 1280.menu.clock.8MHz_internal.build.clkpr=
 1280.menu.clock.8MHz_internal.build.oscillator=internal_oscillator
@@ -814,7 +926,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 1280.menu.clock.4MHz_internal=Internal 4 MHz
-1280.menu.clock.4MHz_internal.upload.speed=9600
+1280.menu.clock.4MHz_internal.upload.default_speed=9600
 1280.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 1280.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 1280.menu.clock.4MHz_internal.build.oscillator=internal_oscillator
@@ -822,7 +934,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 1280.menu.clock.2MHz_internal=Internal 2 MHz
-1280.menu.clock.2MHz_internal.upload.speed=9600
+1280.menu.clock.2MHz_internal.upload.default_speed=9600
 1280.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 1280.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 1280.menu.clock.2MHz_internal.build.oscillator=internal_oscillator
@@ -830,7 +942,7 @@ menu.bootloader=Bootloader
 1280.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 1280.menu.clock.1MHz_internal=Internal 1 MHz
-1280.menu.clock.1MHz_internal.upload.speed=9600
+1280.menu.clock.1MHz_internal.upload.default_speed=9600
 1280.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 1280.menu.clock.1MHz_internal.build.clkpr=
 1280.menu.clock.1MHz_internal.build.oscillator=internal_oscillator
@@ -872,6 +984,34 @@ menu.bootloader=Bootloader
 649.menu.eeprom.keep.bootloader.high_fuses=0xd7
 649.menu.eeprom.erase=EEPROM not retained
 649.menu.eeprom.erase.bootloader.high_fuses=0xdf
+
+# Baud rate
+649.menu.baudrate.default=Default
+649.menu.baudrate.default.upload.speed={upload.default_speed}
+649.menu.baudrate.1000000=1000000
+649.menu.baudrate.1000000.upload.speed=1000000
+649.menu.baudrate.500000=500000
+649.menu.baudrate.500000.upload.speed=500000
+649.menu.baudrate.460800=460800
+649.menu.baudrate.460800.upload.speed=460800
+649.menu.baudrate.250000=250000
+649.menu.baudrate.250000.upload.speed=250000
+649.menu.baudrate.230400=230400
+649.menu.baudrate.230400.upload.speed=230400
+649.menu.baudrate.125000=125000
+649.menu.baudrate.125000.upload.speed=125000
+649.menu.baudrate.115200=115200
+649.menu.baudrate.115200.upload.speed=115200
+649.menu.baudrate.57600=57600
+649.menu.baudrate.57600.upload.speed=57600
+649.menu.baudrate.38400=38400
+649.menu.baudrate.38400.upload.speed=38400
+649.menu.baudrate.19200=19200
+649.menu.baudrate.19200.upload.speed=19200
+649.menu.baudrate.9600=9600
+649.menu.baudrate.9600.upload.speed=9600
+649.menu.baudrate.4800=4800
+649.menu.baudrate.4800.upload.speed=4800
 
 # Variants
 649.menu.variant.model649P=649P/PA
@@ -923,109 +1063,109 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 649.menu.clock.16MHz_external=External 16 MHz
-649.menu.clock.16MHz_external.upload.speed=115200
+649.menu.clock.16MHz_external.upload.default_speed=115200
 649.menu.clock.16MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.16MHz_external.build.clkpr=
 649.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 649.menu.clock.20MHz_external=External 20 MHz
-649.menu.clock.20MHz_external.upload.speed=115200
+649.menu.clock.20MHz_external.upload.default_speed=115200
 649.menu.clock.20MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.20MHz_external.build.clkpr=
 649.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 649.menu.clock.18_432MHz_external=External 18.4320 MHz
-649.menu.clock.18_432MHz_external.upload.speed=115200
+649.menu.clock.18_432MHz_external.upload.default_speed=115200
 649.menu.clock.18_432MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.18_432MHz_external.build.clkpr=
 649.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 649.menu.clock.14_7456MHz_external=External 14.7456 MHz
-649.menu.clock.14_7456MHz_external.upload.speed=115200
+649.menu.clock.14_7456MHz_external.upload.default_speed=115200
 649.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.14_7456MHz_external.build.clkpr=
 649.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 649.menu.clock.12MHz_external=External 12 MHz
-649.menu.clock.12MHz_external.upload.speed=57600
+649.menu.clock.12MHz_external.upload.default_speed=57600
 649.menu.clock.12MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.12MHz_external.build.clkpr=
 649.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 649.menu.clock.11_0592MHz_external=External 11.0592 MHz
-649.menu.clock.11_0592MHz_external.upload.speed=115200
+649.menu.clock.11_0592MHz_external.upload.default_speed=115200
 649.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.11_0592MHz_external.build.clkpr=
 649.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 649.menu.clock.8MHz_external=External 8 MHz
-649.menu.clock.8MHz_external.upload.speed=57600
+649.menu.clock.8MHz_external.upload.default_speed=57600
 649.menu.clock.8MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.8MHz_external.build.clkpr=
 649.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 649.menu.clock.7_3728MHz_external=External 7.3728 MHz
-649.menu.clock.7_3728MHz_external.upload.speed=115200
+649.menu.clock.7_3728MHz_external.upload.default_speed=115200
 649.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.7_3728MHz_external.build.clkpr=
 649.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 649.menu.clock.6MHz_external=External 6 MHz
-649.menu.clock.6MHz_external.upload.speed=57600
+649.menu.clock.6MHz_external.upload.default_speed=57600
 649.menu.clock.6MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.6MHz_external.build.clkpr=
 649.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 649.menu.clock.4MHz_external=External 4 MHz
-649.menu.clock.4MHz_external.upload.speed=9600
+649.menu.clock.4MHz_external.upload.default_speed=9600
 649.menu.clock.4MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.4MHz_external.build.clkpr=
 649.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 649.menu.clock.3_6864MHz_external=External 3.6864 MHz
-649.menu.clock.3_6864MHz_external.upload.speed=115200
+649.menu.clock.3_6864MHz_external.upload.default_speed=115200
 649.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.3_6864MHz_external.build.clkpr=
 649.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 649.menu.clock.2MHz_external=External 2 MHz
-649.menu.clock.2MHz_external.upload.speed=9600
+649.menu.clock.2MHz_external.upload.default_speed=9600
 649.menu.clock.2MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.2MHz_external.build.clkpr=
 649.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 649.menu.clock.1_8432MHz_external=External 1.8432 MHz
-649.menu.clock.1_8432MHz_external.upload.speed=115200
+649.menu.clock.1_8432MHz_external.upload.default_speed=115200
 649.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.1_8432MHz_external.build.clkpr=
 649.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 649.menu.clock.1MHz_external=External 1 MHz
-649.menu.clock.1MHz_external.upload.speed=9600
+649.menu.clock.1MHz_external.upload.default_speed=9600
 649.menu.clock.1MHz_external.bootloader.low_fuses=0xff
 649.menu.clock.1MHz_external.build.clkpr=
 649.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 649.menu.clock.8MHz_internal=Internal 8 MHz
-649.menu.clock.8MHz_internal.upload.speed=38400
+649.menu.clock.8MHz_internal.upload.default_speed=38400
 649.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 649.menu.clock.8MHz_internal.build.clkpr=
 649.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 649.menu.clock.4MHz_internal=Internal 4 MHz
-649.menu.clock.4MHz_internal.upload.speed=9600
+649.menu.clock.4MHz_internal.upload.default_speed=9600
 649.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 649.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 649.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 649.menu.clock.2MHz_internal=Internal 2 MHz
-649.menu.clock.2MHz_internal.upload.speed=9600
+649.menu.clock.2MHz_internal.upload.default_speed=9600
 649.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 649.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 649.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 649.menu.clock.1MHz_internal=Internal 1 MHz
-649.menu.clock.1MHz_internal.upload.speed=9600
+649.menu.clock.1MHz_internal.upload.default_speed=9600
 649.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 649.menu.clock.1MHz_internal.build.clkpr=
 649.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -1065,6 +1205,34 @@ menu.bootloader=Bootloader
 645.menu.eeprom.keep.bootloader.high_fuses=0xd7
 645.menu.eeprom.erase=EEPROM not retained
 645.menu.eeprom.erase.bootloader.high_fuses=0xdf
+
+# Baud rate
+645.menu.baudrate.default=Default
+645.menu.baudrate.default.upload.speed={upload.default_speed}
+645.menu.baudrate.1000000=1000000
+645.menu.baudrate.1000000.upload.speed=1000000
+645.menu.baudrate.500000=500000
+645.menu.baudrate.500000.upload.speed=500000
+645.menu.baudrate.460800=460800
+645.menu.baudrate.460800.upload.speed=460800
+645.menu.baudrate.250000=250000
+645.menu.baudrate.250000.upload.speed=250000
+645.menu.baudrate.230400=230400
+645.menu.baudrate.230400.upload.speed=230400
+645.menu.baudrate.125000=125000
+645.menu.baudrate.125000.upload.speed=125000
+645.menu.baudrate.115200=115200
+645.menu.baudrate.115200.upload.speed=115200
+645.menu.baudrate.57600=57600
+645.menu.baudrate.57600.upload.speed=57600
+645.menu.baudrate.38400=38400
+645.menu.baudrate.38400.upload.speed=38400
+645.menu.baudrate.19200=19200
+645.menu.baudrate.19200.upload.speed=19200
+645.menu.baudrate.9600=9600
+645.menu.baudrate.9600.upload.speed=9600
+645.menu.baudrate.4800=4800
+645.menu.baudrate.4800.upload.speed=4800
 
 # Variants
 645.menu.variant.model645P=645P/PA
@@ -1116,109 +1284,109 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 645.menu.clock.16MHz_external=External 16 MHz
-645.menu.clock.16MHz_external.upload.speed=115200
+645.menu.clock.16MHz_external.upload.default_speed=115200
 645.menu.clock.16MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.16MHz_external.build.clkpr=
 645.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 645.menu.clock.20MHz_external=External 20 MHz
-645.menu.clock.20MHz_external.upload.speed=115200
+645.menu.clock.20MHz_external.upload.default_speed=115200
 645.menu.clock.20MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.20MHz_external.build.clkpr=
 645.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 645.menu.clock.18_432MHz_external=External 18.4320 MHz
-645.menu.clock.18_432MHz_external.upload.speed=115200
+645.menu.clock.18_432MHz_external.upload.default_speed=115200
 645.menu.clock.18_432MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.18_432MHz_external.build.clkpr=
 645.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 645.menu.clock.14_7456MHz_external=External 14.7456 MHz
-645.menu.clock.14_7456MHz_external.upload.speed=115200
+645.menu.clock.14_7456MHz_external.upload.default_speed=115200
 645.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.14_7456MHz_external.build.clkpr=
 645.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 645.menu.clock.12MHz_external=External 12 MHz
-645.menu.clock.12MHz_external.upload.speed=57600
+645.menu.clock.12MHz_external.upload.default_speed=57600
 645.menu.clock.12MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.12MHz_external.build.clkpr=
 645.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 645.menu.clock.11_0592MHz_external=External 11.0592 MHz
-645.menu.clock.11_0592MHz_external.upload.speed=115200
+645.menu.clock.11_0592MHz_external.upload.default_speed=115200
 645.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.11_0592MHz_external.build.clkpr=
 645.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 645.menu.clock.8MHz_external=External 8 MHz
-645.menu.clock.8MHz_external.upload.speed=57600
+645.menu.clock.8MHz_external.upload.default_speed=57600
 645.menu.clock.8MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.8MHz_external.build.clkpr=
 645.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 645.menu.clock.7_3728MHz_external=External 7.3728 MHz
-645.menu.clock.7_3728MHz_external.upload.speed=115200
+645.menu.clock.7_3728MHz_external.upload.default_speed=115200
 645.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.7_3728MHz_external.build.clkpr=
 645.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 645.menu.clock.6MHz_external=External 6 MHz
-645.menu.clock.6MHz_external.upload.speed=57600
+645.menu.clock.6MHz_external.upload.default_speed=57600
 645.menu.clock.6MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.6MHz_external.build.clkpr=
 645.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 645.menu.clock.4MHz_external=External 4 MHz
-645.menu.clock.4MHz_external.upload.speed=9600
+645.menu.clock.4MHz_external.upload.default_speed=9600
 645.menu.clock.4MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.4MHz_external.build.clkpr=
 645.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 645.menu.clock.3_6864MHz_external=External 3.6864 MHz
-645.menu.clock.3_6864MHz_external.upload.speed=115200
+645.menu.clock.3_6864MHz_external.upload.default_speed=115200
 645.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.3_6864MHz_external.build.clkpr=
 645.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 645.menu.clock.2MHz_external=External 2 MHz
-645.menu.clock.2MHz_external.upload.speed=9600
+645.menu.clock.2MHz_external.upload.default_speed=9600
 645.menu.clock.2MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.2MHz_external.build.clkpr=
 645.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 645.menu.clock.1_8432MHz_external=External 1.8432 MHz
-645.menu.clock.1_8432MHz_external.upload.speed=115200
+645.menu.clock.1_8432MHz_external.upload.default_speed=115200
 645.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.1_8432MHz_external.build.clkpr=
 645.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 645.menu.clock.1MHz_external=External 1 MHz
-645.menu.clock.1MHz_external.upload.speed=9600
+645.menu.clock.1MHz_external.upload.default_speed=9600
 645.menu.clock.1MHz_external.bootloader.low_fuses=0xff
 645.menu.clock.1MHz_external.build.clkpr=
 645.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 645.menu.clock.8MHz_internal=Internal 8 MHz
-645.menu.clock.8MHz_internal.upload.speed=38400
+645.menu.clock.8MHz_internal.upload.default_speed=38400
 645.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 645.menu.clock.8MHz_internal.build.clkpr=
 645.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 645.menu.clock.4MHz_internal=Internal 4 MHz
-645.menu.clock.4MHz_internal.upload.speed=9600
+645.menu.clock.4MHz_internal.upload.default_speed=9600
 645.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 645.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 645.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 645.menu.clock.2MHz_internal=Internal 2 MHz
-645.menu.clock.2MHz_internal.upload.speed=9600
+645.menu.clock.2MHz_internal.upload.default_speed=9600
 645.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 645.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 645.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 645.menu.clock.1MHz_internal=Internal 1 MHz
-645.menu.clock.1MHz_internal.upload.speed=9600
+645.menu.clock.1MHz_internal.upload.default_speed=9600
 645.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 645.menu.clock.1MHz_internal.build.clkpr=
 645.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -1282,6 +1450,34 @@ menu.bootloader=Bootloader
 640.menu.eeprom.erase=EEPROM not retained
 640.menu.eeprom.erase.bootloader.high_fuses=0xdf
 
+# Baud rate
+640.menu.baudrate.default=Default
+640.menu.baudrate.default.upload.speed={upload.default_speed}
+640.menu.baudrate.1000000=1000000
+640.menu.baudrate.1000000.upload.speed=1000000
+640.menu.baudrate.500000=500000
+640.menu.baudrate.500000.upload.speed=500000
+640.menu.baudrate.460800=460800
+640.menu.baudrate.460800.upload.speed=460800
+640.menu.baudrate.250000=250000
+640.menu.baudrate.250000.upload.speed=250000
+640.menu.baudrate.230400=230400
+640.menu.baudrate.230400.upload.speed=230400
+640.menu.baudrate.125000=125000
+640.menu.baudrate.125000.upload.speed=125000
+640.menu.baudrate.115200=115200
+640.menu.baudrate.115200.upload.speed=115200
+640.menu.baudrate.57600=57600
+640.menu.baudrate.57600.upload.speed=57600
+640.menu.baudrate.38400=38400
+640.menu.baudrate.38400.upload.speed=38400
+640.menu.baudrate.19200=19200
+640.menu.baudrate.19200.upload.speed=19200
+640.menu.baudrate.9600=9600
+640.menu.baudrate.9600.upload.speed=9600
+640.menu.baudrate.4800=4800
+640.menu.baudrate.4800.upload.speed=4800
+
 # Pinouts
 640.menu.pinout.mega_pinout=Arduino MEGA pinout
 640.menu.pinout.mega_pinout.build.variant=100-pin-arduino-mega
@@ -1313,7 +1509,7 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 640.menu.clock.16MHz_external=External 16 MHz
-640.menu.clock.16MHz_external.upload.speed=115200
+640.menu.clock.16MHz_external.upload.default_speed=115200
 640.menu.clock.16MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.16MHz_external.build.clkpr=
 640.menu.clock.16MHz_external.build.oscillator=external_oscillator
@@ -1321,7 +1517,7 @@ menu.bootloader=Bootloader
 640.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 640.menu.clock.20MHz_external=External 20 MHz
-640.menu.clock.20MHz_external.upload.speed=115200
+640.menu.clock.20MHz_external.upload.default_speed=115200
 640.menu.clock.20MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.20MHz_external.build.clkpr=
 640.menu.clock.20MHz_external.build.oscillator=external_oscillator
@@ -1329,7 +1525,7 @@ menu.bootloader=Bootloader
 640.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 640.menu.clock.18_432MHz_external=External 18.4320 MHz
-640.menu.clock.18_432MHz_external.upload.speed=115200
+640.menu.clock.18_432MHz_external.upload.default_speed=115200
 640.menu.clock.18_432MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.18_432MHz_external.build.clkpr=
 640.menu.clock.18_432MHz_external.build.oscillator=external_oscillator
@@ -1337,7 +1533,7 @@ menu.bootloader=Bootloader
 640.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 640.menu.clock.14_7456MHz_external=External 14.7456 MHz
-640.menu.clock.14_7456MHz_external.upload.speed=115200
+640.menu.clock.14_7456MHz_external.upload.default_speed=115200
 640.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.14_7456MHz_external.build.clkpr=
 640.menu.clock.14_7456MHz_external.build.oscillator=external_oscillator
@@ -1345,7 +1541,7 @@ menu.bootloader=Bootloader
 640.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 640.menu.clock.12MHz_external=External 12 MHz
-640.menu.clock.12MHz_external.upload.speed=57600
+640.menu.clock.12MHz_external.upload.default_speed=57600
 640.menu.clock.12MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.12MHz_external.build.clkpr=
 640.menu.clock.12MHz_external.build.oscillator=external_oscillator
@@ -1353,7 +1549,7 @@ menu.bootloader=Bootloader
 640.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 640.menu.clock.11_0592MHz_external=External 11.0592 MHz
-640.menu.clock.11_0592MHz_external.upload.speed=115200
+640.menu.clock.11_0592MHz_external.upload.default_speed=115200
 640.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.11_0592MHz_external.build.clkpr=
 640.menu.clock.11_0592MHz_external.build.oscillator=external_oscillator
@@ -1361,7 +1557,7 @@ menu.bootloader=Bootloader
 640.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 640.menu.clock.8MHz_external=External 8 MHz
-640.menu.clock.8MHz_external.upload.speed=57600
+640.menu.clock.8MHz_external.upload.default_speed=57600
 640.menu.clock.8MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.8MHz_external.build.clkpr=
 640.menu.clock.8MHz_external.build.oscillator=external_oscillator
@@ -1369,7 +1565,7 @@ menu.bootloader=Bootloader
 640.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 640.menu.clock.7_3728MHz_external=External 7.3728 MHz
-640.menu.clock.7_3728MHz_external.upload.speed=115200
+640.menu.clock.7_3728MHz_external.upload.default_speed=115200
 640.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.7_3728MHz_external.build.clkpr=
 640.menu.clock.7_3728MHz_external.build.oscillator=external_oscillator
@@ -1377,7 +1573,7 @@ menu.bootloader=Bootloader
 640.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 640.menu.clock.6MHz_external=External 6 MHz
-640.menu.clock.6MHz_external.upload.speed=57600
+640.menu.clock.6MHz_external.upload.default_speed=57600
 640.menu.clock.6MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.6MHz_external.build.clkpr=
 640.menu.clock.6MHz_external.build.oscillator=external_oscillator
@@ -1385,7 +1581,7 @@ menu.bootloader=Bootloader
 640.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 640.menu.clock.4MHz_external=External 4 MHz
-640.menu.clock.4MHz_external.upload.speed=9600
+640.menu.clock.4MHz_external.upload.default_speed=9600
 640.menu.clock.4MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.4MHz_external.build.clkpr=
 640.menu.clock.4MHz_external.build.oscillator=external_oscillator
@@ -1393,7 +1589,7 @@ menu.bootloader=Bootloader
 640.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 640.menu.clock.3_6864MHz_external=External 3.6864 MHz
-640.menu.clock.3_6864MHz_external.upload.speed=115200
+640.menu.clock.3_6864MHz_external.upload.default_speed=115200
 640.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.3_6864MHz_external.build.clkpr=
 640.menu.clock.3_6864MHz_external.build.oscillator=external_oscillator
@@ -1401,7 +1597,7 @@ menu.bootloader=Bootloader
 640.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 640.menu.clock.2MHz_external=External 2 MHz
-640.menu.clock.2MHz_external.upload.speed=9600
+640.menu.clock.2MHz_external.upload.default_speed=9600
 640.menu.clock.2MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.2MHz_external.build.clkpr=
 640.menu.clock.2MHz_external.build.oscillator=external_oscillator
@@ -1409,7 +1605,7 @@ menu.bootloader=Bootloader
 640.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 640.menu.clock.1_8432MHz_external=External 1.8432 MHz
-640.menu.clock.1_8432MHz_external.upload.speed=115200
+640.menu.clock.1_8432MHz_external.upload.default_speed=115200
 640.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.1_8432MHz_external.build.clkpr=
 640.menu.clock.1_8432MHz_external.build.oscillator=external_oscillator
@@ -1417,7 +1613,7 @@ menu.bootloader=Bootloader
 640.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 640.menu.clock.1MHz_external=External 1 MHz
-640.menu.clock.1MHz_external.upload.speed=9600
+640.menu.clock.1MHz_external.upload.default_speed=9600
 640.menu.clock.1MHz_external.bootloader.low_fuses=0xf7
 640.menu.clock.1MHz_external.build.clkpr=
 640.menu.clock.1MHz_external.build.oscillator=external_oscillator
@@ -1425,7 +1621,7 @@ menu.bootloader=Bootloader
 640.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 640.menu.clock.8MHz_internal=Internal 8 MHz
-640.menu.clock.8MHz_internal.upload.speed=38400
+640.menu.clock.8MHz_internal.upload.default_speed=38400
 640.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 640.menu.clock.8MHz_internal.build.clkpr=
 640.menu.clock.8MHz_internal.build.oscillator=internal_oscillator
@@ -1433,7 +1629,7 @@ menu.bootloader=Bootloader
 640.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 640.menu.clock.4MHz_internal=Internal 4 MHz
-640.menu.clock.4MHz_internal.upload.speed=9600
+640.menu.clock.4MHz_internal.upload.default_speed=9600
 640.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 640.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 640.menu.clock.4MHz_internal.build.oscillator=internal_oscillator
@@ -1441,7 +1637,7 @@ menu.bootloader=Bootloader
 640.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 640.menu.clock.2MHz_internal=Internal 2 MHz
-640.menu.clock.2MHz_internal.upload.speed=9600
+640.menu.clock.2MHz_internal.upload.default_speed=9600
 640.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 640.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 640.menu.clock.2MHz_internal.build.oscillator=internal_oscillator
@@ -1449,7 +1645,7 @@ menu.bootloader=Bootloader
 640.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 640.menu.clock.1MHz_internal=Internal 1 MHz
-640.menu.clock.1MHz_internal.upload.speed=9600
+640.menu.clock.1MHz_internal.upload.default_speed=9600
 640.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 640.menu.clock.1MHz_internal.build.clkpr=
 640.menu.clock.1MHz_internal.build.oscillator=internal_oscillator
@@ -1491,6 +1687,34 @@ menu.bootloader=Bootloader
 329.menu.eeprom.keep.bootloader.high_fuses=0xd7
 329.menu.eeprom.erase=EEPROM not retained
 329.menu.eeprom.erase.bootloader.high_fuses=0xdf
+
+# Baud rate
+329.menu.baudrate.default=Default
+329.menu.baudrate.default.upload.speed={upload.default_speed}
+329.menu.baudrate.1000000=1000000
+329.menu.baudrate.1000000.upload.speed=1000000
+329.menu.baudrate.500000=500000
+329.menu.baudrate.500000.upload.speed=500000
+329.menu.baudrate.460800=460800
+329.menu.baudrate.460800.upload.speed=460800
+329.menu.baudrate.250000=250000
+329.menu.baudrate.250000.upload.speed=250000
+329.menu.baudrate.230400=230400
+329.menu.baudrate.230400.upload.speed=230400
+329.menu.baudrate.125000=125000
+329.menu.baudrate.125000.upload.speed=125000
+329.menu.baudrate.115200=115200
+329.menu.baudrate.115200.upload.speed=115200
+329.menu.baudrate.57600=57600
+329.menu.baudrate.57600.upload.speed=57600
+329.menu.baudrate.38400=38400
+329.menu.baudrate.38400.upload.speed=38400
+329.menu.baudrate.19200=19200
+329.menu.baudrate.19200.upload.speed=19200
+329.menu.baudrate.9600=9600
+329.menu.baudrate.9600.upload.speed=9600
+329.menu.baudrate.4800=4800
+329.menu.baudrate.4800.upload.speed=4800
 
 # Variants
 329.menu.variant.model329P=329P/PA
@@ -1542,109 +1766,109 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 329.menu.clock.16MHz_external=External 16 MHz
-329.menu.clock.16MHz_external.upload.speed=115200
+329.menu.clock.16MHz_external.upload.default_speed=115200
 329.menu.clock.16MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.16MHz_external.build.clkpr=
 329.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 329.menu.clock.20MHz_external=External 20 MHz
-329.menu.clock.20MHz_external.upload.speed=115200
+329.menu.clock.20MHz_external.upload.default_speed=115200
 329.menu.clock.20MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.20MHz_external.build.clkpr=
 329.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 329.menu.clock.18_432MHz_external=External 18.4320 MHz
-329.menu.clock.18_432MHz_external.upload.speed=115200
+329.menu.clock.18_432MHz_external.upload.default_speed=115200
 329.menu.clock.18_432MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.18_432MHz_external.build.clkpr=
 329.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 329.menu.clock.14_7456MHz_external=External 14.7456 MHz
-329.menu.clock.14_7456MHz_external.upload.speed=115200
+329.menu.clock.14_7456MHz_external.upload.default_speed=115200
 329.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.14_7456MHz_external.build.clkpr=
 329.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 329.menu.clock.12MHz_external=External 12 MHz
-329.menu.clock.12MHz_external.upload.speed=57600
+329.menu.clock.12MHz_external.upload.default_speed=57600
 329.menu.clock.12MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.12MHz_external.build.clkpr=
 329.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 329.menu.clock.11_0592MHz_external=External 11.0592 MHz
-329.menu.clock.11_0592MHz_external.upload.speed=115200
+329.menu.clock.11_0592MHz_external.upload.default_speed=115200
 329.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.11_0592MHz_external.build.clkpr=
 329.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 329.menu.clock.8MHz_external=External 8 MHz
-329.menu.clock.8MHz_external.upload.speed=57600
+329.menu.clock.8MHz_external.upload.default_speed=57600
 329.menu.clock.8MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.8MHz_external.build.clkpr=
 329.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 329.menu.clock.7_3728MHz_external=External 7.3728 MHz
-329.menu.clock.7_3728MHz_external.upload.speed=115200
+329.menu.clock.7_3728MHz_external.upload.default_speed=115200
 329.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.7_3728MHz_external.build.clkpr=
 329.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 329.menu.clock.6MHz_external=External 6 MHz
-329.menu.clock.6MHz_external.upload.speed=57600
+329.menu.clock.6MHz_external.upload.default_speed=57600
 329.menu.clock.6MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.6MHz_external.build.clkpr=
 329.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 329.menu.clock.4MHz_external=External 4 MHz
-329.menu.clock.4MHz_external.upload.speed=9600
+329.menu.clock.4MHz_external.upload.default_speed=9600
 329.menu.clock.4MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.4MHz_external.build.clkpr=
 329.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 329.menu.clock.3_6864MHz_external=External 3.6864 MHz
-329.menu.clock.3_6864MHz_external.upload.speed=115200
+329.menu.clock.3_6864MHz_external.upload.default_speed=115200
 329.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.3_6864MHz_external.build.clkpr=
 329.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 329.menu.clock.2MHz_external=External 2 MHz
-329.menu.clock.2MHz_external.upload.speed=9600
+329.menu.clock.2MHz_external.upload.default_speed=9600
 329.menu.clock.2MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.2MHz_external.build.clkpr=
 329.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 329.menu.clock.1_8432MHz_external=External 1.8432 MHz
-329.menu.clock.1_8432MHz_external.upload.speed=115200
+329.menu.clock.1_8432MHz_external.upload.default_speed=115200
 329.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.1_8432MHz_external.build.clkpr=
 329.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 329.menu.clock.1MHz_external=External 1 MHz
-329.menu.clock.1MHz_external.upload.speed=9600
+329.menu.clock.1MHz_external.upload.default_speed=9600
 329.menu.clock.1MHz_external.bootloader.low_fuses=0xff
 329.menu.clock.1MHz_external.build.clkpr=
 329.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 329.menu.clock.8MHz_internal=Internal 8 MHz
-329.menu.clock.8MHz_internal.upload.speed=38400
+329.menu.clock.8MHz_internal.upload.default_speed=38400
 329.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 329.menu.clock.8MHz_internal.build.clkpr=
 329.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 329.menu.clock.4MHz_internal=Internal 4 MHz
-329.menu.clock.4MHz_internal.upload.speed=9600
+329.menu.clock.4MHz_internal.upload.default_speed=9600
 329.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 329.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 329.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 329.menu.clock.2MHz_internal=Internal 2 MHz
-329.menu.clock.2MHz_internal.upload.speed=9600
+329.menu.clock.2MHz_internal.upload.default_speed=9600
 329.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 329.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 329.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 329.menu.clock.1MHz_internal=Internal 1 MHz
-329.menu.clock.1MHz_internal.upload.speed=9600
+329.menu.clock.1MHz_internal.upload.default_speed=9600
 329.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 329.menu.clock.1MHz_internal.build.clkpr=
 329.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -1684,6 +1908,34 @@ menu.bootloader=Bootloader
 325.menu.eeprom.keep.bootloader.high_fuses=0xd7
 325.menu.eeprom.erase=EEPROM not retained
 325.menu.eeprom.erase.bootloader.high_fuses=0xdf
+
+# Baud rate
+325.menu.baudrate.default=Default
+325.menu.baudrate.default.upload.speed={upload.default_speed}
+325.menu.baudrate.1000000=1000000
+325.menu.baudrate.1000000.upload.speed=1000000
+325.menu.baudrate.500000=500000
+325.menu.baudrate.500000.upload.speed=500000
+325.menu.baudrate.460800=460800
+325.menu.baudrate.460800.upload.speed=460800
+325.menu.baudrate.250000=250000
+325.menu.baudrate.250000.upload.speed=250000
+325.menu.baudrate.230400=230400
+325.menu.baudrate.230400.upload.speed=230400
+325.menu.baudrate.125000=125000
+325.menu.baudrate.125000.upload.speed=125000
+325.menu.baudrate.115200=115200
+325.menu.baudrate.115200.upload.speed=115200
+325.menu.baudrate.57600=57600
+325.menu.baudrate.57600.upload.speed=57600
+325.menu.baudrate.38400=38400
+325.menu.baudrate.38400.upload.speed=38400
+325.menu.baudrate.19200=19200
+325.menu.baudrate.19200.upload.speed=19200
+325.menu.baudrate.9600=9600
+325.menu.baudrate.9600.upload.speed=9600
+325.menu.baudrate.4800=4800
+325.menu.baudrate.4800.upload.speed=4800
 
 # Variants
 325.menu.variant.model325P=325P/PA
@@ -1735,109 +1987,109 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 325.menu.clock.16MHz_external=External 16 MHz
-325.menu.clock.16MHz_external.upload.speed=115200
+325.menu.clock.16MHz_external.upload.default_speed=115200
 325.menu.clock.16MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.16MHz_external.build.clkpr=
 325.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 325.menu.clock.20MHz_external=External 20 MHz
-325.menu.clock.20MHz_external.upload.speed=115200
+325.menu.clock.20MHz_external.upload.default_speed=115200
 325.menu.clock.20MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.20MHz_external.build.clkpr=
 325.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 325.menu.clock.18_432MHz_external=External 18.4320 MHz
-325.menu.clock.18_432MHz_external.upload.speed=115200
+325.menu.clock.18_432MHz_external.upload.default_speed=115200
 325.menu.clock.18_432MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.18_432MHz_external.build.clkpr=
 325.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 325.menu.clock.14_7456MHz_external=External 14.7456 MHz
-325.menu.clock.14_7456MHz_external.upload.speed=115200
+325.menu.clock.14_7456MHz_external.upload.default_speed=115200
 325.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.14_7456MHz_external.build.clkpr=
 325.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 325.menu.clock.12MHz_external=External 12 MHz
-325.menu.clock.12MHz_external.upload.speed=57600
+325.menu.clock.12MHz_external.upload.default_speed=57600
 325.menu.clock.12MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.12MHz_external.build.clkpr=
 325.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 325.menu.clock.11_0592MHz_external=External 11.0592 MHz
-325.menu.clock.11_0592MHz_external.upload.speed=115200
+325.menu.clock.11_0592MHz_external.upload.default_speed=115200
 325.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.11_0592MHz_external.build.clkpr=
 325.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 325.menu.clock.8MHz_external=External 8 MHz
-325.menu.clock.8MHz_external.upload.speed=57600
+325.menu.clock.8MHz_external.upload.default_speed=57600
 325.menu.clock.8MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.8MHz_external.build.clkpr=
 325.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 325.menu.clock.7_3728MHz_external=External 7.3728 MHz
-325.menu.clock.7_3728MHz_external.upload.speed=115200
+325.menu.clock.7_3728MHz_external.upload.default_speed=115200
 325.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.7_3728MHz_external.build.clkpr=
 325.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 325.menu.clock.6MHz_external=External 6 MHz
-325.menu.clock.6MHz_external.upload.speed=57600
+325.menu.clock.6MHz_external.upload.default_speed=57600
 325.menu.clock.6MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.6MHz_external.build.clkpr=
 325.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 325.menu.clock.4MHz_external=External 4 MHz
-325.menu.clock.4MHz_external.upload.speed=9600
+325.menu.clock.4MHz_external.upload.default_speed=9600
 325.menu.clock.4MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.4MHz_external.build.clkpr=
 325.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 325.menu.clock.3_6864MHz_external=External 3.6864 MHz
-325.menu.clock.3_6864MHz_external.upload.speed=115200
+325.menu.clock.3_6864MHz_external.upload.default_speed=115200
 325.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.3_6864MHz_external.build.clkpr=
 325.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 325.menu.clock.2MHz_external=External 2 MHz
-325.menu.clock.2MHz_external.upload.speed=9600
+325.menu.clock.2MHz_external.upload.default_speed=9600
 325.menu.clock.2MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.2MHz_external.build.clkpr=
 325.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 325.menu.clock.1_8432MHz_external=External 1.8432 MHz
-325.menu.clock.1_8432MHz_external.upload.speed=115200
+325.menu.clock.1_8432MHz_external.upload.default_speed=115200
 325.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.1_8432MHz_external.build.clkpr=
 325.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 325.menu.clock.1MHz_external=External 1 MHz
-325.menu.clock.1MHz_external.upload.speed=9600
+325.menu.clock.1MHz_external.upload.default_speed=9600
 325.menu.clock.1MHz_external.bootloader.low_fuses=0xff
 325.menu.clock.1MHz_external.build.clkpr=
 325.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 325.menu.clock.8MHz_internal=Internal 8 MHz
-325.menu.clock.8MHz_internal.upload.speed=38400
+325.menu.clock.8MHz_internal.upload.default_speed=38400
 325.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 325.menu.clock.8MHz_internal.build.clkpr=
 325.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 325.menu.clock.4MHz_internal=Internal 4 MHz
-325.menu.clock.4MHz_internal.upload.speed=9600
+325.menu.clock.4MHz_internal.upload.default_speed=9600
 325.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 325.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 325.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 325.menu.clock.2MHz_internal=Internal 2 MHz
-325.menu.clock.2MHz_internal.upload.speed=9600
+325.menu.clock.2MHz_internal.upload.default_speed=9600
 325.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 325.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 325.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 325.menu.clock.1MHz_internal=Internal 1 MHz
-325.menu.clock.1MHz_internal.upload.speed=9600
+325.menu.clock.1MHz_internal.upload.default_speed=9600
 325.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 325.menu.clock.1MHz_internal.build.clkpr=
 325.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -1880,6 +2132,34 @@ menu.bootloader=Bootloader
 169.menu.eeprom.erase=EEPROM not retained
 169.menu.eeprom.erase.bootloader.high_fuses=0xdf
 
+# Baud rate
+169.menu.baudrate.default=Default
+169.menu.baudrate.default.upload.speed={upload.default_speed}
+169.menu.baudrate.1000000=1000000
+169.menu.baudrate.1000000.upload.speed=1000000
+169.menu.baudrate.500000=500000
+169.menu.baudrate.500000.upload.speed=500000
+169.menu.baudrate.460800=460800
+169.menu.baudrate.460800.upload.speed=460800
+169.menu.baudrate.250000=250000
+169.menu.baudrate.250000.upload.speed=250000
+169.menu.baudrate.230400=230400
+169.menu.baudrate.230400.upload.speed=230400
+169.menu.baudrate.125000=125000
+169.menu.baudrate.125000.upload.speed=125000
+169.menu.baudrate.115200=115200
+169.menu.baudrate.115200.upload.speed=115200
+169.menu.baudrate.57600=57600
+169.menu.baudrate.57600.upload.speed=57600
+169.menu.baudrate.38400=38400
+169.menu.baudrate.38400.upload.speed=38400
+169.menu.baudrate.19200=19200
+169.menu.baudrate.19200.upload.speed=19200
+169.menu.baudrate.9600=9600
+169.menu.baudrate.9600.upload.speed=9600
+169.menu.baudrate.4800=4800
+169.menu.baudrate.4800.upload.speed=4800
+
 # Variants
 169.menu.variant.modelP=169P/PA
 169.menu.variant.modelP.build.mcu=atmega169p
@@ -1911,109 +2191,109 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 169.menu.clock.16MHz_external=External 16 MHz
-169.menu.clock.16MHz_external.upload.speed=115200
+169.menu.clock.16MHz_external.upload.default_speed=115200
 169.menu.clock.16MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.16MHz_external.build.clkpr=
 169.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 169.menu.clock.20MHz_external=External 20 MHz
-169.menu.clock.20MHz_external.upload.speed=115200
+169.menu.clock.20MHz_external.upload.default_speed=115200
 169.menu.clock.20MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.20MHz_external.build.clkpr=
 169.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 169.menu.clock.18_432MHz_external=External 18.4320 MHz
-169.menu.clock.18_432MHz_external.upload.speed=115200
+169.menu.clock.18_432MHz_external.upload.default_speed=115200
 169.menu.clock.18_432MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.18_432MHz_external.build.clkpr=
 169.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 169.menu.clock.14_7456MHz_external=External 14.7456 MHz
-169.menu.clock.14_7456MHz_external.upload.speed=115200
+169.menu.clock.14_7456MHz_external.upload.default_speed=115200
 169.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.14_7456MHz_external.build.clkpr=
 169.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 169.menu.clock.12MHz_external=External 12 MHz
-169.menu.clock.12MHz_external.upload.speed=57600
+169.menu.clock.12MHz_external.upload.default_speed=57600
 169.menu.clock.12MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.12MHz_external.build.clkpr=
 169.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 169.menu.clock.11_0592MHz_external=External 11.0592 MHz
-169.menu.clock.11_0592MHz_external.upload.speed=115200
+169.menu.clock.11_0592MHz_external.upload.default_speed=115200
 169.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.11_0592MHz_external.build.clkpr=
 169.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 169.menu.clock.8MHz_external=External 8 MHz
-169.menu.clock.8MHz_external.upload.speed=57600
+169.menu.clock.8MHz_external.upload.default_speed=57600
 169.menu.clock.8MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.8MHz_external.build.clkpr=
 169.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 169.menu.clock.7_3728MHz_external=External 7.3728 MHz
-169.menu.clock.7_3728MHz_external.upload.speed=115200
+169.menu.clock.7_3728MHz_external.upload.default_speed=115200
 169.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.7_3728MHz_external.build.clkpr=
 169.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 169.menu.clock.6MHz_external=External 6 MHz
-169.menu.clock.6MHz_external.upload.speed=57600
+169.menu.clock.6MHz_external.upload.default_speed=57600
 169.menu.clock.6MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.6MHz_external.build.clkpr=
 169.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 169.menu.clock.4MHz_external=External 4 MHz
-169.menu.clock.4MHz_external.upload.speed=9600
+169.menu.clock.4MHz_external.upload.default_speed=9600
 169.menu.clock.4MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.4MHz_external.build.clkpr=
 169.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 169.menu.clock.3_6864MHz_external=External 3.6864 MHz
-169.menu.clock.3_6864MHz_external.upload.speed=115200
+169.menu.clock.3_6864MHz_external.upload.default_speed=115200
 169.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.3_6864MHz_external.build.clkpr=
 169.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 169.menu.clock.2MHz_external=External 2 MHz
-169.menu.clock.2MHz_external.upload.speed=9600
+169.menu.clock.2MHz_external.upload.default_speed=9600
 169.menu.clock.2MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.2MHz_external.build.clkpr=
 169.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 169.menu.clock.1_8432MHz_external=External 1.8432 MHz
-169.menu.clock.1_8432MHz_external.upload.speed=115200
+169.menu.clock.1_8432MHz_external.upload.default_speed=115200
 169.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.1_8432MHz_external.build.clkpr=
 169.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 169.menu.clock.1MHz_external=External 1 MHz
-169.menu.clock.1MHz_external.upload.speed=9600
+169.menu.clock.1MHz_external.upload.default_speed=9600
 169.menu.clock.1MHz_external.bootloader.low_fuses=0xff
 169.menu.clock.1MHz_external.build.clkpr=
 169.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 169.menu.clock.8MHz_internal=Internal 8 MHz
-169.menu.clock.8MHz_internal.upload.speed=38400
+169.menu.clock.8MHz_internal.upload.default_speed=38400
 169.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 169.menu.clock.8MHz_internal.build.clkpr=
 169.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 169.menu.clock.4MHz_internal=Internal 4 MHz
-169.menu.clock.4MHz_internal.upload.speed=9600
+169.menu.clock.4MHz_internal.upload.default_speed=9600
 169.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 169.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 169.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 169.menu.clock.2MHz_internal=Internal 2 MHz
-169.menu.clock.2MHz_internal.upload.speed=9600
+169.menu.clock.2MHz_internal.upload.default_speed=9600
 169.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 169.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 169.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 169.menu.clock.1MHz_internal=Internal 1 MHz
-169.menu.clock.1MHz_internal.upload.speed=9600
+169.menu.clock.1MHz_internal.upload.default_speed=9600
 169.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 169.menu.clock.1MHz_internal.build.clkpr=
 169.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -2056,6 +2336,34 @@ menu.bootloader=Bootloader
 165.menu.eeprom.erase=EEPROM not retained
 165.menu.eeprom.erase.bootloader.high_fuses=0xdf
 
+# Baud rate
+165.menu.baudrate.default=Default
+165.menu.baudrate.default.upload.speed={upload.default_speed}
+165.menu.baudrate.1000000=1000000
+165.menu.baudrate.1000000.upload.speed=1000000
+165.menu.baudrate.500000=500000
+165.menu.baudrate.500000.upload.speed=500000
+165.menu.baudrate.460800=460800
+165.menu.baudrate.460800.upload.speed=460800
+165.menu.baudrate.250000=250000
+165.menu.baudrate.250000.upload.speed=250000
+165.menu.baudrate.230400=230400
+165.menu.baudrate.230400.upload.speed=230400
+165.menu.baudrate.125000=125000
+165.menu.baudrate.125000.upload.speed=125000
+165.menu.baudrate.115200=115200
+165.menu.baudrate.115200.upload.speed=115200
+165.menu.baudrate.57600=57600
+165.menu.baudrate.57600.upload.speed=57600
+165.menu.baudrate.38400=38400
+165.menu.baudrate.38400.upload.speed=38400
+165.menu.baudrate.19200=19200
+165.menu.baudrate.19200.upload.speed=19200
+165.menu.baudrate.9600=9600
+165.menu.baudrate.9600.upload.speed=9600
+165.menu.baudrate.4800=4800
+165.menu.baudrate.4800.upload.speed=4800
+
 # Variants
 165.menu.variant.modelP=165P/PA
 165.menu.variant.modelP.build.mcu=atmega165p
@@ -2087,109 +2395,109 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 165.menu.clock.16MHz_external=External 16 MHz
-165.menu.clock.16MHz_external.upload.speed=115200
+165.menu.clock.16MHz_external.upload.default_speed=115200
 165.menu.clock.16MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.16MHz_external.build.clkpr=
 165.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 165.menu.clock.20MHz_external=External 20 MHz
-165.menu.clock.20MHz_external.upload.speed=115200
+165.menu.clock.20MHz_external.upload.default_speed=115200
 165.menu.clock.20MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.20MHz_external.build.clkpr=
 165.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 165.menu.clock.18_432MHz_external=External 18.4320 MHz
-165.menu.clock.18_432MHz_external.upload.speed=115200
+165.menu.clock.18_432MHz_external.upload.default_speed=115200
 165.menu.clock.18_432MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.18_432MHz_external.build.clkpr=
 165.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 165.menu.clock.14_7456MHz_external=External 14.7456 MHz
-165.menu.clock.14_7456MHz_external.upload.speed=115200
+165.menu.clock.14_7456MHz_external.upload.default_speed=115200
 165.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.14_7456MHz_external.build.clkpr=
 165.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 165.menu.clock.12MHz_external=External 12 MHz
-165.menu.clock.12MHz_external.upload.speed=57600
+165.menu.clock.12MHz_external.upload.default_speed=57600
 165.menu.clock.12MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.12MHz_external.build.clkpr=
 165.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 165.menu.clock.11_0592MHz_external=External 11.0592 MHz
-165.menu.clock.11_0592MHz_external.upload.speed=115200
+165.menu.clock.11_0592MHz_external.upload.default_speed=115200
 165.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.11_0592MHz_external.build.clkpr=
 165.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 165.menu.clock.8MHz_external=External 8 MHz
-165.menu.clock.8MHz_external.upload.speed=57600
+165.menu.clock.8MHz_external.upload.default_speed=57600
 165.menu.clock.8MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.8MHz_external.build.clkpr=
 165.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 165.menu.clock.7_3728MHz_external=External 7.3728 MHz
-165.menu.clock.7_3728MHz_external.upload.speed=115200
+165.menu.clock.7_3728MHz_external.upload.default_speed=115200
 165.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.7_3728MHz_external.build.clkpr=
 165.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 165.menu.clock.6MHz_external=External 6 MHz
-165.menu.clock.6MHz_external.upload.speed=57600
+165.menu.clock.6MHz_external.upload.default_speed=57600
 165.menu.clock.6MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.6MHz_external.build.clkpr=
 165.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 165.menu.clock.4MHz_external=External 4 MHz
-165.menu.clock.4MHz_external.upload.speed=9600
+165.menu.clock.4MHz_external.upload.default_speed=9600
 165.menu.clock.4MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.4MHz_external.build.clkpr=
 165.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 165.menu.clock.3_6864MHz_external=External 3.6864 MHz
-165.menu.clock.3_6864MHz_external.upload.speed=115200
+165.menu.clock.3_6864MHz_external.upload.default_speed=115200
 165.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.3_6864MHz_external.build.clkpr=
 165.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 165.menu.clock.2MHz_external=External 2 MHz
-165.menu.clock.2MHz_external.upload.speed=9600
+165.menu.clock.2MHz_external.upload.default_speed=9600
 165.menu.clock.2MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.2MHz_external.build.clkpr=
 165.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 165.menu.clock.1_8432MHz_external=External 1.8432 MHz
-165.menu.clock.1_8432MHz_external.upload.speed=115200
+165.menu.clock.1_8432MHz_external.upload.default_speed=115200
 165.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.1_8432MHz_external.build.clkpr=
 165.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 165.menu.clock.1MHz_external=External 1 MHz
-165.menu.clock.1MHz_external.upload.speed=9600
+165.menu.clock.1MHz_external.upload.default_speed=9600
 165.menu.clock.1MHz_external.bootloader.low_fuses=0xff
 165.menu.clock.1MHz_external.build.clkpr=
 165.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 165.menu.clock.8MHz_internal=Internal 8 MHz
-165.menu.clock.8MHz_internal.upload.speed=38400
+165.menu.clock.8MHz_internal.upload.default_speed=38400
 165.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 165.menu.clock.8MHz_internal.build.clkpr=
 165.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 165.menu.clock.4MHz_internal=Internal 4 MHz
-165.menu.clock.4MHz_internal.upload.speed=9600
+165.menu.clock.4MHz_internal.upload.default_speed=9600
 165.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 165.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 165.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 165.menu.clock.2MHz_internal=Internal 2 MHz
-165.menu.clock.2MHz_internal.upload.speed=9600
+165.menu.clock.2MHz_internal.upload.default_speed=9600
 165.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 165.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 165.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 165.menu.clock.1MHz_internal=Internal 1 MHz
-165.menu.clock.1MHz_internal.upload.speed=9600
+165.menu.clock.1MHz_internal.upload.default_speed=9600
 165.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 165.menu.clock.1MHz_internal.build.clkpr=
 165.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -2242,6 +2550,34 @@ menu.bootloader=Bootloader
 128.menu.eeprom.erase=EEPROM not retained
 128.menu.eeprom.erase.bootloader.eesave_bit=1
 
+# Baud rate
+128.menu.baudrate.default=Default
+128.menu.baudrate.default.upload.speed={upload.default_speed}
+128.menu.baudrate.1000000=1000000
+128.menu.baudrate.1000000.upload.speed=1000000
+128.menu.baudrate.500000=500000
+128.menu.baudrate.500000.upload.speed=500000
+128.menu.baudrate.460800=460800
+128.menu.baudrate.460800.upload.speed=460800
+128.menu.baudrate.250000=250000
+128.menu.baudrate.250000.upload.speed=250000
+128.menu.baudrate.230400=230400
+128.menu.baudrate.230400.upload.speed=230400
+128.menu.baudrate.125000=125000
+128.menu.baudrate.125000.upload.speed=125000
+128.menu.baudrate.115200=115200
+128.menu.baudrate.115200.upload.speed=115200
+128.menu.baudrate.57600=57600
+128.menu.baudrate.57600.upload.speed=57600
+128.menu.baudrate.38400=38400
+128.menu.baudrate.38400.upload.speed=38400
+128.menu.baudrate.19200=19200
+128.menu.baudrate.19200.upload.speed=19200
+128.menu.baudrate.9600=9600
+128.menu.baudrate.9600.upload.speed=9600
+128.menu.baudrate.4800=4800
+128.menu.baudrate.4800.upload.speed=4800
+
 # Brown out detection - This is the first part of the low fuse bit concatenation
 128.menu.BOD.2v7=BOD 2.7V
 128.menu.BOD.2v7.bootloader.bod_bits=10
@@ -2265,109 +2601,109 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 128.menu.clock.16MHz_external=External 16 MHz
-128.menu.clock.16MHz_external.upload.speed=115200
+128.menu.clock.16MHz_external.upload.default_speed=115200
 128.menu.clock.16MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.16MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 128.menu.clock.20MHz_external=External 20 MHz
-128.menu.clock.20MHz_external.upload.speed=115200
+128.menu.clock.20MHz_external.upload.default_speed=115200
 128.menu.clock.20MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.20MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 128.menu.clock.18_432MHz_external=External 18.432 MHz
-128.menu.clock.18_432MHz_external.upload.speed=115200
+128.menu.clock.18_432MHz_external.upload.default_speed=115200
 128.menu.clock.18_432MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.18_432MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 128.menu.clock.14_7456MHz_external=External 14.7456 MHz
-128.menu.clock.14_7456MHz_external.upload.speed=115200
+128.menu.clock.14_7456MHz_external.upload.default_speed=115200
 128.menu.clock.14_7456MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.14_7456MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 128.menu.clock.12MHz_external=External 12 MHz
-128.menu.clock.12MHz_external.upload.speed=57600
+128.menu.clock.12MHz_external.upload.default_speed=57600
 128.menu.clock.12MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.12MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 128.menu.clock.11_0592MHz_external=External 11.0592 MHz
-128.menu.clock.11_0592MHz_external.upload.speed=115200
+128.menu.clock.11_0592MHz_external.upload.default_speed=115200
 128.menu.clock.11_0592MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.11_0592MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 128.menu.clock.8MHz_external=External 8 MHz
-128.menu.clock.8MHz_external.upload.speed=57600
+128.menu.clock.8MHz_external.upload.default_speed=57600
 128.menu.clock.8MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.8MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 128.menu.clock.7_3728MHz_external=External 7.3728 MHz
-128.menu.clock.7_3728MHz_external.upload.speed=115200
+128.menu.clock.7_3728MHz_external.upload.default_speed=115200
 128.menu.clock.7_3728MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.7_3728MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 128.menu.clock.6MHz_external=External 6 MHz
-128.menu.clock.6MHz_external.upload.speed=57600
+128.menu.clock.6MHz_external.upload.default_speed=57600
 128.menu.clock.6MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.6MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 128.menu.clock.4MHz_external=External 4 MHz
-128.menu.clock.4MHz_external.upload.speed=9600
+128.menu.clock.4MHz_external.upload.default_speed=9600
 128.menu.clock.4MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.4MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 128.menu.clock.3_6864MHz_external=External 3.6864 MHz
-128.menu.clock.3_6864MHz_external.upload.speed=115200
+128.menu.clock.3_6864MHz_external.upload.default_speed=115200
 128.menu.clock.3_6864MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.3_6864MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 128.menu.clock.2MHz_external=External 2 MHz
-128.menu.clock.2MHz_external.upload.speed=9600
+128.menu.clock.2MHz_external.upload.default_speed=9600
 128.menu.clock.2MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.2MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 128.menu.clock.1_8432MHz_external=External 1.8432 MHz
-128.menu.clock.1_8432MHz_external.upload.speed=115200
+128.menu.clock.1_8432MHz_external.upload.default_speed=115200
 128.menu.clock.1_8432MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.1_8432MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 128.menu.clock.1MHz_external=External 1 MHz
-128.menu.clock.1MHz_external.upload.speed=9600
+128.menu.clock.1MHz_external.upload.default_speed=9600
 128.menu.clock.1MHz_external.bootloader.sut_cksel_bits=111111
 128.menu.clock.1MHz_external.bootloader.ckopt_bit=0
 128.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 128.menu.clock.8MHz_internal=Internal 8 MHz
-128.menu.clock.8MHz_internal.upload.speed=38400
+128.menu.clock.8MHz_internal.upload.default_speed=38400
 128.menu.clock.8MHz_internal.bootloader.sut_cksel_bits=100100
 128.menu.clock.8MHz_internal.bootloader.ckopt_bit=1
 128.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 128.menu.clock.4MHz_internal=Internal 4 MHz
-128.menu.clock.4MHz_internal.upload.speed=9600
+128.menu.clock.4MHz_internal.upload.default_speed=9600
 128.menu.clock.4MHz_internal.bootloader.sut_cksel_bits=100011
 128.menu.clock.4MHz_internal.bootloader.ckopt_bit=1
 128.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 128.menu.clock.2MHz_internal=Internal 2 MHz
-128.menu.clock.2MHz_internal.upload.speed=9600
+128.menu.clock.2MHz_internal.upload.default_speed=9600
 128.menu.clock.2MHz_internal.bootloader.sut_cksel_bits=100010
 128.menu.clock.2MHz_internal.bootloader.ckopt_bit=1
 128.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 128.menu.clock.1MHz_internal=Internal 1 MHz
-128.menu.clock.1MHz_internal.upload.speed=9600
+128.menu.clock.1MHz_internal.upload.default_speed=9600
 128.menu.clock.1MHz_internal.bootloader.sut_cksel_bits=100001
 128.menu.clock.1MHz_internal.bootloader.ckopt_bit=1
 128.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -2420,6 +2756,34 @@ menu.bootloader=Bootloader
 64.menu.eeprom.erase=EEPROM not retained
 64.menu.eeprom.erase.bootloader.eesave_bit=1
 
+# Baud rate
+64.menu.baudrate.default=Default
+64.menu.baudrate.default.upload.speed={upload.default_speed}
+64.menu.baudrate.1000000=1000000
+64.menu.baudrate.1000000.upload.speed=1000000
+64.menu.baudrate.500000=500000
+64.menu.baudrate.500000.upload.speed=500000
+64.menu.baudrate.460800=460800
+64.menu.baudrate.460800.upload.speed=460800
+64.menu.baudrate.250000=250000
+64.menu.baudrate.250000.upload.speed=250000
+64.menu.baudrate.230400=230400
+64.menu.baudrate.230400.upload.speed=230400
+64.menu.baudrate.125000=125000
+64.menu.baudrate.125000.upload.speed=125000
+64.menu.baudrate.115200=115200
+64.menu.baudrate.115200.upload.speed=115200
+64.menu.baudrate.57600=57600
+64.menu.baudrate.57600.upload.speed=57600
+64.menu.baudrate.38400=38400
+64.menu.baudrate.38400.upload.speed=38400
+64.menu.baudrate.19200=19200
+64.menu.baudrate.19200.upload.speed=19200
+64.menu.baudrate.9600=9600
+64.menu.baudrate.9600.upload.speed=9600
+64.menu.baudrate.4800=4800
+64.menu.baudrate.4800.upload.speed=4800
+
 # Brown out detection - This is the first part of the low fuse bit concatenation
 64.menu.BOD.2v7=BOD 2.7V
 64.menu.BOD.2v7.bootloader.bod_bits=10
@@ -2443,109 +2807,109 @@ menu.bootloader=Bootloader
 
 # Clock frequencies
 64.menu.clock.16MHz_external=External 16 MHz
-64.menu.clock.16MHz_external.upload.speed=115200
+64.menu.clock.16MHz_external.upload.default_speed=115200
 64.menu.clock.16MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.16MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 64.menu.clock.20MHz_external=External 20 MHz
-64.menu.clock.20MHz_external.upload.speed=115200
+64.menu.clock.20MHz_external.upload.default_speed=115200
 64.menu.clock.20MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.20MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 64.menu.clock.18_432MHz_external=External 18.432 MHz
-64.menu.clock.18_432MHz_external.upload.speed=115200
+64.menu.clock.18_432MHz_external.upload.default_speed=115200
 64.menu.clock.18_432MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.18_432MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 64.menu.clock.14_7456MHz_external=External 14.7456 MHz
-64.menu.clock.14_7456MHz_external.upload.speed=115200
+64.menu.clock.14_7456MHz_external.upload.default_speed=115200
 64.menu.clock.14_7456MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.14_7456MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 64.menu.clock.12MHz_external=External 12 MHz
-64.menu.clock.12MHz_external.upload.speed=57600
+64.menu.clock.12MHz_external.upload.default_speed=57600
 64.menu.clock.12MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.12MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 64.menu.clock.11_0592MHz_external=External 11.0592 MHz
-64.menu.clock.11_0592MHz_external.upload.speed=115200
+64.menu.clock.11_0592MHz_external.upload.default_speed=115200
 64.menu.clock.11_0592MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.11_0592MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 64.menu.clock.8MHz_external=External 8 MHz
-64.menu.clock.8MHz_external.upload.speed=57600
+64.menu.clock.8MHz_external.upload.default_speed=57600
 64.menu.clock.8MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.8MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 64.menu.clock.7_3728MHz_external=External 7.3728 MHz
-64.menu.clock.7_3728MHz_external.upload.speed=115200
+64.menu.clock.7_3728MHz_external.upload.default_speed=115200
 64.menu.clock.7_3728MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.7_3728MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 64.menu.clock.6MHz_external=External 6 MHz
-64.menu.clock.6MHz_external.upload.speed=57600
+64.menu.clock.6MHz_external.upload.default_speed=57600
 64.menu.clock.6MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.6MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 64.menu.clock.4MHz_external=External 4 MHz
-64.menu.clock.4MHz_external.upload.speed=9600
+64.menu.clock.4MHz_external.upload.default_speed=9600
 64.menu.clock.4MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.4MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 64.menu.clock.3_6864MHz_external=External 3.6864 MHz
-64.menu.clock.3_6864MHz_external.upload.speed=115200
+64.menu.clock.3_6864MHz_external.upload.default_speed=115200
 64.menu.clock.3_6864MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.3_6864MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 64.menu.clock.2MHz_external=External 2 MHz
-64.menu.clock.2MHz_external.upload.speed=9600
+64.menu.clock.2MHz_external.upload.default_speed=9600
 64.menu.clock.2MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.2MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 64.menu.clock.1_8432MHz_external=External 1.8432 MHz
-64.menu.clock.1_8432MHz_external.upload.speed=115200
+64.menu.clock.1_8432MHz_external.upload.default_speed=115200
 64.menu.clock.1_8432MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.1_8432MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 64.menu.clock.1MHz_external=External 1 MHz
-64.menu.clock.1MHz_external.upload.speed=9600
+64.menu.clock.1MHz_external.upload.default_speed=9600
 64.menu.clock.1MHz_external.bootloader.sut_cksel_bits=111111
 64.menu.clock.1MHz_external.bootloader.ckopt_bit=0
 64.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 64.menu.clock.8MHz_internal=Internal 8 MHz
-64.menu.clock.8MHz_internal.upload.speed=38400
+64.menu.clock.8MHz_internal.upload.default_speed=38400
 64.menu.clock.8MHz_internal.bootloader.sut_cksel_bits=100100
 64.menu.clock.8MHz_internal.bootloader.ckopt_bit=1
 64.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 64.menu.clock.4MHz_internal=Internal 4 MHz
-64.menu.clock.4MHz_internal.upload.speed=9600
+64.menu.clock.4MHz_internal.upload.default_speed=9600
 64.menu.clock.4MHz_internal.bootloader.sut_cksel_bits=100011
 64.menu.clock.4MHz_internal.bootloader.ckopt_bit=1
 64.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 64.menu.clock.2MHz_internal=Internal 2 MHz
-64.menu.clock.2MHz_internal.upload.speed=9600
+64.menu.clock.2MHz_internal.upload.default_speed=9600
 64.menu.clock.2MHz_internal.bootloader.sut_cksel_bits=100010
 64.menu.clock.2MHz_internal.bootloader.ckopt_bit=1
 64.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 64.menu.clock.1MHz_internal=Internal 1 MHz
-64.menu.clock.1MHz_internal.upload.speed=9600
+64.menu.clock.1MHz_internal.upload.default_speed=9600
 64.menu.clock.1MHz_internal.bootloader.sut_cksel_bits=100001
 64.menu.clock.1MHz_internal.bootloader.ckopt_bit=1
 64.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -2596,6 +2960,34 @@ can128.menu.eeprom.keep.bootloader.high_fuses=0xd7
 can128.menu.eeprom.erase=EEPROM not retained
 can128.menu.eeprom.erase.bootloader.high_fuses=0xdf
 
+# Baud rate
+can128.menu.baudrate.default=Default
+can128.menu.baudrate.default.upload.speed={upload.default_speed}
+can128.menu.baudrate.1000000=1000000
+can128.menu.baudrate.1000000.upload.speed=1000000
+can128.menu.baudrate.500000=500000
+can128.menu.baudrate.500000.upload.speed=500000
+can128.menu.baudrate.460800=460800
+can128.menu.baudrate.460800.upload.speed=460800
+can128.menu.baudrate.250000=250000
+can128.menu.baudrate.250000.upload.speed=250000
+can128.menu.baudrate.230400=230400
+can128.menu.baudrate.230400.upload.speed=230400
+can128.menu.baudrate.125000=125000
+can128.menu.baudrate.125000.upload.speed=125000
+can128.menu.baudrate.115200=115200
+can128.menu.baudrate.115200.upload.speed=115200
+can128.menu.baudrate.57600=57600
+can128.menu.baudrate.57600.upload.speed=57600
+can128.menu.baudrate.38400=38400
+can128.menu.baudrate.38400.upload.speed=38400
+can128.menu.baudrate.19200=19200
+can128.menu.baudrate.19200.upload.speed=19200
+can128.menu.baudrate.9600=9600
+can128.menu.baudrate.9600.upload.speed=9600
+can128.menu.baudrate.4800=4800
+can128.menu.baudrate.4800.upload.speed=4800
+
 # Brown out detection
 can128.menu.BOD.2v7=BOD 2.7V
 can128.menu.BOD.2v7.bootloader.extended_fuses=0xf5
@@ -2629,109 +3021,109 @@ can128.menu.LTO.Os.ltoarcmd=avr-ar
 
 # Clock frequencies
 can128.menu.clock.16MHz_external=External 16 MHz
-can128.menu.clock.16MHz_external.upload.speed=115200
+can128.menu.clock.16MHz_external.upload.default_speed=115200
 can128.menu.clock.16MHz_external.bootloader.low_fuses=0xff
 can128.menu.clock.16MHz_external.build.clkpr=
 can128.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 can128.menu.clock.20MHz_external=External 20 MHz
-can128.menu.clock.20MHz_external.upload.speed=115200
+can128.menu.clock.20MHz_external.upload.default_speed=115200
 can128.menu.clock.20MHz_external.bootloader.low_fuses=0xff
 can128.menu.clock.20MHz_external.build.clkpr=
 can128.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 can128.menu.clock.18_432MHz_external=External 18.4320 MHz
-can128.menu.clock.18_432MHz_external.upload.speed=115200
+can128.menu.clock.18_432MHz_external.upload.default_speed=115200
 can128.menu.clock.18_432MHz_external.bootloader.low_fuses=0xff
 can128.menu.clock.18_432MHz_external.build.clkpr=
 can128.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 can128.menu.clock.14_7456MHz_external=External 14.7456 MHz
-can128.menu.clock.14_7456MHz_external.upload.speed=115200
+can128.menu.clock.14_7456MHz_external.upload.default_speed=115200
 can128.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xff
 can128.menu.clock.14_7456MHz_external.build.clkpr=
 can128.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 can128.menu.clock.12MHz_external=External 12 MHz
-can128.menu.clock.12MHz_external.upload.speed=57600
+can128.menu.clock.12MHz_external.upload.default_speed=57600
 can128.menu.clock.12MHz_external.bootloader.low_fuses=0xff
 can128.menu.clock.12MHz_external.build.clkpr=
 can128.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 can128.menu.clock.11_0592MHz_external=External 11.0592 MHz
-can128.menu.clock.11_0592MHz_external.upload.speed=115200
+can128.menu.clock.11_0592MHz_external.upload.default_speed=115200
 can128.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xff
 can128.menu.clock.11_0592MHz_external.build.clkpr=
 can128.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 can128.menu.clock.8MHz_external=External 8 MHz
-can128.menu.clock.8MHz_external.upload.speed=57600
+can128.menu.clock.8MHz_external.upload.default_speed=57600
 can128.menu.clock.8MHz_external.bootloader.low_fuses=0xff
 can128.menu.clock.8MHz_external.build.clkpr=
 can128.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 can128.menu.clock.7_3728MHz_external=External 7.3728 MHz
-can128.menu.clock.7_3728MHz_external.upload.speed=115200
+can128.menu.clock.7_3728MHz_external.upload.default_speed=115200
 can128.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xfd
 can128.menu.clock.7_3728MHz_external.build.clkpr=
 can128.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 can128.menu.clock.6MHz_external=External 6 MHz
-can128.menu.clock.6MHz_external.upload.speed=57600
+can128.menu.clock.6MHz_external.upload.default_speed=57600
 can128.menu.clock.6MHz_external.bootloader.low_fuses=0xfd
 can128.menu.clock.6MHz_external.build.clkpr=
 can128.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 can128.menu.clock.4MHz_external=External 4 MHz
-can128.menu.clock.4MHz_external.upload.speed=9600
+can128.menu.clock.4MHz_external.upload.default_speed=9600
 can128.menu.clock.4MHz_external.bootloader.low_fuses=0xfd
 can128.menu.clock.4MHz_external.build.clkpr=
 can128.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 can128.menu.clock.3_6864MHz_external=External 3.6864 MHz
-can128.menu.clock.3_6864MHz_external.upload.speed=115200
+can128.menu.clock.3_6864MHz_external.upload.default_speed=115200
 can128.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xfd
 can128.menu.clock.3_6864MHz_external.build.clkpr=
 can128.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 can128.menu.clock.2MHz_external=External 2 MHz
-can128.menu.clock.2MHz_external.upload.speed=9600
+can128.menu.clock.2MHz_external.upload.default_speed=9600
 can128.menu.clock.2MHz_external.bootloader.low_fuses=0xfb
 can128.menu.clock.2MHz_external.build.clkpr=
 can128.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 can128.menu.clock.1_8432MHz_external=External 1.8432 MHz
-can128.menu.clock.1_8432MHz_external.upload.speed=115200
+can128.menu.clock.1_8432MHz_external.upload.default_speed=115200
 can128.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xfb
 can128.menu.clock.1_8432MHz_external.build.clkpr=
 can128.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 can128.menu.clock.1MHz_external=External 1 MHz
-can128.menu.clock.1MHz_external.upload.speed=9600
+can128.menu.clock.1MHz_external.upload.default_speed=9600
 can128.menu.clock.1MHz_external.bootloader.low_fuses=0xfb
 can128.menu.clock.1MHz_external.build.clkpr=
 can128.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 can128.menu.clock.8MHz_internal=Internal 8 MHz
-can128.menu.clock.8MHz_internal.upload.speed=38400
+can128.menu.clock.8MHz_internal.upload.default_speed=38400
 can128.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 can128.menu.clock.8MHz_internal.build.clkpr=
 can128.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 can128.menu.clock.4MHz_internal=Internal 4 MHz
-can128.menu.clock.4MHz_internal.upload.speed=9600
+can128.menu.clock.4MHz_internal.upload.default_speed=9600
 can128.menu.clock.4MHz_internal.bootloader.low_fuses=0xe2
 can128.menu.clock.4MHz_internal.build.clkpr=-DOSC_PRESCALER=0x01
 can128.menu.clock.4MHz_internal.build.f_cpu=4000000L
 
 can128.menu.clock.2MHz_internal=Internal 2 MHz
-can128.menu.clock.2MHz_internal.upload.speed=9600
+can128.menu.clock.2MHz_internal.upload.default_speed=9600
 can128.menu.clock.2MHz_internal.bootloader.low_fuses=0xe2
 can128.menu.clock.2MHz_internal.build.clkpr=-DOSC_PRESCALER=0x02
 can128.menu.clock.2MHz_internal.build.f_cpu=2000000L
 
 can128.menu.clock.1MHz_internal=Internal 1 MHz
-can128.menu.clock.1MHz_internal.upload.speed=9600
+can128.menu.clock.1MHz_internal.upload.default_speed=9600
 can128.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 can128.menu.clock.1MHz_internal.build.clkpr=
 can128.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -2782,6 +3174,34 @@ can64.menu.eeprom.keep.bootloader.high_fuses=0xd7
 can64.menu.eeprom.erase=EEPROM not retained
 can64.menu.eeprom.erase.bootloader.high_fuses=0xdf
 
+# Baud rate
+can64.menu.baudrate.default=Default
+can64.menu.baudrate.default.upload.speed={upload.default_speed}
+can64.menu.baudrate.1000000=1000000
+can64.menu.baudrate.1000000.upload.speed=1000000
+can64.menu.baudrate.500000=500000
+can64.menu.baudrate.500000.upload.speed=500000
+can64.menu.baudrate.460800=460800
+can64.menu.baudrate.460800.upload.speed=460800
+can64.menu.baudrate.250000=250000
+can64.menu.baudrate.250000.upload.speed=250000
+can64.menu.baudrate.230400=230400
+can64.menu.baudrate.230400.upload.speed=230400
+can64.menu.baudrate.125000=125000
+can64.menu.baudrate.125000.upload.speed=125000
+can64.menu.baudrate.115200=115200
+can64.menu.baudrate.115200.upload.speed=115200
+can64.menu.baudrate.57600=57600
+can64.menu.baudrate.57600.upload.speed=57600
+can64.menu.baudrate.38400=38400
+can64.menu.baudrate.38400.upload.speed=38400
+can64.menu.baudrate.19200=19200
+can64.menu.baudrate.19200.upload.speed=19200
+can64.menu.baudrate.9600=9600
+can64.menu.baudrate.9600.upload.speed=9600
+can64.menu.baudrate.4800=4800
+can64.menu.baudrate.4800.upload.speed=4800
+
 # Brown out detection
 can64.menu.BOD.2v7=BOD 2.7V
 can64.menu.BOD.2v7.bootloader.extended_fuses=0xf5
@@ -2815,97 +3235,97 @@ can64.menu.LTO.Os.ltoarcmd=avr-ar
 
 # Clock frequencies
 can64.menu.clock.16MHz_external=External 16 MHz
-can64.menu.clock.16MHz_external.upload.speed=115200
+can64.menu.clock.16MHz_external.upload.default_speed=115200
 can64.menu.clock.16MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.16MHz_external.build.clkpr=
 can64.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 can64.menu.clock.20MHz_external=External 20 MHz
-can64.menu.clock.20MHz_external.upload.speed=115200
+can64.menu.clock.20MHz_external.upload.default_speed=115200
 can64.menu.clock.20MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.20MHz_external.build.clkpr=
 can64.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 can64.menu.clock.18_432MHz_external=External 18.4320 MHz
-can64.menu.clock.18_432MHz_external.upload.speed=115200
+can64.menu.clock.18_432MHz_external.upload.default_speed=115200
 can64.menu.clock.18_432MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.18_432MHz_external.build.clkpr=
 can64.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 can64.menu.clock.14_7456MHz_external=External 14.7456 MHz
-can64.menu.clock.14_7456MHz_external.upload.speed=115200
+can64.menu.clock.14_7456MHz_external.upload.default_speed=115200
 can64.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.14_7456MHz_external.build.clkpr=
 can64.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 can64.menu.clock.12MHz_external=External 12 MHz
-can64.menu.clock.12MHz_external.upload.speed=57600
+can64.menu.clock.12MHz_external.upload.default_speed=57600
 can64.menu.clock.12MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.12MHz_external.build.clkpr=
 can64.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 can64.menu.clock.11_0592MHz_external=External 11.0592 MHz
-can64.menu.clock.11_0592MHz_external.upload.speed=115200
+can64.menu.clock.11_0592MHz_external.upload.default_speed=115200
 can64.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.11_0592MHz_external.build.clkpr=
 can64.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 can64.menu.clock.8MHz_external=External 8 MHz
-can64.menu.clock.8MHz_external.upload.speed=57600
+can64.menu.clock.8MHz_external.upload.default_speed=57600
 can64.menu.clock.8MHz_external.bootloader.low_fuses=0xcf
 can64.menu.clock.8MHz_external.build.clkpr=
 can64.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 can64.menu.clock.7_3728MHz_external=External 7.3728 MHz
-can64.menu.clock.7_3728MHz_external.upload.speed=115200
+can64.menu.clock.7_3728MHz_external.upload.default_speed=115200
 can64.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xcd
 can64.menu.clock.7_3728MHz_external.build.clkpr=
 can64.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 can64.menu.clock.6MHz_external=External 6 MHz
-can64.menu.clock.6MHz_external.upload.speed=57600
+can64.menu.clock.6MHz_external.upload.default_speed=57600
 can64.menu.clock.6MHz_external.bootloader.low_fuses=0xcd
 can64.menu.clock.6MHz_external.build.clkpr=
 can64.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 can64.menu.clock.4MHz_external=External 4 MHz
-can64.menu.clock.4MHz_external.upload.speed=9600
+can64.menu.clock.4MHz_external.upload.default_speed=9600
 can64.menu.clock.4MHz_external.bootloader.low_fuses=0xcd
 can64.menu.clock.4MHz_external.build.clkpr=
 can64.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 can64.menu.clock.3_6864MHz_external=External 3.6864 MHz
-can64.menu.clock.3_6864MHz_external.upload.speed=115200
+can64.menu.clock.3_6864MHz_external.upload.default_speed=115200
 can64.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xcd
 can64.menu.clock.3_6864MHz_external.build.clkpr=
 can64.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 can64.menu.clock.2MHz_external=External 2 MHz
-can64.menu.clock.2MHz_external.upload.speed=9600
+can64.menu.clock.2MHz_external.upload.default_speed=9600
 can64.menu.clock.2MHz_external.bootloader.low_fuses=0xcb
 can64.menu.clock.2MHz_external.build.clkpr=
 can64.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 can64.menu.clock.1_8432MHz_external=External 1.8432 MHz
-can64.menu.clock.1_8432MHz_external.upload.speed=115200
+can64.menu.clock.1_8432MHz_external.upload.default_speed=115200
 can64.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xcb
 can64.menu.clock.1_8432MHz_external.build.clkpr=
 can64.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 can64.menu.clock.1MHz_external=External 1 MHz
-can64.menu.clock.1MHz_external.upload.speed=9600
+can64.menu.clock.1MHz_external.upload.default_speed=9600
 can64.menu.clock.1MHz_external.bootloader.low_fuses=0xcb
 can64.menu.clock.1MHz_external.build.clkpr=
 can64.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 can64.menu.clock.8MHz_internal=Internal 8 MHz
-can64.menu.clock.8MHz_internal.upload.speed=38400
+can64.menu.clock.8MHz_internal.upload.default_speed=38400
 can64.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 can64.menu.clock.8MHz_internal.build.clkpr=
 can64.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 can64.menu.clock.1MHz_internal=Internal 1 MHz
-can64.menu.clock.1MHz_internal.upload.speed=9600
+can64.menu.clock.1MHz_internal.upload.default_speed=9600
 can64.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 can64.menu.clock.1MHz_internal.build.clkpr=
 can64.menu.clock.1MHz_internal.build.f_cpu=1000000L
@@ -2956,6 +3376,34 @@ can32.menu.eeprom.keep.bootloader.high_fuses=0xd7
 can32.menu.eeprom.erase=EEPROM not retained
 can32.menu.eeprom.erase.bootloader.high_fuses=0xdf
 
+# Baud rate
+can32.menu.baudrate.default=Default
+can32.menu.baudrate.default.upload.speed={upload.default_speed}
+can32.menu.baudrate.1000000=1000000
+can32.menu.baudrate.1000000.upload.speed=1000000
+can32.menu.baudrate.500000=500000
+can32.menu.baudrate.500000.upload.speed=500000
+can32.menu.baudrate.460800=460800
+can32.menu.baudrate.460800.upload.speed=460800
+can32.menu.baudrate.250000=250000
+can32.menu.baudrate.250000.upload.speed=250000
+can32.menu.baudrate.230400=230400
+can32.menu.baudrate.230400.upload.speed=230400
+can32.menu.baudrate.125000=125000
+can32.menu.baudrate.125000.upload.speed=125000
+can32.menu.baudrate.115200=115200
+can32.menu.baudrate.115200.upload.speed=115200
+can32.menu.baudrate.57600=57600
+can32.menu.baudrate.57600.upload.speed=57600
+can32.menu.baudrate.38400=38400
+can32.menu.baudrate.38400.upload.speed=38400
+can32.menu.baudrate.19200=19200
+can32.menu.baudrate.19200.upload.speed=19200
+can32.menu.baudrate.9600=9600
+can32.menu.baudrate.9600.upload.speed=9600
+can32.menu.baudrate.4800=4800
+can32.menu.baudrate.4800.upload.speed=4800
+
 # Brown out detection
 can32.menu.BOD.2v7=BOD 2.7V
 can32.menu.BOD.2v7.bootloader.extended_fuses=0xf5
@@ -2989,97 +3437,97 @@ can32.menu.LTO.Os.ltoarcmd=avr-ar
 
 # Clock frequencies
 can32.menu.clock.16MHz_external=External 16 MHz
-can32.menu.clock.16MHz_external.upload.speed=115200
+can32.menu.clock.16MHz_external.upload.default_speed=115200
 can32.menu.clock.16MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.16MHz_external.build.clkpr=
 can32.menu.clock.16MHz_external.build.f_cpu=16000000L
 
 can32.menu.clock.20MHz_external=External 20 MHz
-can32.menu.clock.20MHz_external.upload.speed=115200
+can32.menu.clock.20MHz_external.upload.default_speed=115200
 can32.menu.clock.20MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.20MHz_external.build.clkpr=
 can32.menu.clock.20MHz_external.build.f_cpu=20000000L
 
 can32.menu.clock.18_432MHz_external=External 18.4320 MHz
-can32.menu.clock.18_432MHz_external.upload.speed=115200
+can32.menu.clock.18_432MHz_external.upload.default_speed=115200
 can32.menu.clock.18_432MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.18_432MHz_external.build.clkpr=
 can32.menu.clock.18_432MHz_external.build.f_cpu=18432000L
 
 can32.menu.clock.14_7456MHz_external=External 14.7456 MHz
-can32.menu.clock.14_7456MHz_external.upload.speed=115200
+can32.menu.clock.14_7456MHz_external.upload.default_speed=115200
 can32.menu.clock.14_7456MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.14_7456MHz_external.build.clkpr=
 can32.menu.clock.14_7456MHz_external.build.f_cpu=14745600L
 
 can32.menu.clock.12MHz_external=External 12 MHz
-can32.menu.clock.12MHz_external.upload.speed=57600
+can32.menu.clock.12MHz_external.upload.default_speed=57600
 can32.menu.clock.12MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.12MHz_external.build.clkpr=
 can32.menu.clock.12MHz_external.build.f_cpu=12000000L
 
 can32.menu.clock.11_0592MHz_external=External 11.0592 MHz
-can32.menu.clock.11_0592MHz_external.upload.speed=115200
+can32.menu.clock.11_0592MHz_external.upload.default_speed=115200
 can32.menu.clock.11_0592MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.11_0592MHz_external.build.clkpr=
 can32.menu.clock.11_0592MHz_external.build.f_cpu=11059200L
 
 can32.menu.clock.8MHz_external=External 8 MHz
-can32.menu.clock.8MHz_external.upload.speed=57600
+can32.menu.clock.8MHz_external.upload.default_speed=57600
 can32.menu.clock.8MHz_external.bootloader.low_fuses=0xcf
 can32.menu.clock.8MHz_external.build.clkpr=
 can32.menu.clock.8MHz_external.build.f_cpu=8000000L
 
 can32.menu.clock.7_3728MHz_external=External 7.3728 MHz
-can32.menu.clock.7_3728MHz_external.upload.speed=115200
+can32.menu.clock.7_3728MHz_external.upload.default_speed=115200
 can32.menu.clock.7_3728MHz_external.bootloader.low_fuses=0xcd
 can32.menu.clock.7_3728MHz_external.build.clkpr=
 can32.menu.clock.7_3728MHz_external.build.f_cpu=7372800L
 
 can32.menu.clock.6MHz_external=External 6 MHz
-can32.menu.clock.6MHz_external.upload.speed=57600
+can32.menu.clock.6MHz_external.upload.default_speed=57600
 can32.menu.clock.6MHz_external.bootloader.low_fuses=0xcd
 can32.menu.clock.6MHz_external.build.clkpr=
 can32.menu.clock.6MHz_external.build.f_cpu=6000000L
 
 can32.menu.clock.4MHz_external=External 4 MHz
-can32.menu.clock.4MHz_external.upload.speed=9600
+can32.menu.clock.4MHz_external.upload.default_speed=9600
 can32.menu.clock.4MHz_external.bootloader.low_fuses=0xcd
 can32.menu.clock.4MHz_external.build.clkpr=
 can32.menu.clock.4MHz_external.build.f_cpu=4000000L
 
 can32.menu.clock.3_6864MHz_external=External 3.6864 MHz
-can32.menu.clock.3_6864MHz_external.upload.speed=115200
+can32.menu.clock.3_6864MHz_external.upload.default_speed=115200
 can32.menu.clock.3_6864MHz_external.bootloader.low_fuses=0xcd
 can32.menu.clock.3_6864MHz_external.build.clkpr=
 can32.menu.clock.3_6864MHz_external.build.f_cpu=3686400L
 
 can32.menu.clock.2MHz_external=External 2 MHz
-can32.menu.clock.2MHz_external.upload.speed=9600
+can32.menu.clock.2MHz_external.upload.default_speed=9600
 can32.menu.clock.2MHz_external.bootloader.low_fuses=0xcb
 can32.menu.clock.2MHz_external.build.clkpr=
 can32.menu.clock.2MHz_external.build.f_cpu=2000000L
 
 can32.menu.clock.1_8432MHz_external=External 1.8432 MHz
-can32.menu.clock.1_8432MHz_external.upload.speed=115200
+can32.menu.clock.1_8432MHz_external.upload.default_speed=115200
 can32.menu.clock.1_8432MHz_external.bootloader.low_fuses=0xcb
 can32.menu.clock.1_8432MHz_external.build.clkpr=
 can32.menu.clock.1_8432MHz_external.build.f_cpu=1843200L
 
 can32.menu.clock.1MHz_external=External 1 MHz
-can32.menu.clock.1MHz_external.upload.speed=9600
+can32.menu.clock.1MHz_external.upload.default_speed=9600
 can32.menu.clock.1MHz_external.bootloader.low_fuses=0xcb
 can32.menu.clock.1MHz_external.build.clkpr=
 can32.menu.clock.1MHz_external.build.f_cpu=1000000L
 
 can32.menu.clock.8MHz_internal=Internal 8 MHz
-can32.menu.clock.8MHz_internal.upload.speed=38400
+can32.menu.clock.8MHz_internal.upload.default_speed=38400
 can32.menu.clock.8MHz_internal.bootloader.low_fuses=0xe2
 can32.menu.clock.8MHz_internal.build.clkpr=
 can32.menu.clock.8MHz_internal.build.f_cpu=8000000L
 
 can32.menu.clock.1MHz_internal=Internal 1 MHz
-can32.menu.clock.1MHz_internal.upload.speed=9600
+can32.menu.clock.1MHz_internal.upload.default_speed=9600
 can32.menu.clock.1MHz_internal.bootloader.low_fuses=0x62
 can32.menu.clock.1MHz_internal.build.clkpr=
 can32.menu.clock.1MHz_internal.build.f_cpu=1000000L

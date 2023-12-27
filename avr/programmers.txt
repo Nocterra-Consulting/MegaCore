@@ -74,3 +74,10 @@ stk500.protocol=stk500
 stk500.program.protocol=stk500
 stk500.program.tool=avrdude
 stk500.program.extra_params= -P {serial.port}
+
+wiring.name=Legacy Arduino MEGA bootoader
+wiring.communication=serial
+wiring.protocol=wiring
+wiring.program.protocol=wiring
+wiring.program.tool=avrdude
+wiring.program.extra_params= -P{serial.port} -b115200 -D

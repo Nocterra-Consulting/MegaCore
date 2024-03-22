@@ -259,14 +259,14 @@ menu.baudrate=Baud rate
 2560.menu.bootloader.uart2.upload.protocol=urclock
 2560.menu.bootloader.uart2.upload.uartpins=uart2_rxh0_txh1
 2560.menu.bootloader.uart2.build.export_merged_output=true
-2560.menu.bootloader.uart2.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
+2560.menu.bootloader.uart2.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}_baud/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
 
 2560.menu.bootloader.uart3=Yes (UART3)
 2560.menu.bootloader.uart3.upload.maximum_size=261632
 2560.menu.bootloader.uart3.upload.protocol=urclock
 2560.menu.bootloader.uart3.upload.uartpins=uart3_rxj0_txj1
 2560.menu.bootloader.uart3.build.export_merged_output=true
-2560.menu.bootloader.uart3.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
+2560.menu.bootloader.uart3.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}_baud/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
 
 2560.menu.bootloader.no_bootloader=No bootloader
 2560.menu.bootloader.no_bootloader.upload.maximum_size=262144
@@ -727,14 +727,14 @@ menu.baudrate=Baud rate
 1280.menu.bootloader.uart2.upload.protocol=urclock
 1280.menu.bootloader.uart2.upload.uartpins=uart2_rxh0_txh1
 1280.menu.bootloader.uart2.build.export_merged_output=true
-1280.menu.bootloader.uart2.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
+1280.menu.bootloader.uart2.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}_baud/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
 
 1280.menu.bootloader.uart3=Yes (UART3)
 1280.menu.bootloader.uart3.upload.maximum_size=130560
 1280.menu.bootloader.uart3.upload.protocol=urclock
 1280.menu.bootloader.uart3.upload.uartpins=uart3_rxj0_txj1
 1280.menu.bootloader.uart3.build.export_merged_output=true
-1280.menu.bootloader.uart3.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
+1280.menu.bootloader.uart3.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}_baud/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
 
 1280.menu.bootloader.no_bootloader=No bootloader
 1280.menu.bootloader.no_bootloader.upload.maximum_size=131072
@@ -1430,14 +1430,14 @@ menu.baudrate=Baud rate
 640.menu.bootloader.uart2.upload.protocol=urclock
 640.menu.bootloader.uart2.upload.uartpins=uart2_rxh0_txh1
 640.menu.bootloader.uart2.build.export_merged_output=true
-640.menu.bootloader.uart2.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
+640.menu.bootloader.uart2.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}_baud/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
 
 640.menu.bootloader.uart3=Yes (UART3)
 640.menu.bootloader.uart3.upload.maximum_size=65024
 640.menu.bootloader.uart3.upload.protocol=urclock
 640.menu.bootloader.uart3.upload.uartpins=uart3_rxj0_txj1
 640.menu.bootloader.uart3.build.export_merged_output=true
-640.menu.bootloader.uart3.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
+640.menu.bootloader.uart3.bootloader.file=urboot/{build.mcu}/watchdog_1_s/{build.oscillator}/{build.clock_speed}/{upload.speed}_baud/{upload.uartpins}/{build.bootloader_led}/urboot_{build.mcu}_pr_ee_ce.hex
 
 640.menu.bootloader.no_bootloader=No bootloader
 640.menu.bootloader.no_bootloader.upload.maximum_size=65536

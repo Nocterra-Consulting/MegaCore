@@ -308,5 +308,5 @@ Here are some simple schematics showing a minimal setup using an external crysta
 
 | ATmega64/128/1281/2561<br/>AT90CAN32/CAN64/CAN128      | ATmega165/325/645<br/>ATmega169/329/649                 | ATmega640/1280/2560                                    | ATmega3250/6450<br/>ATmega3290/6490                    |
 |--------------------------------------------------------|---------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------|
-|<img src="https://i.imgur.com/8p4hN9n.png" width="200"> | <img src="https://i.imgur.com/d5Otnpj.png" width="200"> | <img src="http://i.imgur.com/gQS1ORv.png" width="200"> |<img src="https://i.imgur.com/jdPptok.png" width="200"> |
+|<img src="https://i.imgur.com/UlGwP45.png" width="200"> | <img src="https://i.imgur.com/d5Otnpj.png" width="200"> | <img src="http://i.imgur.com/gQS1ORv.png" width="200"> |<img src="https://i.imgur.com/jdPptok.png" width="200"> |
 

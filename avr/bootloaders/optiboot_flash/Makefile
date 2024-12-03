@@ -48,7 +48,7 @@ SH := bash
 # Uncomment this line to set a custom tool path
 # This directory should contain a folder bin, which again contains avr-gcc
 # Leave the path empty (but keep the "" 's) to use pre-installed avr build tools (Crosspack AVR etc.)
-#CUSTOM_TOOLROOT = "~/Library/Arduino15/packages/arduino/tools/avr-gcc/5.4.0-atmel3.6.1-arduino2"
+CUSTOM_TOOLROOT = "/home/cj/.arduino15/packages/arduino/tools/avr-gcc/7.3.0-atmel3.6.1-arduino7"
 
 # Set default tool path based on OS if custom toolpath isn't specified
 ifeq ($(OS),Windows_NT)
